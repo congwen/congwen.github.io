@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>剑指Offer-05：从尾到头打印链表 - Even - A super concise theme for Hugo</title>
+  <title>剑指Offer-15：链表中倒数第k个结点 - Even - A super concise theme for Hugo</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="丛文" /><meta name="description" content="从尾到头打印链表" /><meta name="keywords" content="剑指Offer" />
+<meta name="author" content="丛文" /><meta name="description" content="链表中倒数第k个结点" /><meta name="keywords" content="剑指Offer" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.58.3 with theme even" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/soword-offer-03/" />
+<link rel="canonical" href="http://localhost:1313/post/sword-offer-14/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -38,26 +38,26 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="剑指Offer-05：从尾到头打印链表" />
-<meta property="og:description" content="从尾到头打印链表" />
+<meta property="og:title" content="剑指Offer-15：链表中倒数第k个结点" />
+<meta property="og:description" content="链表中倒数第k个结点" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/soword-offer-03/" />
-<meta property="article:published_time" content="2019-10-18T11:18:15+08:00" />
-<meta property="article:modified_time" content="2019-10-18T11:18:15+08:00" />
-<meta itemprop="name" content="剑指Offer-05：从尾到头打印链表">
-<meta itemprop="description" content="从尾到头打印链表">
+<meta property="og:url" content="http://localhost:1313/post/sword-offer-14/" />
+<meta property="article:published_time" content="2019-10-21T11:18:15+08:00" />
+<meta property="article:modified_time" content="2019-10-21T11:18:15+08:00" />
+<meta itemprop="name" content="剑指Offer-15：链表中倒数第k个结点">
+<meta itemprop="description" content="链表中倒数第k个结点">
 
 
-<meta itemprop="datePublished" content="2019-10-18T11:18:15&#43;08:00" />
-<meta itemprop="dateModified" content="2019-10-18T11:18:15&#43;08:00" />
-<meta itemprop="wordCount" content="303">
+<meta itemprop="datePublished" content="2019-10-21T11:18:15&#43;08:00" />
+<meta itemprop="dateModified" content="2019-10-21T11:18:15&#43;08:00" />
+<meta itemprop="wordCount" content="355">
 
 
 
 <meta itemprop="keywords" content="剑指Offer," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="剑指Offer-05：从尾到头打印链表"/>
-<meta name="twitter:description" content="从尾到头打印链表"/>
+<meta name="twitter:title" content="剑指Offer-15：链表中倒数第k个结点"/>
+<meta name="twitter:description" content="链表中倒数第k个结点"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -120,10 +120,10 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">剑指Offer-05：从尾到头打印链表</h1>
+      <h1 class="post-title">剑指Offer-15：链表中倒数第k个结点</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2019-10-18 </span>
+        <span class="post-time"> 2019-10-21 </span>
         <div class="post-category">
             <a href="/categories/%E5%89%91%E6%8C%87offer/"> 剑指Offer </a>
             </div>
@@ -140,9 +140,9 @@
 <ul>
 <li>
 <ul>
-<li><a href="#题目-https-www-acwing-com-problem-content-18">题目（ <a href="https://www.acwing.com/problem/content/18/">https://www.acwing.com/problem/content/18/</a> ）</a></li>
+<li><a href="#题目-https-www-acwing-com-problem-content-32">题目（ <a href="https://www.acwing.com/problem/content/32/">https://www.acwing.com/problem/content/32/</a> )</a></li>
 <li><a href="#一-解题思路">(一) 解题思路</a></li>
-<li><a href="#二-实现代码">(二) 实现代码</a></li>
+<li><a href="#二-实现代码">（二）实现代码</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -152,21 +152,24 @@
     <div class="post-content">
       
 
-<h3 id="题目-https-www-acwing-com-problem-content-18">题目（ <a href="https://www.acwing.com/problem/content/18/">https://www.acwing.com/problem/content/18/</a> ）</h3>
+<h3 id="题目-https-www-acwing-com-problem-content-32">题目（ <a href="https://www.acwing.com/problem/content/32/">https://www.acwing.com/problem/content/32/</a> )</h3>
 
-<p>输入一个链表的头结点，按照 从尾到头 的顺序返回节点的值。</p>
+<p>输入一个链表，输出该链表中倒数第k个结点。</p>
 
-<p>返回的结果用数组存储。</p>
+<p>注意：</p>
 
-<p>样例
-输入：[2, 3, 5]
-返回：[5, 3, 2]</p>
+<p>k &gt;= 0;
+如果k大于链表长度，则返回 NULL;
+样例
+输入：链表：1-&gt;2-&gt;3-&gt;4-&gt;5 ，k=2</p>
+
+<p>输出：4</p>
 
 <h3 id="一-解题思路">(一) 解题思路</h3>
 
-<p>通常，我们不希望修改原链表的结构。返回一个反序的链表，这就是经典的“后进先出”，我们可以使用栈实现这种顺序。每经过一个结点的时候，把该结点放到一个栈中。当遍历完整个链表后，再从栈顶开始逐个输出结点的值，给一个新的链表结构，这样链表就实现了反转。</p>
+<p>我们可以定义两个指针。第一个指针从链表的头指针开始遍历向前走k-1，第二个指针保持不动；从第k步开始，第二个指针也开始从链表的头指针开始遍历。由于两个指针的距离保持在k-1，当第一个（走在前面的）指针到达链表的尾结点时，第二个指针（走在后面的）指针正好是倒数第k个结点。</p>
 
-<h3 id="二-实现代码">(二) 实现代码</h3>
+<h3 id="二-实现代码">（二）实现代码</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt"> 1
@@ -197,50 +200,34 @@
 </span><span class="lnt">26
 </span><span class="lnt">27
 </span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-java" data-lang="java"><span class="cm">/**
 </span><span class="cm"> * Definition for singly-linked list.
-</span><span class="cm"> * class ListNode {
+</span><span class="cm"> * public class ListNode {
 </span><span class="cm"> *     int val;
 </span><span class="cm"> *     ListNode next;
 </span><span class="cm"> *     ListNode(int x) { val = x; }
 </span><span class="cm"> * }
 </span><span class="cm"> */</span>
 <span class="kd">class</span> <span class="nf">Solution</span> <span class="p">{</span>
-    <span class="kd">public</span> <span class="nf">int</span><span class="p">[]</span> <span class="n">printListReversingly</span><span class="p">(</span><span class="n">ListNode</span> <span class="nf">head</span><span class="p">)</span> <span class="p">{</span>
-        
-        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">list</span> <span class="o">=</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-        
-        <span class="k">if</span><span class="p">(</span><span class="n">head</span><span class="o">==</span> <span class="kc">null</span><span class="p">){</span>
-            <span class="k">return</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="n">list</span><span class="p">.</span><span class="na">size</span><span class="p">()];</span>
+    <span class="kd">public</span> <span class="nf">ListNode</span> <span class="n">findKthToTail</span><span class="p">(</span><span class="n">ListNode</span> <span class="nf">head</span><span class="p">,</span> <span class="kt">int</span> <span class="nf">k</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">head</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
         <span class="p">}</span>
-        
-        <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">stack</span><span class="o">=</span><span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-        
-        <span class="k">while</span><span class="p">(</span><span class="n">head</span><span class="o">!=</span><span class="kc">null</span><span class="p">){</span>
-            <span class="n">stack</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="n">head</span><span class="p">.</span><span class="na">val</span><span class="p">);</span>
-            <span class="n">head</span><span class="o">=</span><span class="n">head</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+        <span class="n">ListNode</span> <span class="nf">fast</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+        <span class="n">ListNode</span> <span class="nf">slow</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">k</span><span class="o">--</span> <span class="o">&gt;</span> <span class="n">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">fast</span><span class="p">.</span><span class="na">next</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
         <span class="p">}</span>
-        <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">stack</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()){</span>
-            <span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">stack</span><span class="p">.</span><span class="na">pop</span><span class="p">());</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">fast</span><span class="p">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+            <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
         <span class="p">}</span>
-         <span class="kt">int</span> <span class="nf">res</span> <span class="p">[]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="n">list</span><span class="p">.</span><span class="na">size</span><span class="p">()];</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nf">i</span><span class="o">=</span><span class="n">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">list</span><span class="p">.</span><span class="na">size</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
-            <span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">list</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
-        
-       
-        
+        <span class="k">return</span> <span class="n">slow</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></td></tr></table>
 </div>
@@ -255,7 +242,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2019-10-18
+        2019-10-21
         
     </span>
   </p>
@@ -267,12 +254,12 @@
           <a href="/tags/%E5%89%91%E6%8C%87offer/">剑指Offer</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/sword-offer-14/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">剑指Offer-15：链表中倒数第k个结点</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
         
+        <a class="next" href="/post/soword-offer-03/">
+            <span class="next-text nav-default">剑指Offer-05：从尾到头打印链表</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
       </nav>
     </footer>
   </article>
