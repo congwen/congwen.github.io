@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>使用hugo搭建博客</title>
-      <link>http://localhost:1313/post/first/</link>
+      <title>剑指Offer-03：从尾到头打印链表</title>
+      <link>http://localhost:1313/post/soword-offer-03/</link>
       <pubDate>Fri, 18 Oct 2019 11:18:15 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/first/</guid>
-      <description>1 select * from tb where day=20180910</description>
+      <guid>http://localhost:1313/post/soword-offer-03/</guid>
+      <description>(一) 解题思路 通常，这种情况下，我们不希望修改原链表的结构。返回一个反序的链表，这就是经典的“后进先出”，我们可以使用栈实现这种顺序。每经过</description>
     </item>
     
   </channel>

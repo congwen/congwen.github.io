@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://localhost:1313/post/first/</loc>
+    <loc>http://localhost:1313/post/soword-offer-03/</loc>
     <lastmod>2019-10-18T11:18:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -23,20 +23,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/hugo/</loc>
-    <lastmod>2019-10-18T11:18:15+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/hugo/</loc>
-    <lastmod>2019-10-18T11:18:15+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/post/</loc>
     <lastmod>2019-10-18T11:18:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -45,6 +31,20 @@
   
   <url>
     <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2019-10-18T11:18:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/%E5%89%91%E6%8C%87offer/</loc>
+    <lastmod>2019-10-18T11:18:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/%E5%89%91%E6%8C%87offer/</loc>
     <lastmod>2019-10-18T11:18:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
