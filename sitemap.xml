@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://localhost:1313/post/bubble-sort/</loc>
+    <lastmod>2019-10-25T11:18:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/post/sword-offer-14/</loc>
     <lastmod>2019-10-21T11:18:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -17,42 +24,49 @@
   
   <url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2019-10-21T11:18:15+08:00</lastmod>
+    <lastmod>2019-10-25T11:18:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2019-10-21T11:18:15+08:00</lastmod>
+    <lastmod>2019-10-25T11:18:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/post/</loc>
-    <lastmod>2019-10-21T11:18:15+08:00</lastmod>
+    <lastmod>2019-10-25T11:18:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2019-10-21T11:18:15+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/%E5%89%91%E6%8C%87offer/</loc>
-    <lastmod>2019-10-21T11:18:15+08:00</lastmod>
+    <lastmod>2019-10-25T11:18:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/categories/%E5%89%91%E6%8C%87offer/</loc>
-    <lastmod>2019-10-21T11:18:15+08:00</lastmod>
+    <lastmod>2019-10-25T11:18:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/%E5%89%91%E6%8C%87offer/</loc>
+    <lastmod>2019-10-25T11:18:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2019-10-25T11:18:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

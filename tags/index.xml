@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 21 Oct 2019 11:18:15 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 25 Oct 2019 11:18:15 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,18 @@
     <item>
       <title>剑指Offer</title>
       <link>http://localhost:1313/tags/%E5%89%91%E6%8C%87offer/</link>
-      <pubDate>Mon, 21 Oct 2019 11:18:15 +0800</pubDate>
+      <pubDate>Fri, 25 Oct 2019 11:18:15 +0800</pubDate>
       
       <guid>http://localhost:1313/tags/%E5%89%91%E6%8C%87offer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>算法</title>
+      <link>http://localhost:1313/tags/%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Fri, 25 Oct 2019 11:18:15 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/%E7%AE%97%E6%B3%95/</guid>
       <description></description>
     </item>
     

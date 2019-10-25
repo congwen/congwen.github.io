@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>剑指Offer-15：链表中倒数第k个结点 - Even - A super concise theme for Hugo</title>
+  <title>冒泡排序 - Even - A super concise theme for Hugo</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="丛文" /><meta name="description" content="链表中倒数第k个结点" /><meta name="keywords" content="剑指Offer" />
+<meta name="author" content="丛文" /><meta name="description" content="从尾到头打印链表" /><meta name="keywords" content="剑指Offer" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.58.3 with theme even" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/sword-offer-14/" />
+<link rel="canonical" href="http://localhost:1313/post/bubble-sort/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -38,26 +38,26 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="剑指Offer-15：链表中倒数第k个结点" />
-<meta property="og:description" content="链表中倒数第k个结点" />
+<meta property="og:title" content="冒泡排序" />
+<meta property="og:description" content="从尾到头打印链表" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/sword-offer-14/" />
-<meta property="article:published_time" content="2019-10-21T11:18:15+08:00" />
-<meta property="article:modified_time" content="2019-10-21T11:18:15+08:00" />
-<meta itemprop="name" content="剑指Offer-15：链表中倒数第k个结点">
-<meta itemprop="description" content="链表中倒数第k个结点">
+<meta property="og:url" content="http://localhost:1313/post/bubble-sort/" />
+<meta property="article:published_time" content="2019-10-25T11:18:15+08:00" />
+<meta property="article:modified_time" content="2019-10-25T11:18:15+08:00" />
+<meta itemprop="name" content="冒泡排序">
+<meta itemprop="description" content="从尾到头打印链表">
 
 
-<meta itemprop="datePublished" content="2019-10-21T11:18:15&#43;08:00" />
-<meta itemprop="dateModified" content="2019-10-21T11:18:15&#43;08:00" />
-<meta itemprop="wordCount" content="352">
+<meta itemprop="datePublished" content="2019-10-25T11:18:15&#43;08:00" />
+<meta itemprop="dateModified" content="2019-10-25T11:18:15&#43;08:00" />
+<meta itemprop="wordCount" content="265">
 
 
 
 <meta itemprop="keywords" content="剑指Offer,算法," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="剑指Offer-15：链表中倒数第k个结点"/>
-<meta name="twitter:description" content="链表中倒数第k个结点"/>
+<meta name="twitter:title" content="冒泡排序"/>
+<meta name="twitter:description" content="从尾到头打印链表"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -120,10 +120,10 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">剑指Offer-15：链表中倒数第k个结点</h1>
+      <h1 class="post-title">冒泡排序</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2019-10-21 </span>
+        <span class="post-time"> 2019-10-25 </span>
         <div class="post-category">
             <a href="/categories/%E5%89%91%E6%8C%87offer/"> 剑指Offer </a>
             </div>
@@ -138,11 +138,11 @@
 <ul>
 <li>
 <ul>
-<li>
+<li><a href="#冒泡排序-bubble-sort">冒泡排序（Bubble Sort）</a>
 <ul>
-<li><a href="#题目-https-www-acwing-com-problem-content-32"><a href="https://www.acwing.com/problem/content/32/">题目</a></a></li>
-<li><a href="#一-解题思路">（一）解题思路</a></li>
-<li><a href="#二-实现代码">（二）实现代码</a></li>
+<li><a href="#算法思路">算法思路</a></li>
+<li><a href="#代码">代码</a></li>
+<li><a href="#算法分析">算法分析</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -152,24 +152,24 @@
     <div class="post-content">
       
 
-<h3 id="题目-https-www-acwing-com-problem-content-32"><a href="https://www.acwing.com/problem/content/32/">题目</a></h3>
+<h2 id="冒泡排序-bubble-sort">冒泡排序（Bubble Sort）</h2>
 
-<p>输入一个链表，输出该链表中倒数第k个结点。</p>
-
-<p>注意：</p>
-
-<p>k &gt;= 0;
-如果k大于链表长度，则返回 NULL;
-样例
-输入：链表：1-&gt;2-&gt;3-&gt;4-&gt;5 ，k=2</p>
-
-<p>输出：4</p>
-
-<h3 id="一-解题思路">（一）解题思路</h3>
-
-<p>我们可以定义两个指针。第一个指针从链表的头指针开始遍历向前走k-1，第二个指针保持不动；从第k步开始，第二个指针也开始从链表的头指针开始遍历。由于两个指针的距离保持在k-1，当第一个（走在前面的）指针到达链表的尾结点时，第二个指针（走在后面的）指针正好是倒数第k个结点。</p>
-
-<h3 id="二-实现代码">（二）实现代码</h3>
+<h3 id="算法思路">算法思路</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">比较相邻的元素。如果第一个比第二个大，就交换它们两个；
+对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对，这样在最后的元素应该会是最大的数；
+针对所有的元素重复以上的步骤，除了最后一个；
+重复步骤1~3，直到排序完成。</pre></td></tr></table>
+</div>
+</div>
+<h3 id="代码">代码</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt"> 1
@@ -190,46 +190,35 @@
 </span><span class="lnt">16
 </span><span class="lnt">17
 </span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-java" data-lang="java"><span class="cm">/**
-</span><span class="cm"> * Definition for singly-linked list.
-</span><span class="cm"> * public class ListNode {
-</span><span class="cm"> *     int val;
-</span><span class="cm"> *     ListNode next;
-</span><span class="cm"> *     ListNode(int x) { val = x; }
-</span><span class="cm"> * }
-</span><span class="cm"> */</span>
-<span class="kd">class</span> <span class="nf">Solution</span> <span class="p">{</span>
-    <span class="kd">public</span> <span class="nf">ListNode</span> <span class="n">findKthToTail</span><span class="p">(</span><span class="n">ListNode</span> <span class="nf">head</span><span class="p">,</span> <span class="kt">int</span> <span class="nf">k</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">head</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">1</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="n">ListNode</span> <span class="nf">fast</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
-        <span class="n">ListNode</span> <span class="nf">slow</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
-        <span class="k">while</span> <span class="p">(</span><span class="n">k</span><span class="o">--</span> <span class="o">&gt;</span> <span class="n">1</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">fast</span><span class="p">.</span><span class="na">next</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
-            <span class="p">}</span>
-            <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">while</span> <span class="p">(</span><span class="n">fast</span><span class="p">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
-            <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="n">slow</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></td></tr></table>
+</span><span class="cm">     * 冒泡排序
+</span><span class="cm">     *
+</span><span class="cm">     * @param array
+</span><span class="cm">     * @return
+</span><span class="cm">     */</span>
+    <span class="kd">public</span> <span class="nf">static</span> <span class="kt">int</span><span class="p">[]</span> <span class="nf">bubbleSort</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="nf">array</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">array</span><span class="p">.</span><span class="na">length</span> <span class="o">==</span> <span class="n">0</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">array</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nf">i</span> <span class="o">=</span> <span class="n">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">array</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nf">j</span> <span class="o">=</span> <span class="n">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">array</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="n">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="n">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="p">{</span>
+                    <span class="kt">int</span> <span class="nf">temp</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="n">1</span><span class="p">];</span>
+                    <span class="n">array</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="n">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+                    <span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+                <span class="p">}</span>
+        <span class="k">return</span> <span class="n">array</span><span class="p">;</span>
+    <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="算法分析">算法分析</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">最佳情况：T(n) = O(n2)  最差情况：T(n) = O(n2)  平均情况：T(n) = O(n2)</pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -242,7 +231,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2019-10-21
+        2019-10-25
         
     </span>
   </p>
@@ -255,13 +244,9 @@
           <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/bubble-sort/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">冒泡排序</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/soword-offer-03/">
-            <span class="next-text nav-default">剑指Offer-05：从尾到头打印链表</span>
+        
+        <a class="next" href="/post/sword-offer-14/">
+            <span class="next-text nav-default">剑指Offer-15：链表中倒数第k个结点</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
