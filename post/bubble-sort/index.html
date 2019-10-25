@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="丛文" /><meta name="description" content="从尾到头打印链表" /><meta name="keywords" content="剑指Offer" />
+<meta name="author" content="丛文" /><meta name="description" content="冒泡排序" /><meta name="keywords" content="冒泡排序" />
 
 
 
@@ -39,25 +39,25 @@
 
 
 <meta property="og:title" content="冒泡排序" />
-<meta property="og:description" content="从尾到头打印链表" />
+<meta property="og:description" content="冒泡排序" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/post/bubble-sort/" />
 <meta property="article:published_time" content="2019-10-25T11:18:15+08:00" />
 <meta property="article:modified_time" content="2019-10-25T11:18:15+08:00" />
 <meta itemprop="name" content="冒泡排序">
-<meta itemprop="description" content="从尾到头打印链表">
+<meta itemprop="description" content="冒泡排序">
 
 
 <meta itemprop="datePublished" content="2019-10-25T11:18:15&#43;08:00" />
 <meta itemprop="dateModified" content="2019-10-25T11:18:15&#43;08:00" />
-<meta itemprop="wordCount" content="265">
+<meta itemprop="wordCount" content="244">
 
 
 
-<meta itemprop="keywords" content="剑指Offer,算法," />
+<meta itemprop="keywords" content="算法," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="冒泡排序"/>
-<meta name="twitter:description" content="从尾到头打印链表"/>
+<meta name="twitter:description" content="冒泡排序"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -125,7 +125,7 @@
       <div class="post-meta">
         <span class="post-time"> 2019-10-25 </span>
         <div class="post-category">
-            <a href="/categories/%E5%89%91%E6%8C%87offer/"> 剑指Offer </a>
+            <a href="/categories/%E7%AE%97%E6%B3%95/"> 算法 </a>
             </div>
         
       </div>
@@ -138,7 +138,7 @@
 <ul>
 <li>
 <ul>
-<li><a href="#冒泡排序-bubble-sort">冒泡排序（Bubble Sort）</a>
+<li>
 <ul>
 <li><a href="#算法思路">算法思路</a></li>
 <li><a href="#代码">代码</a></li>
@@ -152,23 +152,15 @@
     <div class="post-content">
       
 
-<h2 id="冒泡排序-bubble-sort">冒泡排序（Bubble Sort）</h2>
-
 <h3 id="算法思路">算法思路</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">比较相邻的元素。如果第一个比第二个大，就交换它们两个；
-对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对，这样在最后的元素应该会是最大的数；
-针对所有的元素重复以上的步骤，除了最后一个；
-重复步骤1~3，直到排序完成。</pre></td></tr></table>
-</div>
-</div>
+
+<ol>
+<li>比较相邻的元素。如果第一个比第二个大，就交换它们两个；</li>
+<li>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对，这样在最后的元素应该会是最大的数；</li>
+<li>针对所有的元素重复以上的步骤，除了最后一个；</li>
+<li>重复步骤1~3，直到排序完成。</li>
+</ol>
+
 <h3 id="代码">代码</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -213,14 +205,9 @@
 </div>
 </div>
 <h3 id="算法分析">算法分析</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">最佳情况：T(n) = O(n2)  最差情况：T(n) = O(n2)  平均情况：T(n) = O(n2)</pre></td></tr></table>
-</div>
-</div>
+
+<p>最佳情况：T(n) = O(n2)  最差情况：T(n) = O(n2)  平均情况：T(n) = O(n2)</p>
+
     </div>
 
     <div class="post-copyright">
@@ -240,7 +227,6 @@
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/%E5%89%91%E6%8C%87offer/">剑指Offer</a>
           <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
           </div>
       <nav class="post-nav">

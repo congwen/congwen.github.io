@@ -17,7 +17,7 @@
       <pubDate>Fri, 25 Oct 2019 11:18:15 +0800</pubDate>
       
       <guid>http://localhost:1313/post/bubble-sort/</guid>
-      <description>冒泡排序（Bubble Sort） 算法思路 1 2 3 4 比较相邻的元素。如果第一个比第二个大，就交换它们两个； 对每一对相邻元素作同样的工作，从开始第</description>
+      <description>算法思路 比较相邻的元素。如果第一个比第二个大，就交换它们两个； 对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对，这样在最后的元素应</description>
     </item>
     
     <item>

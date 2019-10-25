@@ -6,19 +6,10 @@
     <description>Recent content in 剑指Offer on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 25 Oct 2019 11:18:15 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 21 Oct 2019 11:18:15 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/categories/%E5%89%91%E6%8C%87offer/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>冒泡排序</title>
-      <link>http://localhost:1313/post/bubble-sort/</link>
-      <pubDate>Fri, 25 Oct 2019 11:18:15 +0800</pubDate>
-      
-      <guid>http://localhost:1313/post/bubble-sort/</guid>
-      <description>冒泡排序（Bubble Sort） 算法思路 1 2 3 4 比较相邻的元素。如果第一个比第二个大，就交换它们两个； 对每一对相邻元素作同样的工作，从开始第</description>
-    </item>
     
     <item>
       <title>剑指Offer-15：链表中倒数第k个结点</title>

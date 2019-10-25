@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>算法 on Even - A super concise theme for Hugo</title>
+    <link>http://localhost:1313/categories/%E7%AE%97%E6%B3%95/</link>
+    <description>Recent content in 算法 on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 25 Oct 2019 11:18:15 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/categories/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>冒泡排序</title>
+      <link>http://localhost:1313/post/bubble-sort/</link>
+      <pubDate>Fri, 25 Oct 2019 11:18:15 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/bubble-sort/</guid>
+      <description>算法思路 比较相邻的元素。如果第一个比第二个大，就交换它们两个； 对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对，这样在最后的元素应</description>
+    </item>
+    
+  </channel>
+</rss>
