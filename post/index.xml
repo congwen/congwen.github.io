@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 丛文的博客--日拱一卒，积硅步，至千里</title>
@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 丛文的博客--日拱一卒，积硅步，至千里</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 25 Oct 2019 11:18:15 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 04 Nov 2019 09:30:34 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>插入排序（Insertion Sort）</title>
+      <link>http://localhost:1313/post/insertion-sort/</link>
+      <pubDate>Mon, 04 Nov 2019 09:30:34 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/insertion-sort/</guid>
+      <description>算法原理 插入排序（Insertion-Sort）的算法描述是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序</description>
+    </item>
     
     <item>
       <title>冒泡排序</title>

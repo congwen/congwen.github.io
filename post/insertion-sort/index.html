@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>冒泡排序 - 丛文的博客--日拱一卒，积硅步，至千里</title>
+  <title>插入排序（Insertion Sort） - 丛文的博客--日拱一卒，积硅步，至千里</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="丛文" /><meta name="description" content="冒泡排序" /><meta name="keywords" content="冒泡排序" />
+<meta name="author" content="丛文" /><meta name="description" content="Insertion Sort" /><meta name="keywords" content="Insertion, Sort" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.59.1 with theme even" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/bubble-sort/" />
+<link rel="canonical" href="http://localhost:1313/post/insertion-sort/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -38,26 +38,26 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="冒泡排序" />
-<meta property="og:description" content="冒泡排序" />
+<meta property="og:title" content="插入排序（Insertion Sort）" />
+<meta property="og:description" content="Insertion Sort" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/bubble-sort/" />
-<meta property="article:published_time" content="2019-10-25T11:18:15+08:00" />
-<meta property="article:modified_time" content="2019-10-25T11:18:15+08:00" />
-<meta itemprop="name" content="冒泡排序">
-<meta itemprop="description" content="冒泡排序">
+<meta property="og:url" content="http://localhost:1313/post/insertion-sort/" />
+<meta property="article:published_time" content="2019-11-04T09:30:34+08:00" />
+<meta property="article:modified_time" content="2019-11-04T09:30:34+08:00" />
+<meta itemprop="name" content="插入排序（Insertion Sort）">
+<meta itemprop="description" content="Insertion Sort">
 
 
-<meta itemprop="datePublished" content="2019-10-25T11:18:15&#43;08:00" />
-<meta itemprop="dateModified" content="2019-10-25T11:18:15&#43;08:00" />
-<meta itemprop="wordCount" content="244">
+<meta itemprop="datePublished" content="2019-11-04T09:30:34&#43;08:00" />
+<meta itemprop="dateModified" content="2019-11-04T09:30:34&#43;08:00" />
+<meta itemprop="wordCount" content="496">
 
 
 
 <meta itemprop="keywords" content="算法," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="冒泡排序"/>
-<meta name="twitter:description" content="冒泡排序"/>
+<meta name="twitter:title" content="插入排序（Insertion Sort）"/>
+<meta name="twitter:description" content="Insertion Sort"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -120,10 +120,10 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">冒泡排序</h1>
+      <h1 class="post-title">插入排序（Insertion Sort）</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2019-10-25 </span>
+        <span class="post-time"> 2019-11-04 </span>
         <div class="post-category">
             <a href="/categories/%E7%AE%97%E6%B3%95/"> 算法 </a>
             </div>
@@ -140,8 +140,9 @@
 <ul>
 <li>
 <ul>
+<li><a href="#算法原理">算法原理</a></li>
 <li><a href="#算法思路">算法思路</a></li>
-<li><a href="#代码">代码</a></li>
+<li><a href="#代码实现">代码实现</a></li>
 <li><a href="#算法分析">算法分析</a></li>
 </ul></li>
 </ul></li>
@@ -152,16 +153,22 @@
     <div class="post-content">
       
 
+<h3 id="算法原理">算法原理</h3>
+
+<p>插入排序（Insertion-Sort）的算法描述是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。插入排序在实现上，通常采用in-place排序（即只需用到O(1)的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。</p>
+
 <h3 id="算法思路">算法思路</h3>
 
 <ol>
-<li>比较相邻的元素。如果第一个比第二个大，就交换它们两个；</li>
-<li>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对，这样在最后的元素应该会是最大的数；</li>
-<li>针对所有的元素重复以上的步骤，除了最后一个；</li>
-<li>重复步骤1~3，直到排序完成。</li>
+<li>从第一个元素开始，该元素可以认为已经被排序</li>
+<li>取出下一个元素，在已经排序的元素序列中从后向前扫描</li>
+<li>如果该元素（已排序）大于新元素，将该元素移到下一位置</li>
+<li>重复步骤3，直到找到已排序的元素小于或者等于新元素的位置</li>
+<li>将新元素插入到该位置后；</li>
+<li>重复步骤2~5</li>
 </ol>
 
-<h3 id="代码">代码</h3>
+<h3 id="代码实现">代码实现</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt"> 1
@@ -182,31 +189,37 @@
 </span><span class="lnt">16
 </span><span class="lnt">17
 </span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="cm">/**
-</span><span class="cm">     * 冒泡排序
-</span><span class="cm">     *
-</span><span class="cm">     * @param array
+<pre class="chroma"><code class="language-java" data-lang="java">    <span class="cm">/**
+</span><span class="cm">     * 插入排序
+</span><span class="cm">     * @param arr
 </span><span class="cm">     * @return
 </span><span class="cm">     */</span>
-    <span class="err">public static int[] bubbleSort</span><span class="p">(</span><span class="err">int[] array</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">array</span><span class="p">.</span><span class="na">length</span> <span class="o">==</span> <span class="n">0</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">array</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(</span><span class="err">int i </span><span class="o">=</span> <span class="n">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">array</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-            <span class="k">for</span> <span class="p">(</span><span class="err">int j </span><span class="o">=</span> <span class="n">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">array</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="n">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="n">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="p">{</span>
-                    <span class="err">int temp </span><span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="n">1</span><span class="p">];</span>
-                    <span class="n">array</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="n">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
-                    <span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
-                <span class="p">}</span>
-        <span class="k">return</span> <span class="n">array</span><span class="p">;</span>
+<span class="err">public static </span><span class="kt">int</span> <span class="p">[]</span> <span class="n">insertionSort</span><span class="p">(</span><span class="kt">int</span> <span class="p">[]</span> <span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="o">==</span><span class="n">0</span><span class="p">){</span><span class="k">return</span> <span class="n">arr</span><span class="p">;}</span>
+        <span class="err">int curr</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="err">int i </span><span class="o">=</span> <span class="n">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="o">-</span><span class="n">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">curr</span><span class="o">=</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">1</span><span class="p">];</span> <span class="c1">//待插入元素
+</span><span class="c1"></span>            <span class="err">int preindex</span><span class="o">=</span><span class="n">i</span><span class="p">;</span> <span class="c1">// 前一个元素
+</span><span class="c1"></span>            <span class="k">while</span><span class="p">(</span><span class="n">preindex</span><span class="o">&gt;=</span><span class="n">0</span> <span class="o">&amp;&amp;</span> <span class="err">curr&lt; arr</span><span class="p">[</span><span class="n">preindex</span><span class="p">]){</span><span class="c1">//插入元素比前一个小
+</span><span class="c1"></span>                <span class="n">arr</span><span class="p">[</span><span class="n">preindex</span><span class="o">+</span><span class="n">1</span><span class="p">]</span><span class="o">=</span><span class="n">arr</span><span class="p">[</span><span class="n">preindex</span><span class="p">];</span><span class="c1">// 前一个元素后移
+</span><span class="c1"></span>                <span class="n">preindex</span><span class="o">--</span><span class="p">;</span><span class="c1">//向前遍历
+</span><span class="c1"></span>            <span class="p">}</span>
+            <span class="n">arr</span><span class="p">[</span><span class="n">preindex</span><span class="o">+</span><span class="n">1</span><span class="p">]</span><span class="o">=</span><span class="n">curr</span><span class="p">;</span><span class="c1">//插入元素
+</span><span class="c1"></span>        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">arr</span><span class="p">;</span>
+        
     <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
 <h3 id="算法分析">算法分析</h3>
 
-<p>最佳情况：T(n) = O(n2)  最差情况：T(n) = O(n2)  平均情况：T(n) = O(n2)</p>
+<p>最佳情况：T(n) = O(n)   最坏情况：T(n) = O(n2)   平均情况：T(n) = O(n2)</p>
 
     </div>
 
@@ -218,7 +231,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2019-10-25
+        2019-11-04
         
     </span>
   </p>
@@ -230,13 +243,9 @@
           <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/insertion-sort/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">插入排序（Insertion Sort）</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/sword-offer-14/">
-            <span class="next-text nav-default">剑指Offer-15：链表中倒数第k个结点</span>
+        
+        <a class="next" href="/post/bubble-sort/">
+            <span class="next-text nav-default">冒泡排序</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
