@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.59.1 with theme even" />
+<meta name="generator" content="Hugo 0.58.3 with theme even" />
 
 
 <link rel="canonical" href="http://localhost:1313/post/shell-sort/" />
@@ -209,23 +209,23 @@
 </span><span class="lnt">35
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="err">class ShellSort</span><span class="p">{</span>
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nf">ShellSort</span><span class="p">{</span>
     <span class="cm">/**
 </span><span class="cm">     * 希尔排序
 </span><span class="cm">     *
 </span><span class="cm">     * @param array
 </span><span class="cm">     * @return
 </span><span class="cm">     */</span>
-    <span class="err">public static int[] shellSort</span><span class="p">(</span><span class="err">int[] array</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">static</span> <span class="kt">int</span><span class="p">[]</span> <span class="nf">shellSort</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="nf">array</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">if</span><span class="p">(</span><span class="n">array</span><span class="p">.</span><span class="na">length</span><span class="o">==</span><span class="n">0</span><span class="p">){</span>
                 <span class="k">return</span> <span class="n">array</span><span class="p">;</span>
             <span class="p">}</span>
-            <span class="err">int len</span><span class="o">=</span><span class="n">array</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
-            <span class="err">int cur</span><span class="p">,</span><span class="n">gap</span><span class="o">=</span><span class="n">len</span><span class="o">/</span><span class="n">2</span><span class="p">;</span><span class="c1">//计算步长
+            <span class="kt">int</span> <span class="nf">len</span><span class="o">=</span><span class="n">array</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="nf">cur</span><span class="p">,</span><span class="n">gap</span><span class="o">=</span><span class="n">len</span><span class="o">/</span><span class="n">2</span><span class="p">;</span><span class="c1">//计算步长
 </span><span class="c1"></span>            <span class="k">while</span><span class="p">(</span><span class="n">gap</span><span class="o">&gt;</span><span class="n">0</span><span class="p">){</span>
-                <span class="k">for</span> <span class="p">(</span><span class="err">int i </span><span class="o">=</span> <span class="n">gap</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">array</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nf">i</span> <span class="o">=</span> <span class="n">gap</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">array</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
                     <span class="n">cur</span><span class="o">=</span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="c1">//当前步长元素
-</span><span class="c1"></span>                    <span class="err">int preindex</span><span class="o">=</span><span class="n">i</span><span class="o">-</span><span class="n">gap</span><span class="p">;</span><span class="c1">//相同步长对应的元素
+</span><span class="c1"></span>                    <span class="kt">int</span> <span class="nf">preindex</span><span class="o">=</span><span class="n">i</span><span class="o">-</span><span class="n">gap</span><span class="p">;</span><span class="c1">//相同步长对应的元素
 </span><span class="c1"></span>                    <span class="k">while</span><span class="p">(</span><span class="n">preindex</span><span class="o">&gt;=</span><span class="n">0</span> <span class="o">&amp;&amp;</span> <span class="n">array</span><span class="p">[</span><span class="n">preindex</span><span class="p">]</span><span class="o">&gt;</span><span class="n">cur</span><span class="p">){</span><span class="c1">//前一个元素比当前元素大时
 </span><span class="c1"></span>                        <span class="n">array</span><span class="p">[</span><span class="n">preindex</span><span class="o">+</span><span class="n">gap</span><span class="p">]</span><span class="o">=</span><span class="n">array</span><span class="p">[</span><span class="n">preindex</span><span class="p">];</span> <span class="c1">//前一个元素放到当前步长位置
 </span><span class="c1"></span>                        <span class="n">preindex</span> <span class="o">-=</span><span class="n">gap</span><span class="p">;</span><span class="c1">//同步长向前遍历
@@ -236,10 +236,10 @@
 </span><span class="c1"></span>            <span class="p">}</span>
         <span class="k">return</span> <span class="n">array</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="err">public static void main</span><span class="p">(</span><span class="err">String[] args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="nf">args</span><span class="p">)</span> <span class="p">{</span>
         <span class="kt">int</span> <span class="p">[]</span> <span class="n">arr</span><span class="o">=</span><span class="p">{</span><span class="n">8</span><span class="p">,</span><span class="n">9</span><span class="p">,</span><span class="n">1</span><span class="p">,</span><span class="n">7</span><span class="p">,</span><span class="n">2</span><span class="p">,</span><span class="n">3</span><span class="p">,</span><span class="n">5</span><span class="p">,</span><span class="n">4</span><span class="p">,</span><span class="n">6</span><span class="p">,</span><span class="n">0</span><span class="p">};</span>
         <span class="n">shellSort</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
-        <span class="k">for</span> <span class="p">(</span><span class="err">int i </span><span class="o">=</span> <span class="n">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nf">i</span> <span class="o">=</span> <span class="n">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
             <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="s">&#34; &#34;</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
@@ -272,7 +272,11 @@
           <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
           </div>
       <nav class="post-nav">
-        
+        <a class="prev" href="/post/git-push-pull-no-passwd/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">解决Git Pull,push每次都需要输入密码问题</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
         <a class="next" href="/post/insertion-sort/">
             <span class="next-text nav-default">插入排序（Insertion Sort）</span>
             <span class="next-text nav-mobile">下一篇</span>

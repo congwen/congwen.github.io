@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>丛文的博客--日拱一卒，积硅步，至千里</title>
@@ -6,10 +6,19 @@
     <description>Recent content on 丛文的博客--日拱一卒，积硅步，至千里</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 05 Nov 2019 09:29:19 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 05 Nov 2019 11:14:34 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>解决Git Pull,push每次都需要输入密码问题</title>
+      <link>http://localhost:1313/post/git-push-pull-no-passwd/</link>
+      <pubDate>Tue, 05 Nov 2019 11:14:34 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/git-push-pull-no-passwd/</guid>
+      <description>本地保存帐号密码 git bash 进入你的项目目录，输入： 1 git config --global credential.helper store 然后你会在你本地生成一个文本，上边记录你的账号和密码。当然这些你可以不用关心。 然后你</description>
+    </item>
     
     <item>
       <title>希尔排序（Shell Sort）</title>
