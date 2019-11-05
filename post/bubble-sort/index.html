@@ -158,8 +158,9 @@
 <li>比较相邻的元素。如果第一个比第二个大，就交换它们两个；</li>
 <li>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对，这样在最后的元素应该会是最大的数；</li>
 <li>针对所有的元素重复以上的步骤，除了最后一个；</li>
-<li>重复步骤1~3，直到排序完成。</li>
-</ol>
+
+<li><p>重复步骤1~3，直到排序完成。
+<img src="/img/bubble-sort.gif" alt="冒泡排序" /></p>
 
 <h3 id="代码">代码</h3>
 <div class="highlight"><div class="chroma">
@@ -185,25 +186,27 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-java" data-lang="java"><span class="cm">/**
-</span><span class="cm">     * 冒泡排序
-</span><span class="cm">     *
-</span><span class="cm">     * @param array
-</span><span class="cm">     * @return
-</span><span class="cm">     */</span>
-    <span class="kd">public</span> <span class="nf">static</span> <span class="kt">int</span><span class="p">[]</span> <span class="nf">bubbleSort</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="nf">array</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">array</span><span class="p">.</span><span class="na">length</span> <span class="o">==</span> <span class="n">0</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">array</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nf">i</span> <span class="o">=</span> <span class="n">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">array</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nf">j</span> <span class="o">=</span> <span class="n">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">array</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="n">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="n">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="p">{</span>
-                    <span class="kt">int</span> <span class="nf">temp</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="n">1</span><span class="p">];</span>
-                    <span class="n">array</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="n">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
-                    <span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
-                <span class="p">}</span>
+</span><span class="cm"> * 冒泡排序
+</span><span class="cm"> *
+</span><span class="cm"> * @param array
+</span><span class="cm"> * @return
+</span><span class="cm"> */</span>
+<span class="kd">public</span> <span class="nf">static</span> <span class="kt">int</span><span class="p">[]</span> <span class="nf">bubbleSort</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="nf">array</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">array</span><span class="p">.</span><span class="na">length</span> <span class="o">==</span> <span class="n">0</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">array</span><span class="p">;</span>
-    <span class="p">}</span></code></pre></td></tr></table>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nf">i</span> <span class="o">=</span> <span class="n">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">array</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nf">j</span> <span class="o">=</span> <span class="n">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">array</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="n">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="n">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="p">{</span>
+                <span class="kt">int</span> <span class="nf">temp</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="n">1</span><span class="p">];</span>
+                <span class="n">array</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="n">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+                <span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+            <span class="p">}</span>
+    <span class="k">return</span> <span class="n">array</span><span class="p">;</span>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div>
+</div></li>
+</ol>
+
 <h3 id="算法分析">算法分析</h3>
 
 <p>最佳情况：T(n) = O(n2)  最差情况：T(n) = O(n2)  平均情况：T(n) = O(n2)</p>

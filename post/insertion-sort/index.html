@@ -165,8 +165,9 @@
 <li>如果该元素（已排序）大于新元素，将该元素移到下一位置</li>
 <li>重复步骤3，直到找到已排序的元素小于或者等于新元素的位置</li>
 <li>将新元素插入到该位置后；</li>
-<li>重复步骤2~5</li>
-</ol>
+
+<li><p>重复步骤2~5
+<img src="/img/insert-sort.gif" alt="insert-sort" /></p>
 
 <h3 id="代码实现">代码实现</h3>
 <div class="highlight"><div class="chroma">
@@ -194,29 +195,31 @@
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java">    <span class="cm">/**
-</span><span class="cm">     * 插入排序
-</span><span class="cm">     * @param arr
-</span><span class="cm">     * @return
-</span><span class="cm">     */</span>
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="cm">/**
+</span><span class="cm"> * 插入排序
+</span><span class="cm"> * @param arr
+</span><span class="cm"> * @return
+</span><span class="cm"> */</span>
 <span class="kd">public</span> <span class="nf">static</span> <span class="kt">int</span> <span class="p">[]</span> <span class="n">insertionSort</span><span class="p">(</span><span class="kt">int</span> <span class="p">[]</span> <span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="o">==</span><span class="n">0</span><span class="p">){</span><span class="k">return</span> <span class="n">arr</span><span class="p">;}</span>
-        <span class="kt">int</span> <span class="nf">curr</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nf">i</span> <span class="o">=</span> <span class="n">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="o">-</span><span class="n">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">curr</span><span class="o">=</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">1</span><span class="p">];</span> <span class="c1">//待插入元素
-</span><span class="c1"></span>            <span class="kt">int</span> <span class="nf">preindex</span><span class="o">=</span><span class="n">i</span><span class="p">;</span> <span class="c1">// 前一个元素
-</span><span class="c1"></span>            <span class="k">while</span><span class="p">(</span><span class="n">preindex</span><span class="o">&gt;=</span><span class="n">0</span> <span class="o">&amp;&amp;</span> <span class="n">curr</span><span class="o">&lt;</span> <span class="nf">arr</span><span class="p">[</span><span class="n">preindex</span><span class="p">]){</span><span class="c1">//插入元素比前一个小
-</span><span class="c1"></span>                <span class="n">arr</span><span class="p">[</span><span class="n">preindex</span><span class="o">+</span><span class="n">1</span><span class="p">]</span><span class="o">=</span><span class="n">arr</span><span class="p">[</span><span class="n">preindex</span><span class="p">];</span><span class="c1">// 前一个元素后移
-</span><span class="c1"></span>                <span class="n">preindex</span><span class="o">--</span><span class="p">;</span><span class="c1">//向前遍历
-</span><span class="c1"></span>            <span class="p">}</span>
-            <span class="n">arr</span><span class="p">[</span><span class="n">preindex</span><span class="o">+</span><span class="n">1</span><span class="p">]</span><span class="o">=</span><span class="n">curr</span><span class="p">;</span><span class="c1">//插入元素
+    <span class="k">if</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="o">==</span><span class="n">0</span><span class="p">){</span><span class="k">return</span> <span class="n">arr</span><span class="p">;}</span>
+    <span class="kt">int</span> <span class="nf">curr</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nf">i</span> <span class="o">=</span> <span class="n">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="o">-</span><span class="n">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">curr</span><span class="o">=</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">1</span><span class="p">];</span> <span class="c1">//待插入元素
+</span><span class="c1"></span>        <span class="kt">int</span> <span class="nf">preindex</span><span class="o">=</span><span class="n">i</span><span class="p">;</span> <span class="c1">// 前一个元素
+</span><span class="c1"></span>        <span class="k">while</span><span class="p">(</span><span class="n">preindex</span><span class="o">&gt;=</span><span class="n">0</span> <span class="o">&amp;&amp;</span> <span class="n">curr</span><span class="o">&lt;</span> <span class="nf">arr</span><span class="p">[</span><span class="n">preindex</span><span class="p">]){</span><span class="c1">//插入元素比前一个小
+</span><span class="c1"></span>            <span class="n">arr</span><span class="p">[</span><span class="n">preindex</span><span class="o">+</span><span class="n">1</span><span class="p">]</span><span class="o">=</span><span class="n">arr</span><span class="p">[</span><span class="n">preindex</span><span class="p">];</span><span class="c1">// 前一个元素后移
+</span><span class="c1"></span>            <span class="n">preindex</span><span class="o">--</span><span class="p">;</span><span class="c1">//向前遍历
 </span><span class="c1"></span>        <span class="p">}</span>
+        <span class="n">arr</span><span class="p">[</span><span class="n">preindex</span><span class="o">+</span><span class="n">1</span><span class="p">]</span><span class="o">=</span><span class="n">curr</span><span class="p">;</span><span class="c1">//插入元素
+</span><span class="c1"></span>    <span class="p">}</span>
 
-        <span class="k">return</span> <span class="n">arr</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">arr</span><span class="p">;</span>
         
-    <span class="p">}</span></code></pre></td></tr></table>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div>
+</div></li>
+</ol>
+
 <h3 id="算法分析">算法分析</h3>
 
 <p>最佳情况：T(n) = O(n)   最坏情况：T(n) = O(n2)   平均情况：T(n) = O(n2)</p>
