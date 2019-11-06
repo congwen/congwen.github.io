@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.59.1 with theme even" />
+<meta name="generator" content="Hugo 0.58.3 with theme even" />
 
 
 <link rel="canonical" href="http://localhost:1313/post/sword-offer-14/" />
@@ -210,13 +210,13 @@
 </span><span class="cm"> *     ListNode(int x) { val = x; }
 </span><span class="cm"> * }
 </span><span class="cm"> */</span>
-<span class="err">class Solution </span><span class="p">{</span>
-    <span class="err">public ListNode </span><span class="n">findKthToTail</span><span class="p">(</span><span class="err">ListNode head</span><span class="p">,</span> <span class="err">int k</span><span class="p">)</span> <span class="p">{</span>
+<span class="kd">class</span> <span class="nf">Solution</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">ListNode</span> <span class="n">findKthToTail</span><span class="p">(</span><span class="n">ListNode</span> <span class="nf">head</span><span class="p">,</span> <span class="kt">int</span> <span class="nf">k</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">head</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">1</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
         <span class="p">}</span>
-        <span class="err">ListNode fast </span><span class="o">=</span> <span class="n">head</span><span class="p">;</span>
-        <span class="err">ListNode slow </span><span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+        <span class="n">ListNode</span> <span class="nf">fast</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+        <span class="n">ListNode</span> <span class="nf">slow</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
         <span class="k">while</span> <span class="p">(</span><span class="n">k</span><span class="o">--</span> <span class="o">&gt;</span> <span class="n">1</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">fast</span><span class="p">.</span><span class="na">next</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
                 <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
