@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.3 with theme even" />
+<meta name="generator" content="Hugo 0.59.1 with theme even" />
 
 
 <link rel="canonical" href="http://localhost:1313/post/bubble-sort/" />
@@ -213,17 +213,17 @@
 </span><span class="cm"> * @param array
 </span><span class="cm"> * @return
 </span><span class="cm"> */</span>
-<span class="kd">public</span> <span class="nf">class</span> <span class="n">BubbleSort</span> <span class="p">{</span>
+<span class="err">public class </span><span class="n">BubbleSort</span> <span class="p">{</span>
 
-<span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">sort</span><span class="p">(</span><span class="kt">int</span> <span class="nf">array</span><span class="p">[])</span>
+<span class="err">public static void sort</span><span class="p">(</span><span class="err">int array</span><span class="p">[])</span>
 <span class="p">{</span>
-    <span class="kt">int</span> <span class="nf">tmp</span>  <span class="o">=</span> <span class="n">0</span><span class="p">;</span>
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="nf">i</span> <span class="o">=</span> <span class="n">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">array</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="err">int tmp  </span><span class="o">=</span> <span class="n">0</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="err">int i </span><span class="o">=</span> <span class="n">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">array</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="c1">//有序标记，每一轮的初始是true
-</span><span class="c1"></span>        <span class="kt">boolean</span> <span class="nf">isSorted</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</span><span class="c1"></span>        <span class="err">boolean isSorted </span><span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 
-        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="nf">j</span> <span class="o">=</span> <span class="n">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">array</span><span class="p">.</span><span class="na">length</span><span class="o">-</span><span class="n">1</span><span class="o">-</span><span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">for</span><span class="p">(</span><span class="err">int j </span><span class="o">=</span> <span class="n">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">array</span><span class="p">.</span><span class="na">length</span><span class="o">-</span><span class="n">1</span><span class="o">-</span><span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
         <span class="p">{</span>
             <span class="k">if</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="n">1</span><span class="p">])</span>
             <span class="p">{</span>
@@ -241,8 +241,8 @@
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kd">public</span> <span class="nf">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="nf">args</span><span class="p">){</span>
-    <span class="kt">int</span><span class="p">[]</span> <span class="nf">array</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[]{</span><span class="n">3</span><span class="p">,</span><span class="n">4</span><span class="p">,</span><span class="n">2</span><span class="p">,</span><span class="n">1</span><span class="p">,</span><span class="n">5</span><span class="p">,</span><span class="n">6</span><span class="p">,</span><span class="n">7</span><span class="p">,</span><span class="n">8</span><span class="p">};</span>
+<span class="err">public static void main</span><span class="p">(</span><span class="err">String[] args</span><span class="p">){</span>
+    <span class="err">int[] array </span><span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[]{</span><span class="n">3</span><span class="p">,</span><span class="n">4</span><span class="p">,</span><span class="n">2</span><span class="p">,</span><span class="n">1</span><span class="p">,</span><span class="n">5</span><span class="p">,</span><span class="n">6</span><span class="p">,</span><span class="n">7</span><span class="p">,</span><span class="n">8</span><span class="p">};</span>
     <span class="n">sort</span><span class="p">(</span><span class="n">array</span><span class="p">);</span>
     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">array</span><span class="p">));</span>
 <span class="p">}</span>
@@ -279,9 +279,9 @@
           <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/insertion-sort/">
+        <a class="prev" href="/post/quick-sort/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">插入排序（Insertion Sort）</span>
+            <span class="prev-text nav-default">快速排序（Quick Sort）</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         <a class="next" href="/post/sword-offer-14/">

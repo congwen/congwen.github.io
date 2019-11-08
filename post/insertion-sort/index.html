@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.3 with theme even" />
+<meta name="generator" content="Hugo 0.59.1 with theme even" />
 
 
 <link rel="canonical" href="http://localhost:1313/post/insertion-sort/" />
@@ -200,13 +200,13 @@
 </span><span class="cm"> * @param arr
 </span><span class="cm"> * @return
 </span><span class="cm"> */</span>
-<span class="kd">public</span> <span class="nf">static</span> <span class="kt">int</span> <span class="p">[]</span> <span class="n">insertionSort</span><span class="p">(</span><span class="kt">int</span> <span class="p">[]</span> <span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
+<span class="err">public static </span><span class="kt">int</span> <span class="p">[]</span> <span class="n">insertionSort</span><span class="p">(</span><span class="kt">int</span> <span class="p">[]</span> <span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="o">==</span><span class="n">0</span><span class="p">){</span><span class="k">return</span> <span class="n">arr</span><span class="p">;}</span>
-    <span class="kt">int</span> <span class="nf">curr</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nf">i</span> <span class="o">=</span> <span class="n">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="o">-</span><span class="n">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="err">int curr</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="err">int i </span><span class="o">=</span> <span class="n">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="o">-</span><span class="n">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">curr</span><span class="o">=</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">1</span><span class="p">];</span> <span class="c1">//待插入元素
-</span><span class="c1"></span>        <span class="kt">int</span> <span class="nf">preindex</span><span class="o">=</span><span class="n">i</span><span class="p">;</span> <span class="c1">// 前一个元素
-</span><span class="c1"></span>        <span class="k">while</span><span class="p">(</span><span class="n">preindex</span><span class="o">&gt;=</span><span class="n">0</span> <span class="o">&amp;&amp;</span> <span class="n">curr</span><span class="o">&lt;</span> <span class="nf">arr</span><span class="p">[</span><span class="n">preindex</span><span class="p">]){</span><span class="c1">//插入元素比前一个小
+</span><span class="c1"></span>        <span class="err">int preindex</span><span class="o">=</span><span class="n">i</span><span class="p">;</span> <span class="c1">// 前一个元素
+</span><span class="c1"></span>        <span class="k">while</span><span class="p">(</span><span class="n">preindex</span><span class="o">&gt;=</span><span class="n">0</span> <span class="o">&amp;&amp;</span> <span class="err">curr&lt; arr</span><span class="p">[</span><span class="n">preindex</span><span class="p">]){</span><span class="c1">//插入元素比前一个小
 </span><span class="c1"></span>            <span class="n">arr</span><span class="p">[</span><span class="n">preindex</span><span class="o">+</span><span class="n">1</span><span class="p">]</span><span class="o">=</span><span class="n">arr</span><span class="p">[</span><span class="n">preindex</span><span class="p">];</span><span class="c1">// 前一个元素后移
 </span><span class="c1"></span>            <span class="n">preindex</span><span class="o">--</span><span class="p">;</span><span class="c1">//向前遍历
 </span><span class="c1"></span>        <span class="p">}</span>
@@ -253,8 +253,8 @@
             <span class="prev-text nav-default">希尔排序（Shell Sort）</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/post/bubble-sort/">
-            <span class="next-text nav-default">冒泡排序（Bubble Sort）</span>
+        <a class="next" href="/post/quick-sort/">
+            <span class="next-text nav-default">快速排序（Quick Sort）</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
