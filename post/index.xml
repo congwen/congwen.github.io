@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 丛文的博客--日拱一卒，积硅步，至千里</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 05 Nov 2019 11:14:34 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 11 Nov 2019 09:31:15 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>归并排序（Merge Sort）</title>
+      <link>http://localhost:1313/post/merge-sort/</link>
+      <pubDate>Mon, 11 Nov 2019 09:31:15 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/merge-sort/</guid>
+      <description>算法原理 归并排序是建立在归并操作上的一种有效的排序算法。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。归并排序是一</description>
+    </item>
     
     <item>
       <title>解决Git Pull,push每次都需要输入密码问题</title>
