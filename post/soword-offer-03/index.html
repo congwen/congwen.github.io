@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.59.1 with theme even" />
+<meta name="generator" content="Hugo 0.86.0 with theme even" />
 
 
 <link rel="canonical" href="http://localhost:1313/post/soword-offer-03/" />
@@ -41,21 +41,15 @@
 <meta property="og:title" content="剑指Offer-05：从尾到头打印链表" />
 <meta property="og:description" content="从尾到头打印链表" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/soword-offer-03/" />
+<meta property="og:url" content="http://localhost:1313/post/soword-offer-03/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2019-10-18T11:18:15+08:00" />
 <meta property="article:modified_time" content="2019-10-18T11:18:15+08:00" />
+
 <meta itemprop="name" content="剑指Offer-05：从尾到头打印链表">
-<meta itemprop="description" content="从尾到头打印链表">
-
-
-<meta itemprop="datePublished" content="2019-10-18T11:18:15&#43;08:00" />
-<meta itemprop="dateModified" content="2019-10-18T11:18:15&#43;08:00" />
+<meta itemprop="description" content="从尾到头打印链表"><meta itemprop="datePublished" content="2019-10-18T11:18:15+08:00" />
+<meta itemprop="dateModified" content="2019-10-18T11:18:15+08:00" />
 <meta itemprop="wordCount" content="300">
-
-
-
-<meta itemprop="keywords" content="剑指Offer,算法," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="剑指Offer,算法," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="剑指Offer-05：从尾到头打印链表"/>
 <meta name="twitter:description" content="从尾到头打印链表"/>
 
@@ -135,41 +129,31 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#题目-https-www-acwing-com-problem-content-18"><a href="https://www.acwing.com/problem/content/18/">题目</a></a></li>
-<li><a href="#一-解题思路">(一) 解题思路</a></li>
-<li><a href="#二-实现代码">(二) 实现代码</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#题目httpswwwacwingcomproblemcontent18"><a href="https://www.acwing.com/problem/content/18/">题目</a></a></li>
+        <li><a href="#一-解题思路">(一) 解题思路</a></li>
+        <li><a href="#二-实现代码">(二) 实现代码</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      
-
-<h3 id="题目-https-www-acwing-com-problem-content-18"><a href="https://www.acwing.com/problem/content/18/">题目</a></h3>
-
+      <h3 id="题目httpswwwacwingcomproblemcontent18"><a href="https://www.acwing.com/problem/content/18/">题目</a></h3>
 <p>输入一个链表的头结点，按照 从尾到头 的顺序返回节点的值。</p>
-
 <p>返回的结果用数组存储。</p>
-
 <p>样例
 输入：[2, 3, 5]
 返回：[5, 3, 2]</p>
-
 <h3 id="一-解题思路">(一) 解题思路</h3>
-
 <p>通常，我们不希望修改原链表的结构。返回一个反序的链表，这就是经典的“后进先出”，我们可以使用栈实现这种顺序。每经过一个结点的时候，把该结点放到一个栈中。当遍历完整个链表后，再从栈顶开始逐个输出结点的值，给一个新的链表结构，这样链表就实现了反转。</p>
-
 <h3 id="二-实现代码">(二) 实现代码</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -207,7 +191,7 @@
 </span><span class="lnt">36
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="cm">/**
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="cm">/**
 </span><span class="cm"> * Definition for singly-linked list.
 </span><span class="cm"> * class ListNode {
 </span><span class="cm"> *     int val;
@@ -215,34 +199,35 @@
 </span><span class="cm"> *     ListNode(int x) { val = x; }
 </span><span class="cm"> * }
 </span><span class="cm"> */</span>
-<span class="err">class Solution </span><span class="p">{</span>
-    <span class="err">public int</span><span class="p">[]</span> <span class="n">printListReversingly</span><span class="p">(</span><span class="err">ListNode head</span><span class="p">)</span> <span class="p">{</span>
+<span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">printListReversingly</span><span class="o">(</span><span class="n">ListNode</span> <span class="n">head</span><span class="o">)</span> <span class="o">{</span>
         
-        <span class="err">ArrayList&lt;Integer&gt; list </span><span class="o">=</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
         
-        <span class="k">if</span><span class="p">(</span><span class="n">head</span><span class="o">==</span> <span class="kc">null</span><span class="p">){</span>
-            <span class="k">return</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="n">list</span><span class="p">.</span><span class="na">size</span><span class="p">()];</span>
-        <span class="p">}</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">head</span><span class="o">==</span> <span class="kc">null</span><span class="o">){</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">()];</span>
+        <span class="o">}</span>
         
-        <span class="err">Stack&lt;Integer&gt; stack</span><span class="o">=</span><span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+        <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">stack</span><span class="o">=</span><span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;&gt;();</span>
         
-        <span class="k">while</span><span class="p">(</span><span class="n">head</span><span class="o">!=</span><span class="kc">null</span><span class="p">){</span>
-            <span class="n">stack</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="n">head</span><span class="p">.</span><span class="na">val</span><span class="p">);</span>
-            <span class="n">head</span><span class="o">=</span><span class="n">head</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">stack</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()){</span>
-            <span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">stack</span><span class="p">.</span><span class="na">pop</span><span class="p">());</span>
-        <span class="p">}</span>
-         <span class="err">int res </span><span class="p">[]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="n">list</span><span class="p">.</span><span class="na">size</span><span class="p">()];</span>
-        <span class="k">for</span> <span class="p">(</span><span class="err">int i</span><span class="o">=</span><span class="n">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">list</span><span class="p">.</span><span class="na">size</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
-            <span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">list</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">head</span><span class="o">!=</span><span class="kc">null</span><span class="o">){</span>
+            <span class="n">stack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">head</span><span class="o">.</span><span class="na">val</span><span class="o">);</span>
+            <span class="n">head</span><span class="o">=</span><span class="n">head</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">while</span><span class="o">(!</span><span class="n">stack</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">()){</span>
+            <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">stack</span><span class="o">.</span><span class="na">pop</span><span class="o">());</span>
+        <span class="o">}</span>
+         <span class="kt">int</span> <span class="n">res</span> <span class="o">[]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">()];</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">0</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">();</span><span class="n">i</span><span class="o">++){</span>
+            <span class="n">res</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span><span class="n">list</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">;</span>
         
        
         
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></td></tr></table>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -308,7 +293,8 @@
 
   <span class="copyright-year">
     &copy; 
-    2019
+    2019 - 
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>

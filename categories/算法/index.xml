@@ -6,11 +6,7 @@
     <description>Recent content in 算法 on 丛文的博客--日拱一卒，积硅步，至千里</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 11 Nov 2019 09:31:15 +0800</lastBuildDate>
-    
-	<atom:link href="http://localhost:1313/categories/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 11 Nov 2019 09:31:15 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>归并排序（Merge Sort）</title>
       <link>http://localhost:1313/post/merge-sort/</link>

@@ -6,11 +6,7 @@
     <description>Recent content in 剑指Offer on 丛文的博客--日拱一卒，积硅步，至千里</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 21 Oct 2019 11:18:15 +0800</lastBuildDate>
-    
-	<atom:link href="http://localhost:1313/tags/%E5%89%91%E6%8C%87offer/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 21 Oct 2019 11:18:15 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/%E5%89%91%E6%8C%87offer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>剑指Offer-15：链表中倒数第k个结点</title>
       <link>http://localhost:1313/post/sword-offer-14/</link>

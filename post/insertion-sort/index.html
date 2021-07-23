@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.59.1 with theme even" />
+<meta name="generator" content="Hugo 0.86.0 with theme even" />
 
 
 <link rel="canonical" href="http://localhost:1313/post/insertion-sort/" />
@@ -41,21 +41,15 @@
 <meta property="og:title" content="插入排序（Insertion Sort）" />
 <meta property="og:description" content="Insertion Sort" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/insertion-sort/" />
+<meta property="og:url" content="http://localhost:1313/post/insertion-sort/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2019-11-04T09:30:34+08:00" />
 <meta property="article:modified_time" content="2019-11-04T09:30:34+08:00" />
+
 <meta itemprop="name" content="插入排序（Insertion Sort）">
-<meta itemprop="description" content="Insertion Sort">
-
-
-<meta itemprop="datePublished" content="2019-11-04T09:30:34&#43;08:00" />
-<meta itemprop="dateModified" content="2019-11-04T09:30:34&#43;08:00" />
+<meta itemprop="description" content="Insertion Sort"><meta itemprop="datePublished" content="2019-11-04T09:30:34+08:00" />
+<meta itemprop="dateModified" content="2019-11-04T09:30:34+08:00" />
 <meta itemprop="wordCount" content="549">
-
-
-
-<meta itemprop="keywords" content="算法," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="算法," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="插入排序（Insertion Sort）"/>
 <meta name="twitter:description" content="Insertion Sort"/>
 
@@ -135,44 +129,36 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#算法原理">算法原理</a></li>
-<li><a href="#算法思路">算法思路</a></li>
-<li><a href="#代码实现">代码实现</a></li>
-<li><a href="#算法分析">算法分析</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#算法原理">算法原理</a></li>
+        <li><a href="#算法思路">算法思路</a></li>
+        <li><a href="#代码实现">代码实现</a></li>
+        <li><a href="#算法分析">算法分析</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      
-
-<h3 id="算法原理">算法原理</h3>
-
+      <h3 id="算法原理">算法原理</h3>
 <p>插入排序（Insertion-Sort）的算法描述是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。插入排序在实现上，通常采用in-place排序（即只需用到O(1)的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。</p>
-
 <h3 id="算法思路">算法思路</h3>
-
 <ol>
 <li>从第一个元素开始，该元素可以认为已经被排序</li>
 <li>取出下一个元素，在已经排序的元素序列中从后向前扫描</li>
 <li>如果该元素（已排序）大于新元素，将该元素移到下一位置</li>
 <li>重复步骤3，直到找到已排序的元素小于或者等于新元素的位置</li>
 <li>将新元素插入到该位置后；</li>
-
-<li><p>重复步骤2~5
-<img src="/img/insert-sort.gif" alt="insert-sort" /></p>
-
+<li>重复步骤2~5
+<img src="/img/insert-sort.gif" alt="insert-sort"></li>
+</ol>
 <h3 id="代码实现">代码实现</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -195,36 +181,32 @@
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="cm">/**
-</span><span class="cm"> * 插入排序
-</span><span class="cm"> * @param arr
-</span><span class="cm"> * @return
-</span><span class="cm"> */</span>
-<span class="err">public static </span><span class="kt">int</span> <span class="p">[]</span> <span class="n">insertionSort</span><span class="p">(</span><span class="kt">int</span> <span class="p">[]</span> <span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="o">==</span><span class="n">0</span><span class="p">){</span><span class="k">return</span> <span class="n">arr</span><span class="p">;}</span>
-    <span class="err">int curr</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="err">int i </span><span class="o">=</span> <span class="n">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="o">-</span><span class="n">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">curr</span><span class="o">=</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">1</span><span class="p">];</span> <span class="c1">//待插入元素
-</span><span class="c1"></span>        <span class="err">int preindex</span><span class="o">=</span><span class="n">i</span><span class="p">;</span> <span class="c1">// 前一个元素
-</span><span class="c1"></span>        <span class="k">while</span><span class="p">(</span><span class="n">preindex</span><span class="o">&gt;=</span><span class="n">0</span> <span class="o">&amp;&amp;</span> <span class="err">curr&lt; arr</span><span class="p">[</span><span class="n">preindex</span><span class="p">]){</span><span class="c1">//插入元素比前一个小
-</span><span class="c1"></span>            <span class="n">arr</span><span class="p">[</span><span class="n">preindex</span><span class="o">+</span><span class="n">1</span><span class="p">]</span><span class="o">=</span><span class="n">arr</span><span class="p">[</span><span class="n">preindex</span><span class="p">];</span><span class="c1">// 前一个元素后移
-</span><span class="c1"></span>            <span class="n">preindex</span><span class="o">--</span><span class="p">;</span><span class="c1">//向前遍历
-</span><span class="c1"></span>        <span class="p">}</span>
-        <span class="n">arr</span><span class="p">[</span><span class="n">preindex</span><span class="o">+</span><span class="n">1</span><span class="p">]</span><span class="o">=</span><span class="n">curr</span><span class="p">;</span><span class="c1">//插入元素
-</span><span class="c1"></span>    <span class="p">}</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java">    <span class="cm">/**
+</span><span class="cm">     * 插入排序
+</span><span class="cm">     * @param arr
+</span><span class="cm">     * @return
+</span><span class="cm">     */</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="o">[]</span> <span class="n">insertionSort</span><span class="o">(</span><span class="kt">int</span> <span class="o">[]</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">==</span><span class="n">0</span><span class="o">){</span><span class="k">return</span> <span class="n">arr</span><span class="o">;}</span>
+        <span class="kt">int</span> <span class="n">curr</span><span class="o">;</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="n">1</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="n">curr</span><span class="o">=</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">+</span><span class="n">1</span><span class="o">];</span> <span class="c1">//待插入元素
+</span><span class="c1"></span>            <span class="kt">int</span> <span class="n">preindex</span><span class="o">=</span><span class="n">i</span><span class="o">;</span> <span class="c1">// 前一个元素
+</span><span class="c1"></span>            <span class="k">while</span><span class="o">(</span><span class="n">preindex</span><span class="o">&gt;=</span><span class="n">0</span> <span class="o">&amp;&amp;</span> <span class="n">curr</span><span class="o">&lt;</span> <span class="n">arr</span><span class="o">[</span><span class="n">preindex</span><span class="o">]){</span><span class="c1">//插入元素比前一个小
+</span><span class="c1"></span>                <span class="n">arr</span><span class="o">[</span><span class="n">preindex</span><span class="o">+</span><span class="n">1</span><span class="o">]=</span><span class="n">arr</span><span class="o">[</span><span class="n">preindex</span><span class="o">];</span><span class="c1">// 前一个元素后移
+</span><span class="c1"></span>                <span class="n">preindex</span><span class="o">--;</span><span class="c1">//向前遍历
+</span><span class="c1"></span>            <span class="o">}</span>
+            <span class="n">arr</span><span class="o">[</span><span class="n">preindex</span><span class="o">+</span><span class="n">1</span><span class="o">]=</span><span class="n">curr</span><span class="o">;</span><span class="c1">//插入元素
+</span><span class="c1"></span>        <span class="o">}</span>
 
-    <span class="k">return</span> <span class="n">arr</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">arr</span><span class="o">;</span>
         
-<span class="p">}</span></code></pre></td></tr></table>
+    <span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
-</div></li>
-</ol>
-
-<h3 id="算法分析">算法分析</h3>
-
+</div><h3 id="算法分析">算法分析</h3>
 <p>最佳情况：T(n) = O(n)   最坏情况：T(n) = O(n2)   平均情况：T(n) = O(n2)</p>
-
-<p>参考文章：<a href="https://www.cnblogs.com/guoyaohua/p/8600214.html">https://www.cnblogs.com/guoyaohua/p/8600214.html</a></p>
+<p>参考文章：https://www.cnblogs.com/guoyaohua/p/8600214.html</p>
 
     </div>
 
@@ -292,7 +274,8 @@
 
   <span class="copyright-year">
     &copy; 
-    2019
+    2019 - 
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>

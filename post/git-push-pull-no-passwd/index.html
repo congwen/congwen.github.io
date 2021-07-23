@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.59.1 with theme even" />
+<meta name="generator" content="Hugo 0.86.0 with theme even" />
 
 
 <link rel="canonical" href="http://localhost:1313/post/git-push-pull-no-passwd/" />
@@ -41,21 +41,15 @@
 <meta property="og:title" content="解决Git Pull,push每次都需要输入密码问题" />
 <meta property="og:description" content="Git Push Pull No Passwd" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/git-push-pull-no-passwd/" />
+<meta property="og:url" content="http://localhost:1313/post/git-push-pull-no-passwd/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2019-11-05T11:14:34+08:00" />
 <meta property="article:modified_time" content="2019-11-05T11:14:34+08:00" />
+
 <meta itemprop="name" content="解决Git Pull,push每次都需要输入密码问题">
-<meta itemprop="description" content="Git Push Pull No Passwd">
-
-
-<meta itemprop="datePublished" content="2019-11-05T11:14:34&#43;08:00" />
-<meta itemprop="dateModified" content="2019-11-05T11:14:34&#43;08:00" />
+<meta itemprop="description" content="Git Push Pull No Passwd"><meta itemprop="datePublished" content="2019-11-05T11:14:34+08:00" />
+<meta itemprop="dateModified" content="2019-11-05T11:14:34+08:00" />
 <meta itemprop="wordCount" content="172">
-
-
-
-<meta itemprop="keywords" content="git," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="git," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="解决Git Pull,push每次都需要输入密码问题"/>
 <meta name="twitter:description" content="Git Push Pull No Passwd"/>
 
@@ -135,35 +129,30 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#本地保存帐号密码">本地保存帐号密码</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#本地保存帐号密码">本地保存帐号密码</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      
-
-<h3 id="本地保存帐号密码">本地保存帐号密码</h3>
-
+      <h3 id="本地保存帐号密码">本地保存帐号密码</h3>
 <p>git bash 进入你的项目目录，输入：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">git config --global credential.helper store</pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">git config --global credential.helper store
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>然后你会在你本地生成一个文本，上边记录你的账号和密码。当然这些你可以不用关心。
+</div><p>然后你会在你本地生成一个文本，上边记录你的账号和密码。当然这些你可以不用关心。
 然后你使用上述的命令配置好之后，再操作一次 git pull，然后它会提示你输入账号密码，这一次之后就不需要再次输入密码了
-参考文章：<a href="https://segmentfault.com/a/1190000019072796">https://segmentfault.com/a/1190000019072796</a></p>
+参考文章：https://segmentfault.com/a/1190000019072796</p>
 
     </div>
 
@@ -231,7 +220,8 @@
 
   <span class="copyright-year">
     &copy; 
-    2019
+    2019 - 
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
