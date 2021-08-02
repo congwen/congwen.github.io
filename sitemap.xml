@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://congwen.github.io/post/clickhouse-install-in-ubuntu/</loc>
+    <lastmod>2021-08-02T10:32:30+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://congwen.github.io/post/install-ubuntu-server-in-virtualbox/</loc>
     <lastmod>2021-07-29T16:51:46+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -73,34 +80,48 @@
   
   <url>
     <loc>https://congwen.github.io/categories/</loc>
-    <lastmod>2021-07-29T16:51:46+08:00</lastmod>
+    <lastmod>2021-08-02T10:32:30+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://congwen.github.io/tags/clickhouse/</loc>
+    <lastmod>2021-08-02T10:32:30+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://congwen.github.io/post/</loc>
-    <lastmod>2021-07-29T16:51:46+08:00</lastmod>
+    <lastmod>2021-08-02T10:32:30+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://congwen.github.io/tags/</loc>
-    <lastmod>2021-07-29T16:51:46+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://congwen.github.io/tags/ubuntu/</loc>
-    <lastmod>2021-07-29T16:51:46+08:00</lastmod>
+    <lastmod>2021-08-02T10:32:30+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://congwen.github.io/</loc>
+    <lastmod>2021-08-02T10:32:30+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://congwen.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+    <lastmod>2021-08-02T10:32:30+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://congwen.github.io/tags/ubuntu/</loc>
     <lastmod>2021-07-29T16:51:46+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
