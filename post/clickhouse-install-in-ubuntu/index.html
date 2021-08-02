@@ -49,7 +49,7 @@
 <meta itemprop="name" content="在Ubuntu中安装clickhouse">
 <meta itemprop="description" content="Clickhouse Install in Ubuntu"><meta itemprop="datePublished" content="2021-08-02T10:32:30+08:00" />
 <meta itemprop="dateModified" content="2021-08-02T10:32:30+08:00" />
-<meta itemprop="wordCount" content="353">
+<meta itemprop="wordCount" content="462">
 <meta itemprop="keywords" content="clickhouse," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="在Ubuntu中安装clickhouse"/>
 <meta name="twitter:description" content="Clickhouse Install in Ubuntu"/>
@@ -148,6 +148,8 @@
         <li><a href="#2-配置clickhouse软件源">2. 配置clickhouse软件源</a></li>
         <li><a href="#3-添加依赖并更新apt数据库">3. 添加依赖并更新apt数据库</a></li>
         <li><a href="#4-安装clickhouse服务端及客户端">4. 安装clickhouse服务端及客户端</a></li>
+        <li><a href="#5-添加新用户">5. 添加新用户</a></li>
+        <li><a href="#6-使用新用户登录">6. 使用新用户登录</a></li>
       </ul>
     </li>
   </ul>
@@ -212,6 +214,43 @@ sudo apt update
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">sudo apt-get install clickhouse-client clickhouse-server
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="5-添加新用户">5. 添加新用户</h3>
+<p>sudo vim /etc/clickhouse-server/user.xml</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml">   <span class="nt">&lt;users&gt;</span>
+    <span class="nt">&lt;test&gt;</span> <span class="c">&lt;!--用户名 --&gt;</span>
+        <span class="nt">&lt;password&gt;</span>abc123<span class="nt">&lt;/password&gt;</span><span class="c">&lt;!--密码--&gt;</span>
+        <span class="nt">&lt;networks</span> <span class="na">incl=</span><span class="s">&#34;networks&#34;</span> <span class="na">replace=</span><span class="s">&#34;replace&#34;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;ip&gt;</span>::/0<span class="nt">&lt;/ip&gt;</span>
+        <span class="nt">&lt;/networks&gt;</span>
+        <span class="nt">&lt;profile&gt;</span>default<span class="nt">&lt;/profile&gt;</span>
+        <span class="nt">&lt;quota&gt;</span>default<span class="nt">&lt;/quota&gt;</span>
+    <span class="nt">&lt;/test&gt;</span>
+   <span class="nt">&lt;/users&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="6-使用新用户登录">6. 使用新用户登录</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">clickhouse-client  --user <span class="nb">test</span> --password abc123
 </code></pre></td></tr></table>
 </div>
 </div>
