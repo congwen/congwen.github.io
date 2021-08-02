@@ -6,7 +6,16 @@
     <description>Recent content on 丛文的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 02 Aug 2021 10:32:30 +0800</lastBuildDate><atom:link href="https://congwen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Aug 2021 11:56:54 +0800</lastBuildDate><atom:link href="https://congwen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SSL Error Syscall in Connection to Github 443</title>
+      <link>https://congwen.github.io/post/ssl-error-syscall-in-connection-to-github-443/</link>
+      <pubDate>Mon, 02 Aug 2021 11:56:54 +0800</pubDate>
+      
+      <guid>https://congwen.github.io/post/ssl-error-syscall-in-connection-to-github-443/</guid>
+      <description>因为我的电脑装了翻墙软件，导致每次往github上push代码时会报 OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443，着实很头疼，于是在Google</description>
+    </item>
+    
     <item>
       <title>在Ubuntu中安装clickhouse</title>
       <link>https://congwen.github.io/post/clickhouse-install-in-ubuntu/</link>
