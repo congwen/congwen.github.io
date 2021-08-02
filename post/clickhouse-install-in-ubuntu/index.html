@@ -49,7 +49,7 @@
 <meta itemprop="name" content="在Ubuntu中安装clickhouse">
 <meta itemprop="description" content="Clickhouse Install in Ubuntu"><meta itemprop="datePublished" content="2021-08-02T10:32:30+08:00" />
 <meta itemprop="dateModified" content="2021-08-02T10:32:30+08:00" />
-<meta itemprop="wordCount" content="349">
+<meta itemprop="wordCount" content="353">
 <meta itemprop="keywords" content="clickhouse," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="在Ubuntu中安装clickhouse"/>
 <meta name="twitter:description" content="Clickhouse Install in Ubuntu"/>
@@ -144,10 +144,10 @@
     <li>
       <ul>
         <li><a href="#官方文档">官方文档</a></li>
-        <li><a href="#检查是否支持sse42">检查是否支持SSE4.2</a></li>
-        <li><a href="#配置clickhouse软件源">配置clickhouse软件源</a></li>
-        <li><a href="#添加依赖并更新apt数据库">添加依赖并更新apt数据库</a></li>
-        <li><a href="#安装clickhouse服务端及客户端">安装clickhouse服务端及客户端</a></li>
+        <li><a href="#1-检查是否支持sse42">1. 检查是否支持SSE4.2</a></li>
+        <li><a href="#2-配置clickhouse软件源">2. 配置clickhouse软件源</a></li>
+        <li><a href="#3-添加依赖并更新apt数据库">3. 添加依赖并更新apt数据库</a></li>
+        <li><a href="#4-安装clickhouse服务端及客户端">4. 安装clickhouse服务端及客户端</a></li>
       </ul>
     </li>
   </ul>
@@ -158,7 +158,7 @@
       <p>上篇文章介绍了<a href="https://congwen.github.io/post/install-ubuntu-server-in-virtualbox/">如何安装Ubuntu server</a>，接下来我们看下如何在Ubuntu里安装clickhouse</p>
 <h3 id="官方文档">官方文档</h3>
 <p>我们可以先看下<a href="https://clickhouse.tech/docs/zh/getting-started/install/">官方文档</a>,里面介绍了各种系统的安装方式，本文主要介绍如何在Ubuntu里安装clickhouse</p>
-<h3 id="检查是否支持sse42">检查是否支持SSE4.2</h3>
+<h3 id="1-检查是否支持sse42">1. 检查是否支持SSE4.2</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -170,7 +170,7 @@
 </code></pre></td></tr></table>
 </div>
 </div><p>因为向量化执行需要用到这一项特性,如果不支持SSE指令集,则不能直接使用预编译安装包,需要通过源码编译特定的版本进行安装</p>
-<h3 id="配置clickhouse软件源">配置clickhouse软件源</h3>
+<h3 id="2-配置clickhouse软件源">2. 配置clickhouse软件源</h3>
 <p>国内使用yandex的软件源下载安装包时会很慢，这里建议使用清华的clickhouse软件源</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -188,7 +188,7 @@ sudo vim /etc/apt/sources.list
 deb https://mirrors.tuna.tsinghua.edu.cn/clickhouse/deb/stable/ main/
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="添加依赖并更新apt数据库">添加依赖并更新apt数据库</h3>
+</div><h3 id="3-添加依赖并更新apt数据库">3. 添加依赖并更新apt数据库</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -205,7 +205,7 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv E0C56BD4    <s
 sudo apt update
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="安装clickhouse服务端及客户端">安装clickhouse服务端及客户端</h3>
+</div><h3 id="4-安装clickhouse服务端及客户端">4. 安装clickhouse服务端及客户端</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
