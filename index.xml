@@ -6,7 +6,16 @@
     <description>Recent content on 丛文的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 02 Aug 2021 16:35:01 +0800</lastBuildDate><atom:link href="https://congwen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Aug 2021 16:44:13 +0800</lastBuildDate><atom:link href="https://congwen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Clickhouse位图（bitmap）的使用</title>
+      <link>https://congwen.github.io/post/bitmap-in-clickhouse/</link>
+      <pubDate>Tue, 03 Aug 2021 16:44:13 +0800</pubDate>
+      
+      <guid>https://congwen.github.io/post/bitmap-in-clickhouse/</guid>
+      <description>可以先看下官方文档，也可以参考下这篇文章，写得很详细 1. 构建bitmap 位图对象有两种构造方法。一个是由聚合函数groupBitmapStat</description>
+    </item>
+    
     <item>
       <title>解决virtualbox网络配置hostonly后不生效的问题</title>
       <link>https://congwen.github.io/post/solve-virtualbox-network-config-of-hostonly/</link>
@@ -49,7 +58,7 @@
       <pubDate>Thu, 29 Jul 2021 16:51:46 +0800</pubDate>
       
       <guid>https://congwen.github.io/post/install-ubuntu-server-in-virtualbox/</guid>
-      <description>使用windows开发的同学，内心是非常渴望有一台Linux的开发机，安排！ 1. 下载Ubuntu server系统 下载网址：https://ub</description>
+      <description>使用windows开发的同学，内心是非常渴望有一台Linux的开发机，马上安排！ 1. 下载Ubuntu server系统 下载网址：https://</description>
     </item>
     
     <item>
