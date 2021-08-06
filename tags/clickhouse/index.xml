@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>clickhouse on xiang</title>
+    <title>clickhouse on 丛文的博客</title>
     <link>https://congwen.github.io/tags/clickhouse/</link>
-    <description>Recent content in clickhouse on xiang</description>
+    <description>Recent content in clickhouse on 丛文的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 03 Aug 2021 16:44:13 +0800</lastBuildDate><atom:link href="https://congwen.github.io/tags/clickhouse/index.xml" rel="self" type="application/rss+xml" />
