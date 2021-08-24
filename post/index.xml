@@ -6,7 +6,16 @@
     <description>Recent content in Posts on 丛文的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 03 Aug 2021 16:44:13 +0800</lastBuildDate><atom:link href="https://congwen.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 24 Aug 2021 16:51:41 +0800</lastBuildDate><atom:link href="https://congwen.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>单例模式-双重校验锁</title>
+      <link>https://congwen.github.io/post/singleton-pattern/</link>
+      <pubDate>Tue, 24 Aug 2021 16:51:41 +0800</pubDate>
+      
+      <guid>https://congwen.github.io/post/singleton-pattern/</guid>
+      <description>采用双锁机制，安全且在多线程情况下能保持高性能。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 public class Singleton{ private static volatile Singleton instance; private Singleton(){} public static Singleton getInstance(){ if(instance == null){ // 判断对象是否以及实例化过</description>
+    </item>
+    
     <item>
       <title>Clickhouse位图（bitmap）的使用</title>
       <link>https://congwen.github.io/post/bitmap-in-clickhouse/</link>
