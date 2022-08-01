@@ -1,12 +1,30 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>剑指Offer on 丛文的博客</title>
+    <title>剑指offer on 丛文的博客</title>
     <link>https://congwen.github.io/categories/%E5%89%91%E6%8C%87offer/</link>
-    <description>Recent content in 剑指Offer on 丛文的博客</description>
+    <description>Recent content in 剑指offer on 丛文的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 21 Oct 2019 11:18:15 +0800</lastBuildDate><atom:link href="https://congwen.github.io/categories/%E5%89%91%E6%8C%87offer/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Aug 2022 20:01:12 +0800</lastBuildDate><atom:link href="https://congwen.github.io/categories/%E5%89%91%E6%8C%87offer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[leetcode]剑指 Offer 29. 顺时针打印矩阵</title>
+      <link>https://congwen.github.io/post/sordoffer29-shun-shi-zhen-da-yin-ju-zhen-lcof/</link>
+      <pubDate>Mon, 01 Aug 2022 20:01:12 +0800</pubDate>
+      
+      <guid>https://congwen.github.io/post/sordoffer29-shun-shi-zhen-da-yin-ju-zhen-lcof/</guid>
+      <description>输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字。 示例 1： 输入：matrix = [[1,2,3],[4,5,6],[7,8,9]] 输出：[1,2,3,6,9,8,7,4,5] 示例</description>
+    </item>
+    
+    <item>
+      <title>[leetcode]剑指 Offer 28. 对称的二叉树</title>
+      <link>https://congwen.github.io/post/sordoffer-28-dui-cheng-de-er-cha-shu-lcof/</link>
+      <pubDate>Mon, 01 Aug 2022 18:19:25 +0800</pubDate>
+      
+      <guid>https://congwen.github.io/post/sordoffer-28-dui-cheng-de-er-cha-shu-lcof/</guid>
+      <description>请实现一个函数，用来判断一棵二叉树是不是对称的。如果一棵二叉树和它的镜像一样，那么它是对称的。 例如，二叉树 [1,2,2,3,4,4,3] 是对称的。 1 / \ 2 2 / \ / \ 3 4</description>
+    </item>
+    
     <item>
       <title>剑指Offer-15：链表中倒数第k个结点</title>
       <link>https://congwen.github.io/post/sword-offer-14/</link>
