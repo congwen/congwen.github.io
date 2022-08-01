@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>设计模式 on 丛文的博客</title>
+    <link>https://congwen.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
+    <description>Recent content in 设计模式 on 丛文的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 24 Aug 2021 16:51:41 +0800</lastBuildDate><atom:link href="https://congwen.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>单例模式-双重校验锁</title>
+      <link>https://congwen.github.io/post/singleton-pattern/</link>
+      <pubDate>Tue, 24 Aug 2021 16:51:41 +0800</pubDate>
+      
+      <guid>https://congwen.github.io/post/singleton-pattern/</guid>
+      <description>采用双锁机制，安全且在多线程情况下能保持高性能。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 public class Singleton{ private static volatile Singleton instance; private Singleton(){} public static Singleton getInstance(){ if(instance == null){ // 判断对象是否以及实例化过</description>
+    </item>
+    
+  </channel>
+</rss>

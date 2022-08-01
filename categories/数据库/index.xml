@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数据库 on 丛文的博客</title>
+    <link>https://congwen.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+    <description>Recent content in 数据库 on 丛文的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 03 Aug 2021 16:44:13 +0800</lastBuildDate><atom:link href="https://congwen.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Clickhouse位图（bitmap）的使用</title>
+      <link>https://congwen.github.io/post/bitmap-in-clickhouse/</link>
+      <pubDate>Tue, 03 Aug 2021 16:44:13 +0800</pubDate>
+      
+      <guid>https://congwen.github.io/post/bitmap-in-clickhouse/</guid>
+      <description>可以先看下官方文档，也可以参考下这篇文章，写得很详细 1. 构建bitmap 位图对象有两种构造方法。一个是由聚合函数groupBitmapStat</description>
+    </item>
+    
+    <item>
+      <title>在Ubuntu中安装clickhouse</title>
+      <link>https://congwen.github.io/post/clickhouse-install-in-ubuntu/</link>
+      <pubDate>Mon, 02 Aug 2021 10:32:30 +0800</pubDate>
+      
+      <guid>https://congwen.github.io/post/clickhouse-install-in-ubuntu/</guid>
+      <description>上篇文章介绍了如何安装Ubuntu server，接下来我们看下如何在Ubuntu里安装clickhouse 官方文档 我们可以先看下官方文档,里</description>
+    </item>
+    
+  </channel>
+</rss>

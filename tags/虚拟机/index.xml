@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>虚拟机 on 丛文的博客</title>
+    <link>https://congwen.github.io/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/</link>
+    <description>Recent content in 虚拟机 on 丛文的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 02 Aug 2021 16:35:01 +0800</lastBuildDate><atom:link href="https://congwen.github.io/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决virtualbox网络配置hostonly后不生效的问题</title>
+      <link>https://congwen.github.io/post/solve-virtualbox-network-config-of-hostonly/</link>
+      <pubDate>Mon, 02 Aug 2021 16:35:01 +0800</pubDate>
+      
+      <guid>https://congwen.github.io/post/solve-virtualbox-network-config-of-hostonly/</guid>
+      <description>搭建了一个ubuntu的虚拟机，网卡配置了nat和hostonly,nat可以实现虚拟机连接外网，ping www.baidu.com 没有问题，问题是配置hoston</description>
+    </item>
+    
+    <item>
+      <title>VirtualBox的菜单栏被隐藏的解决办法</title>
+      <link>https://congwen.github.io/post/solution-of-virtualbox-menu-is-hided/</link>
+      <pubDate>Mon, 02 Aug 2021 15:13:37 +0800</pubDate>
+      
+      <guid>https://congwen.github.io/post/solution-of-virtualbox-menu-is-hided/</guid>
+      <description>搞不懂virtualbox为什么有时会隐藏顶部菜单栏，在Google里百度了一下，使用右Ctrl+C可以重新打开菜单栏，注意一定要是右Ctr</description>
+    </item>
+    
+    <item>
+      <title>在win10系统中安装virtualbox</title>
+      <link>https://congwen.github.io/post/install-virtualbox-in-windows10/</link>
+      <pubDate>Thu, 29 Jul 2021 16:15:29 +0800</pubDate>
+      
+      <guid>https://congwen.github.io/post/install-virtualbox-in-windows10/</guid>
+      <description>1、下载virtualbox 进入virtualbox官网下载：https://www.virtualbox.org/wiki/Downloa</description>
+    </item>
+    
+  </channel>
+</rss>
