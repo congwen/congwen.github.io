@@ -6,7 +6,16 @@
     <description>Recent content in 算法 on 丛文的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 11 Nov 2019 09:31:15 +0800</lastBuildDate><atom:link href="https://congwen.github.io/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 29 Jul 2022 14:58:11 +0800</lastBuildDate><atom:link href="https://congwen.github.io/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[leetcode]二叉树的完全性检验</title>
+      <link>https://congwen.github.io/post/leetcode-958-check-completeness-of-a-binary-tree/</link>
+      <pubDate>Fri, 29 Jul 2022 14:58:11 +0800</pubDate>
+      
+      <guid>https://congwen.github.io/post/leetcode-958-check-completeness-of-a-binary-tree/</guid>
+      <description>给定一个二叉树的 root ，确定它是否是一个 完全二叉树 。 在一个 完全二叉树 中，除了最后一个关卡外，所有关卡都是完全被填满的，并且最后一个关卡中的所有节</description>
+    </item>
+    
     <item>
       <title>归并排序（Merge Sort）</title>
       <link>https://congwen.github.io/post/merge-sort/</link>
