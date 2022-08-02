@@ -6,7 +6,25 @@
     <description>Recent content in Posts on 丛文的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 01 Aug 2022 20:01:12 +0800</lastBuildDate><atom:link href="https://congwen.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Aug 2022 11:28:58 +0800</lastBuildDate><atom:link href="https://congwen.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[leetcode]剑指 Offer 31. 栈的压入、弹出序列</title>
+      <link>https://congwen.github.io/post/sordoffer-31-zhan-de-ya-ru-dan-chu-xu-lie-lcof/</link>
+      <pubDate>Tue, 02 Aug 2022 11:28:58 +0800</pubDate>
+      
+      <guid>https://congwen.github.io/post/sordoffer-31-zhan-de-ya-ru-dan-chu-xu-lie-lcof/</guid>
+      <description>输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否为该栈的弹出顺序。 假设压入栈的所有数字均不相等。 例如，序列 {1,2,3,4,5} 是某栈的压栈序</description>
+    </item>
+    
+    <item>
+      <title>[leetcode]剑指 Offer 30. 包含min函数的栈</title>
+      <link>https://congwen.github.io/post/sordoffer-30-bao-han-minhan-shu-de-zhan-lcof/</link>
+      <pubDate>Tue, 02 Aug 2022 10:13:33 +0800</pubDate>
+      
+      <guid>https://congwen.github.io/post/sordoffer-30-bao-han-minhan-shu-de-zhan-lcof/</guid>
+      <description>定义栈的数据结构，请在该类型中实现一个能够得到栈的最小元素的 min 函数在该栈中，调用 min、push 及 pop 的时间复杂度都是 O(1)。 示例: MinStack minStack = new</description>
+    </item>
+    
     <item>
       <title>[leetcode]剑指 Offer 29. 顺时针打印矩阵</title>
       <link>https://congwen.github.io/post/sordoffer29-shun-shi-zhen-da-yin-ju-zhen-lcof/</link>
