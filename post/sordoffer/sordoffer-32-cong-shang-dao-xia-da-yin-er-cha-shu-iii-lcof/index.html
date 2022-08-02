@@ -180,7 +180,7 @@
 <h3 id="解题思路">解题思路</h3>
 <p>使用一个队列存储每一层的节点，level变量记录第几层，初始level等于1,
 每次循环都记录下当前队列的大小（n）,n即为每层的节点数量，当队列不为空时，
-每次出队n个节点同时保存节点的值到一个list（当level为后数时使用链表头插法），
+每次出队n个节点同时保存节点的值到一个list（当level为偶数时使用链表头插法），
 每层节点遍历完后level+1,直到队列为空，最后返回结果</p>
 <h3 id="代码实现">代码实现</h3>
 <div class="highlight"><div class="chroma">
@@ -266,7 +266,11 @@
           <a href="/tags/%E5%89%91%E6%8C%87offer/">剑指offer</a>
           </div>
       <nav class="post-nav">
-        
+        <a class="prev" href="/post/data-warehouse/3nf-model/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">数据仓库-第3范式</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
         <a class="next" href="/post/sordoffer/sordoffer-32-cong-shang-dao-xia-da-yin-er-cha-shu-ii-lcof/">
             <span class="next-text nav-default">[leetcode]剑指 Offer 32 - II. 从上到下打印二叉树 II</span>
             <span class="next-text nav-mobile">下一篇</span>

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://congwen.github.io/post/data-warehouse/3nf-model/</loc>
+    <lastmod>2022-08-02T17:41:09+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://congwen.github.io/post/sordoffer/sordoffer-32-cong-shang-dao-xia-da-yin-er-cha-shu-iii-lcof/</loc>
     <lastmod>2022-08-02T12:51:53+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -164,34 +171,48 @@
   
   <url>
     <loc>https://congwen.github.io/categories/</loc>
-    <lastmod>2022-08-02T12:51:53+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://congwen.github.io/categories/leetcode/</loc>
-    <lastmod>2022-08-02T12:51:53+08:00</lastmod>
+    <lastmod>2022-08-02T17:41:09+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://congwen.github.io/post/</loc>
-    <lastmod>2022-08-02T12:51:53+08:00</lastmod>
+    <lastmod>2022-08-02T17:41:09+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://congwen.github.io/tags/</loc>
-    <lastmod>2022-08-02T12:51:53+08:00</lastmod>
+    <lastmod>2022-08-02T17:41:09+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://congwen.github.io/</loc>
+    <lastmod>2022-08-02T17:41:09+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://congwen.github.io/tags/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93/</loc>
+    <lastmod>2022-08-02T17:41:09+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://congwen.github.io/categories/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93/</loc>
+    <lastmod>2022-08-02T17:41:09+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://congwen.github.io/categories/leetcode/</loc>
     <lastmod>2022-08-02T12:51:53+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
