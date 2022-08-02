@@ -6,43 +6,7 @@
     <description>Recent content in 剑指offer on 丛文的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 02 Aug 2022 11:28:58 +0800</lastBuildDate><atom:link href="https://congwen.github.io/categories/%E5%89%91%E6%8C%87offer/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>[leetcode]剑指 Offer 31. 栈的压入、弹出序列</title>
-      <link>https://congwen.github.io/post/sordoffer-31-zhan-de-ya-ru-dan-chu-xu-lie-lcof/</link>
-      <pubDate>Tue, 02 Aug 2022 11:28:58 +0800</pubDate>
-      
-      <guid>https://congwen.github.io/post/sordoffer-31-zhan-de-ya-ru-dan-chu-xu-lie-lcof/</guid>
-      <description>输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否为该栈的弹出顺序。 假设压入栈的所有数字均不相等。 例如，序列 {1,2,3,4,5} 是某栈的压栈序</description>
-    </item>
-    
-    <item>
-      <title>[leetcode]剑指 Offer 30. 包含min函数的栈</title>
-      <link>https://congwen.github.io/post/sordoffer-30-bao-han-minhan-shu-de-zhan-lcof/</link>
-      <pubDate>Tue, 02 Aug 2022 10:13:33 +0800</pubDate>
-      
-      <guid>https://congwen.github.io/post/sordoffer-30-bao-han-minhan-shu-de-zhan-lcof/</guid>
-      <description>定义栈的数据结构，请在该类型中实现一个能够得到栈的最小元素的 min 函数在该栈中，调用 min、push 及 pop 的时间复杂度都是 O(1)。 示例: MinStack minStack = new</description>
-    </item>
-    
-    <item>
-      <title>[leetcode]剑指 Offer 29. 顺时针打印矩阵</title>
-      <link>https://congwen.github.io/post/sordoffer29-shun-shi-zhen-da-yin-ju-zhen-lcof/</link>
-      <pubDate>Mon, 01 Aug 2022 20:01:12 +0800</pubDate>
-      
-      <guid>https://congwen.github.io/post/sordoffer29-shun-shi-zhen-da-yin-ju-zhen-lcof/</guid>
-      <description>输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字。 示例 1： 输入：matrix = [[1,2,3],[4,5,6],[7,8,9]] 输出：[1,2,3,6,9,8,7,4,5] 示例</description>
-    </item>
-    
-    <item>
-      <title>[leetcode]剑指 Offer 28. 对称的二叉树</title>
-      <link>https://congwen.github.io/post/sordoffer-28-dui-cheng-de-er-cha-shu-lcof/</link>
-      <pubDate>Mon, 01 Aug 2022 18:19:25 +0800</pubDate>
-      
-      <guid>https://congwen.github.io/post/sordoffer-28-dui-cheng-de-er-cha-shu-lcof/</guid>
-      <description>请实现一个函数，用来判断一棵二叉树是不是对称的。如果一棵二叉树和它的镜像一样，那么它是对称的。 例如，二叉树 [1,2,2,3,4,4,3] 是对称的。 1 / \ 2 2 / \ / \ 3 4</description>
-    </item>
-    
+    <lastBuildDate>Mon, 21 Oct 2019 11:18:15 +0800</lastBuildDate><atom:link href="https://congwen.github.io/categories/%E5%89%91%E6%8C%87offer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>剑指Offer-15：链表中倒数第k个结点</title>
       <link>https://congwen.github.io/post/sword-offer-14/</link>
