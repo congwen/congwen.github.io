@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>[leetcode]剑指 Offer 33. 二叉搜索树的后序遍历序列 - 丛文的博客</title>
+  <title>[leetcode]剑指 Offer 36. 二叉搜索树与双向链表 - 丛文的博客</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="丛文" /><meta name="description" content="33 Er Cha Sou Suo Shu De Hou Xu Bian Li Xu Lie Lcof" /><meta name="keywords" content="33, Er, Cha, Sou, Suo, Shu, De, Hou, Xu, Bian, Li, Xu, Lie, Lcof" />
+<meta name="author" content="丛文" /><meta name="description" content="36 Er Cha Sou Suo Shu Yu Shuang Xiang Lian Biao Lcof" /><meta name="keywords" content="36, Er, Cha, Sou, Suo, Shu, Yu, Shuang, Xiang, Lian, Biao, Lcof" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.88.1 with theme even" />
 
 
-<link rel="canonical" href="https://congwen.github.io/post/sordoffer/33-er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/" />
+<link rel="canonical" href="https://congwen.github.io/post/sordoffer/36-er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -41,20 +41,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="[leetcode]剑指 Offer 33. 二叉搜索树的后序遍历序列" />
-<meta property="og:description" content="33 Er Cha Sou Suo Shu De Hou Xu Bian Li Xu Lie Lcof" />
+<meta property="og:title" content="[leetcode]剑指 Offer 36. 二叉搜索树与双向链表" />
+<meta property="og:description" content="36 Er Cha Sou Suo Shu Yu Shuang Xiang Lian Biao Lcof" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://congwen.github.io/post/sordoffer/33-er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2022-08-03T15:24:12+08:00" />
-<meta property="article:modified_time" content="2022-08-03T15:24:12+08:00" />
+<meta property="og:url" content="https://congwen.github.io/post/sordoffer/36-er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-08-04T19:30:13+08:00" />
+<meta property="article:modified_time" content="2022-08-04T19:30:13+08:00" />
 
-<meta itemprop="name" content="[leetcode]剑指 Offer 33. 二叉搜索树的后序遍历序列">
-<meta itemprop="description" content="33 Er Cha Sou Suo Shu De Hou Xu Bian Li Xu Lie Lcof"><meta itemprop="datePublished" content="2022-08-03T15:24:12+08:00" />
-<meta itemprop="dateModified" content="2022-08-03T15:24:12+08:00" />
-<meta itemprop="wordCount" content="547">
-<meta itemprop="keywords" content="剑指offer," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="[leetcode]剑指 Offer 33. 二叉搜索树的后序遍历序列"/>
-<meta name="twitter:description" content="33 Er Cha Sou Suo Shu De Hou Xu Bian Li Xu Lie Lcof"/>
+<meta itemprop="name" content="[leetcode]剑指 Offer 36. 二叉搜索树与双向链表">
+<meta itemprop="description" content="36 Er Cha Sou Suo Shu Yu Shuang Xiang Lian Biao Lcof"><meta itemprop="datePublished" content="2022-08-04T19:30:13+08:00" />
+<meta itemprop="dateModified" content="2022-08-04T19:30:13+08:00" />
+<meta itemprop="wordCount" content="649">
+<meta itemprop="keywords" content="tags," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[leetcode]剑指 Offer 36. 二叉搜索树与双向链表"/>
+<meta name="twitter:description" content="36 Er Cha Sou Suo Shu Yu Shuang Xiang Lian Biao Lcof"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -127,12 +127,12 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">[leetcode]剑指 Offer 33. 二叉搜索树的后序遍历序列</h1>
+      <h1 class="post-title">[leetcode]剑指 Offer 36. 二叉搜索树与双向链表</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2022-08-03 </span>
+        <span class="post-time"> 2022-08-04 </span>
         <div class="post-category">
-            <a href="/categories/leetcode/"> leetcode </a>
+            <a href="/categories/cates/"> cates </a>
             </div>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -156,36 +156,12 @@
 </div>
     <div class="post-content">
       <h3 id="题目">题目</h3>
-<p>输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历结果。如果是则返回 true，否则返回 false。假设输入的数组的任意两个数字都互不相同。</p>
-<p> </p>
-<p>参考以下这颗二叉搜索树：</p>
-<pre><code>     5
-    / \
-    2  6
-   / \
-   1  3
-</code></pre>
-<p>示例 1：</p>
-<p>输入: [1,6,3,2,5]
-输出: false
-示例 2：</p>
-<p>输入: [1,3,2,6,5]
-输出: true</p>
+<p>输入一棵二叉搜索树，将该二叉搜索树转换成一个排序的循环双向链表。要求不能创建任何新的节点，只能调整树中节点指针的指向。</p>
+<p>我们希望将这个二叉搜索树转化为双向循环链表。链表中的每个节点都有一个前驱和后继指针。对于双向循环链表，第一个节点的前驱是最后一个节点，最后一个节点的后继是第一个节点。</p>
 <p>来源：力扣（LeetCode）</p>
-<p>链接：<a href="https://leetcode.cn/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof">https://leetcode.cn/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof</a></p>
+<p>链接：<a href="https://leetcode.cn/problems/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof">https://leetcode.cn/problems/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof</a></p>
 <h3 id="解题思路">解题思路</h3>
-<p>参考：<a href="https://leetcode.cn/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/solution/by-nehzil-vtxe/">题解</a></p>
-<pre><code>二叉树后序遍历的顺序是：左-&gt;右-&gt;根，所以数组最后一个元素是根节点。
-
-二叉树搜索树的特性：
-* 若它的左子树不空，则左子树上所有结点的值均小于它的根结点的值；
-* 若它的右子树不空，则右子树上所有结点的值均大于它的根结点的值；
-* 它的左、右子树也分别为二叉搜索树
-
-1. 从数组第0个元素开始往后找到第一个比根节点大的元素，该元素记为分割节点
-2. 从分割节点到根结点的元素都要比跟节点大
-3. 左右子树都应该满足1和2，递归即可，当分割的子树只有一个时，返回true,递归终止 
-</code></pre>
+<p>二叉搜索树的中序遍历是升序的，在遍历的过程中改变节点的左右指针，left作为pre指针，right为next指针，即可形成双向循环链表</p>
 <h3 id="代码实现">代码实现</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -213,30 +189,78 @@
 </span><span class="lnt">22
 </span><span class="lnt">23
 </span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">verifyPostorder</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">postorder</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">helper</span><span class="o">(</span><span class="n">postorder</span><span class="o">,</span><span class="n">0</span><span class="o">,</span><span class="n">postorder</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="n">1</span><span class="o">);</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="cm">/*
+</span><span class="cm">// Definition for a Node.
+</span><span class="cm">class Node {
+</span><span class="cm">    public int val;
+</span><span class="cm">    public Node left;
+</span><span class="cm">    public Node right;
+</span><span class="cm">
+</span><span class="cm">    public Node() {}
+</span><span class="cm">
+</span><span class="cm">    public Node(int _val) {
+</span><span class="cm">        val = _val;
+</span><span class="cm">    }
+</span><span class="cm">
+</span><span class="cm">    public Node(int _val,Node _left,Node _right) {
+</span><span class="cm">        val = _val;
+</span><span class="cm">        left = _left;
+</span><span class="cm">        right = _right;
+</span><span class="cm">    }
+</span><span class="cm">};
+</span><span class="cm">*/</span>
+<span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="n">Node</span> <span class="n">head</span><span class="o">,</span><span class="n">tail</span><span class="o">;</span><span class="c1">//定义头尾节点
+</span><span class="c1"></span>    <span class="kd">public</span> <span class="n">Node</span> <span class="nf">treeToDoublyList</span><span class="o">(</span><span class="n">Node</span> <span class="n">root</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">root</span><span class="o">==</span><span class="kc">null</span><span class="o">)</span> <span class="k">return</span> <span class="n">root</span><span class="o">;</span>
+
+        <span class="n">dfs</span><span class="o">(</span><span class="n">root</span><span class="o">);</span>
+
+        <span class="n">head</span><span class="o">.</span><span class="na">left</span><span class="o">=</span><span class="n">tail</span><span class="o">;</span> <span class="c1">//left作为pre指针
+</span><span class="c1"></span>
+        <span class="n">tail</span><span class="o">.</span><span class="na">right</span><span class="o">=</span><span class="n">head</span><span class="o">;</span><span class="c1">//right为next指针
+</span><span class="c1"></span>
+        <span class="k">return</span> <span class="n">head</span><span class="o">;</span>
     <span class="o">}</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">helper</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">postorder</span><span class="o">,</span><span class="kt">int</span> <span class="n">start</span><span class="o">,</span><span class="kt">int</span> <span class="n">end</span><span class="o">){</span>
-        <span class="c1">//递归终止
-</span><span class="c1"></span>        <span class="k">if</span><span class="o">(</span><span class="n">start</span><span class="o">&gt;=</span><span class="n">end</span><span class="o">)</span> <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-        <span class="kt">int</span> <span class="n">idx</span><span class="o">=</span><span class="n">start</span><span class="o">;</span>
-
-        <span class="k">while</span><span class="o">(</span><span class="n">postorder</span><span class="o">[</span><span class="n">idx</span><span class="o">]&lt;</span><span class="n">postorder</span><span class="o">[</span><span class="n">end</span><span class="o">]){</span>
-            <span class="n">idx</span><span class="o">++;</span>
-        <span class="o">}</span> 
-         <span class="cm">/* 记录分割点 */</span>
-        <span class="kt">int</span> <span class="n">midIdx</span><span class="o">=</span><span class="n">idx</span><span class="o">;</span>
-        <span class="k">while</span><span class="o">(</span><span class="n">postorder</span><span class="o">[</span><span class="n">idx</span><span class="o">]&gt;</span><span class="n">postorder</span><span class="o">[</span><span class="n">end</span><span class="o">]){</span>
-            <span class="n">idx</span><span class="o">++;</span>
-        <span class="o">}</span>
-        <span class="c1">//判断左右子树
-</span><span class="c1"></span>        <span class="kt">boolean</span> <span class="n">left</span> <span class="o">=</span> <span class="n">helper</span><span class="o">(</span><span class="n">postorder</span><span class="o">,</span><span class="n">start</span><span class="o">,</span><span class="n">midIdx</span><span class="o">-</span><span class="n">1</span><span class="o">);</span>
-        <span class="kt">boolean</span> <span class="n">right</span><span class="o">=</span> <span class="n">helper</span><span class="o">(</span><span class="n">postorder</span><span class="o">,</span><span class="n">midIdx</span><span class="o">,</span><span class="n">end</span><span class="o">-</span><span class="n">1</span><span class="o">);</span>
-        <span class="k">return</span> <span class="n">idx</span><span class="o">==</span><span class="n">end</span> <span class="o">&amp;&amp;</span> <span class="n">left</span> <span class="o">&amp;&amp;</span> <span class="n">right</span><span class="o">;</span> 
-
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">dfs</span><span class="o">(</span><span class="n">Node</span> <span class="n">node</span><span class="o">){</span>
+        <span class="c1">//递归结束条件
+</span><span class="c1"></span>        <span class="k">if</span><span class="o">(</span><span class="n">node</span><span class="o">==</span><span class="kc">null</span><span class="o">)</span> <span class="k">return</span><span class="o">;</span>
+        <span class="c1">//中序遍历：左-&gt;根-&gt;右
+</span><span class="c1"></span>        <span class="n">dfs</span><span class="o">(</span><span class="n">node</span><span class="o">.</span><span class="na">left</span><span class="o">);</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">tail</span><span class="o">==</span><span class="kc">null</span><span class="o">){</span><span class="c1">//说明在第一个节点，保存为head
+</span><span class="c1"></span>            <span class="n">head</span><span class="o">=</span><span class="n">node</span><span class="o">;</span> 
+        <span class="o">}</span><span class="k">else</span><span class="o">{</span>
+            <span class="n">tail</span><span class="o">.</span><span class="na">right</span> <span class="o">=</span><span class="n">node</span><span class="o">;</span> <span class="c1">//tail保存的是上一个节点，改变右指针指向当前节点
+</span><span class="c1"></span>        <span class="o">}</span>     
+        <span class="n">node</span><span class="o">.</span><span class="na">left</span><span class="o">=</span><span class="n">tail</span><span class="o">;</span><span class="c1">//当前节点左指针指向上一节点tail,形成双向链表
+</span><span class="c1"></span>        <span class="n">tail</span><span class="o">=</span><span class="n">node</span><span class="o">;</span> <span class="c1">// 保存当前节点，用于下层递归创建
+</span><span class="c1"></span>        <span class="n">dfs</span><span class="o">(</span><span class="n">node</span><span class="o">.</span><span class="na">right</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
@@ -252,7 +276,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2022-08-03
+        2022-08-04
         
     </span>
   </p>
@@ -261,16 +285,12 @@
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/%E5%89%91%E6%8C%87offer/">剑指offer</a>
+          <a href="/tags/tags/">tags</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/sordoffer/36-er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">[leetcode]剑指 Offer 36. 二叉搜索树与双向链表</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/data-warehouse/3nf-model/">
-            <span class="next-text nav-default">数据仓库-第3范式</span>
+        
+        <a class="next" href="/post/sordoffer/33-er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/">
+            <span class="next-text nav-default">[leetcode]剑指 Offer 33. 二叉搜索树的后序遍历序列</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

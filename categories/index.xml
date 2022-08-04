@@ -6,7 +6,16 @@
     <description>Recent content in Categories on 丛文的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 03 Aug 2022 15:24:12 +0800</lastBuildDate><atom:link href="https://congwen.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Aug 2022 19:30:13 +0800</lastBuildDate><atom:link href="https://congwen.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cates</title>
+      <link>https://congwen.github.io/categories/cates/</link>
+      <pubDate>Thu, 04 Aug 2022 19:30:13 +0800</pubDate>
+      
+      <guid>https://congwen.github.io/categories/cates/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>leetcode</title>
       <link>https://congwen.github.io/categories/leetcode/</link>
