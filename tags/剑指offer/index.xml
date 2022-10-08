@@ -6,7 +6,16 @@
     <description>Recent content in 剑指offer on 丛文的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 04 Aug 2022 19:30:13 +0800</lastBuildDate><atom:link href="https://congwen.github.io/tags/%E5%89%91%E6%8C%87offer/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Aug 2022 12:27:30 +0800</lastBuildDate><atom:link href="https://congwen.github.io/tags/%E5%89%91%E6%8C%87offer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[leetcode]剑指 Offer 37. 序列化二叉树</title>
+      <link>https://congwen.github.io/post/sordoffer/37-xu-lie-hua-er-cha-shu-lcof/</link>
+      <pubDate>Tue, 09 Aug 2022 12:27:30 +0800</pubDate>
+      
+      <guid>https://congwen.github.io/post/sordoffer/37-xu-lie-hua-er-cha-shu-lcof/</guid>
+      <description>题目 请实现两个函数，分别用来序列化和反序列化二叉树。 你需要设计一个算法来实现二叉树的序列化与反序列化。这里不限定你的序列 / 反序列化算法执行逻</description>
+    </item>
+    
     <item>
       <title>[leetcode]剑指 Offer 36. 二叉搜索树与双向链表</title>
       <link>https://congwen.github.io/post/sordoffer/36-er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/</link>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>链表 on 丛文的博客</title>
+    <link>https://congwen.github.io/tags/%E9%93%BE%E8%A1%A8/</link>
+    <description>Recent content in 链表 on 丛文的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 24 Aug 2022 12:48:43 +0800</lastBuildDate><atom:link href="https://congwen.github.io/tags/%E9%93%BE%E8%A1%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[leetcode]删除排序链表中的重复元素 II</title>
+      <link>https://congwen.github.io/post/leetcode/82-remove-duplicates-from-sorted-list-ii/</link>
+      <pubDate>Wed, 24 Aug 2022 12:48:43 +0800</pubDate>
+      
+      <guid>https://congwen.github.io/post/leetcode/82-remove-duplicates-from-sorted-list-ii/</guid>
+      <description>题目 给定一个已排序的链表的头 head ， 删除原始链表中所有重复数字的节点，只留下不同的数字 。返回 已排序的链表 。 示例1: 输入：head = [1,2,3,3,4,4,5] 输出：[1,</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>单例模式-双重校验锁 - 丛文的博客</title>
+  <title>Java中的方法覆盖Override和方法重载Overloade的区别 - 丛文的博客</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="丛文" /><meta name="description" content="Singleton Pattern" /><meta name="keywords" content="Singleton, Pattern" />
+<meta name="author" content="丛文" /><meta name="description" content="Java中的方法覆盖Override和方法重载Overloade的区别" /><meta name="keywords" content="Java中的方法覆盖Override和方法重载Overloade的区别" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.88.1 with theme even" />
 
 
-<link rel="canonical" href="https://congwen.github.io/post/singleton-pattern/" />
+<link rel="canonical" href="https://congwen.github.io/post/java/java%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95%E8%A6%86%E7%9B%96override%E5%92%8C%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BDoverloade%E7%9A%84%E5%8C%BA%E5%88%AB/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -41,20 +41,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="单例模式-双重校验锁" />
-<meta property="og:description" content="Singleton Pattern" />
+<meta property="og:title" content="Java中的方法覆盖Override和方法重载Overloade的区别" />
+<meta property="og:description" content="Java中的方法覆盖Override和方法重载Overloade的区别" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://congwen.github.io/post/singleton-pattern/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-08-24T16:51:41+08:00" />
-<meta property="article:modified_time" content="2021-08-24T16:51:41+08:00" />
+<meta property="og:url" content="https://congwen.github.io/post/java/java%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95%E8%A6%86%E7%9B%96override%E5%92%8C%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BDoverloade%E7%9A%84%E5%8C%BA%E5%88%AB/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-10-08T18:56:34+08:00" />
+<meta property="article:modified_time" content="2021-10-08T18:56:34+08:00" />
 
-<meta itemprop="name" content="单例模式-双重校验锁">
-<meta itemprop="description" content="Singleton Pattern"><meta itemprop="datePublished" content="2021-08-24T16:51:41+08:00" />
-<meta itemprop="dateModified" content="2021-08-24T16:51:41+08:00" />
-<meta itemprop="wordCount" content="225">
-<meta itemprop="keywords" content="设计模式," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="单例模式-双重校验锁"/>
-<meta name="twitter:description" content="Singleton Pattern"/>
+<meta itemprop="name" content="Java中的方法覆盖Override和方法重载Overloade的区别">
+<meta itemprop="description" content="Java中的方法覆盖Override和方法重载Overloade的区别"><meta itemprop="datePublished" content="2021-10-08T18:56:34+08:00" />
+<meta itemprop="dateModified" content="2021-10-08T18:56:34+08:00" />
+<meta itemprop="wordCount" content="921">
+<meta itemprop="keywords" content="java," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Java中的方法覆盖Override和方法重载Overloade的区别"/>
+<meta name="twitter:description" content="Java中的方法覆盖Override和方法重载Overloade的区别"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -127,12 +127,12 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">单例模式-双重校验锁</h1>
+      <h1 class="post-title">Java中的方法覆盖Override和方法重载Overloade的区别</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2021-08-24 </span>
+        <span class="post-time"> 2021-10-08 </span>
         <div class="post-category">
-            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"> 设计模式 </a>
+            <a href="/categories/java/"> java </a>
             </div>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -141,50 +141,89 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#重写override">重写(Override)</a></li>
+        <li><a href="#重载overload">重载(Overload)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
   </div>
 </div>
     <div class="post-content">
-      <p>采用双锁机制，安全且在多线程情况下能保持高性能。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Singleton</span><span class="o">{</span>
-  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">volatile</span> <span class="n">Singleton</span> <span class="n">instance</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="nf">Singleton</span><span class="o">(){}</span>
-  <span class="kd">public</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="nf">getInstance</span><span class="o">(){</span>
-    <span class="k">if</span><span class="o">(</span><span class="n">instance</span> <span class="o">==</span> <span class="kc">null</span><span class="o">){</span>
-    <span class="c1">// 判断对象是否以及实例化过，没有则进入加锁代码块，此处可能有多个线程同时进来，等待类对象锁
-</span><span class="c1"></span>      <span class="kd">synchronized</span><span class="o">(</span><span class="n">Singleton</span><span class="o">.</span><span class="na">class</span><span class="o">){</span>
-      <span class="c1">// 获取类对象锁，其他线程在外等待，其他线程进来再次判断，如果对象实例化了，则不需要再实例化
-</span><span class="c1"></span>        <span class="k">if</span><span class="o">(</span><span class="n">instance</span> <span class="o">==</span> <span class="kc">null</span><span class="o">){</span>
-          <span class="n">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Singleton</span><span class="o">();</span>
-        <span class="o">}</span>
-      <span class="o">}</span>
-    <span class="o">}</span>
-    <span class="k">return</span> <span class="n">instance</span><span class="o">;</span>
-  <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>参考：https://www.runoob.com/design-pattern/singleton-pattern.html</p>
+      <h3 id="重写override">重写(Override)</h3>
+<ol>
+<li>
+<p>重写是子类对父类的允许访问的方法的实现过程进行重新编写, 返回值和形参都不能改变。即外壳不变，核心重写！</p>
+</li>
+<li>
+<p>重写的好处在于子类可以根据需要，定义特定于自己的行为。 也就是说子类能够根据需要实现父类的方法。</p>
+</li>
+<li>
+<p>重写方法不能抛出新的检查异常或者比被重写方法申明更加宽泛的异常。例如： 父类的一个方法申明了一个检查异常 IOException，但是在重写这个方法的时候不能抛出 Exception 异常，因为 Exception 是 IOException 的父类，抛出 IOException 异常或者 IOException 的子类异常</p>
+</li>
+</ol>
+<h4 id="方法的重写规则">方法的重写规则</h4>
+<ul>
+<li>
+<p>参数列表与被重写方法的参数列表必须完全相同。</p>
+</li>
+<li>
+<p>返回类型与被重写方法的返回类型可以不相同，但是必须是父类返回值的派生类（java5 及更早版本返回类型要一样，java7 及更高版本可以不同）。</p>
+</li>
+<li>
+<p>访问权限不能比父类中被重写的方法的访问权限更低。例如：如果父类的一个方法被声明为 public，那么在子类中重写该方法就不能声明为 protected。</p>
+</li>
+<li>
+<p>父类的成员方法只能被它的子类重写。</p>
+</li>
+<li>
+<p>声明为 final 的方法不能被重写。</p>
+</li>
+<li>
+<p>声明为 static 的方法不能被重写，但是能够被再次声明。</p>
+</li>
+<li>
+<p>子类和父类在同一个包中，那么子类可以重写父类所有方法，除了声明为 private 和 final 的方法。</p>
+</li>
+<li>
+<p>子类和父类不在同一个包中，那么子类只能够重写父类的声明为 public 和 protected 的非 final 方法。</p>
+</li>
+<li>
+<p>重写的方法能够抛出任何非强制异常，无论被重写的方法是否抛出异常。但是，重写的方法不能抛出新的强制性异常，或者比被重写方法声明的更广泛的强制性异常，反之则可以。</p>
+</li>
+<li>
+<p>构造方法不能被重写。</p>
+</li>
+<li>
+<p>如果不能继承一个类，则不能重写该类的方法。</p>
+</li>
+</ul>
+<h3 id="重载overload">重载(Overload)</h3>
+<ol>
+<li>
+<p>重载(overloading) 是在一个类里面，方法名字相同，而参数不同。返回类型可以相同也可以不同。</p>
+</li>
+<li>
+<p>每个重载的方法（或者构造函数）都必须有一个独一无二的参数类型列表。</p>
+</li>
+<li>
+<p>最常用的地方就是构造器的重载。</p>
+</li>
+</ol>
+<h4 id="重载规则">重载规则:</h4>
+<ul>
+<li>被重载的方法必须改变参数列表(参数个数或类型不一样)；</li>
+<li>被重载的方法可以改变返回类型；</li>
+<li>被重载的方法可以改变访问修饰符；</li>
+<li>被重载的方法可以声明新的或更广的检查异常；</li>
+<li>方法能够在同一个类中或者在一个子类中被重载。</li>
+<li>无法以返回值类型作为重载函数的区分标准。</li>
+</ul>
+<p>参考：<a href="https://www.runoob.com/java/java-override-overload.html">https://www.runoob.com/java/java-override-overload.html</a></p>
 
     </div>
 
@@ -196,7 +235,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2021-08-24
+        2021-10-08
         
     </span>
   </p>
@@ -205,16 +244,16 @@
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
+          <a href="/tags/java/">java</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/java/java%E4%B8%ADexception%E5%92%8Cerror%E7%9A%84%E5%8C%BA%E5%88%AB/">
+        <a class="prev" href="/post/leetcode-958-check-completeness-of-a-binary-tree/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Java中Exception和Error的区别</span>
+            <span class="prev-text nav-default">[leetcode]二叉树的完全性检验</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/post/bitmap-in-clickhouse/">
-            <span class="next-text nav-default">Clickhouse位图（bitmap）的使用</span>
+        <a class="next" href="/post/java/java%E4%B8%ADexception%E5%92%8Cerror%E7%9A%84%E5%8C%BA%E5%88%AB/">
+            <span class="next-text nav-default">Java中Exception和Error的区别</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

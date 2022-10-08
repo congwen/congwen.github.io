@@ -6,7 +6,25 @@
     <description>Recent content on 丛文的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 04 Aug 2022 19:30:13 +0800</lastBuildDate><atom:link href="https://congwen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Aug 2022 12:48:43 +0800</lastBuildDate><atom:link href="https://congwen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[leetcode]删除排序链表中的重复元素 II</title>
+      <link>https://congwen.github.io/post/leetcode/82-remove-duplicates-from-sorted-list-ii/</link>
+      <pubDate>Wed, 24 Aug 2022 12:48:43 +0800</pubDate>
+      
+      <guid>https://congwen.github.io/post/leetcode/82-remove-duplicates-from-sorted-list-ii/</guid>
+      <description>题目 给定一个已排序的链表的头 head ， 删除原始链表中所有重复数字的节点，只留下不同的数字 。返回 已排序的链表 。 示例1: 输入：head = [1,2,3,3,4,4,5] 输出：[1,</description>
+    </item>
+    
+    <item>
+      <title>[leetcode]剑指 Offer 37. 序列化二叉树</title>
+      <link>https://congwen.github.io/post/sordoffer/37-xu-lie-hua-er-cha-shu-lcof/</link>
+      <pubDate>Tue, 09 Aug 2022 12:27:30 +0800</pubDate>
+      
+      <guid>https://congwen.github.io/post/sordoffer/37-xu-lie-hua-er-cha-shu-lcof/</guid>
+      <description>题目 请实现两个函数，分别用来序列化和反序列化二叉树。 你需要设计一个算法来实现二叉树的序列化与反序列化。这里不限定你的序列 / 反序列化算法执行逻</description>
+    </item>
+    
     <item>
       <title>[leetcode]剑指 Offer 36. 二叉搜索树与双向链表</title>
       <link>https://congwen.github.io/post/sordoffer/36-er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/</link>
@@ -95,6 +113,24 @@
       
       <guid>https://congwen.github.io/post/leetcode-958-check-completeness-of-a-binary-tree/</guid>
       <description>给定一个二叉树的 root ，确定它是否是一个 完全二叉树 。 在一个 完全二叉树 中，除了最后一个关卡外，所有关卡都是完全被填满的，并且最后一个关卡中的所有节</description>
+    </item>
+    
+    <item>
+      <title>Java中的方法覆盖Override和方法重载Overloade的区别</title>
+      <link>https://congwen.github.io/post/java/java%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95%E8%A6%86%E7%9B%96override%E5%92%8C%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BDoverloade%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Fri, 08 Oct 2021 18:56:34 +0800</pubDate>
+      
+      <guid>https://congwen.github.io/post/java/java%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95%E8%A6%86%E7%9B%96override%E5%92%8C%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BDoverloade%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <description>重写(Override) 重写是子类对父类的允许访问的方法的实现过程进行重新编写, 返回值和形参都不能改变。即外壳不变，核心重写！ 重写的好处在于</description>
+    </item>
+    
+    <item>
+      <title>Java中Exception和Error的区别</title>
+      <link>https://congwen.github.io/post/java/java%E4%B8%ADexception%E5%92%8Cerror%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Fri, 08 Oct 2021 17:22:25 +0800</pubDate>
+      
+      <guid>https://congwen.github.io/post/java/java%E4%B8%ADexception%E5%92%8Cerror%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <description>要做好异常处理就必须了解 Exception 和 Error 的区别，它们主要有以下异同 首先 Exception 和 Error 都是继承于 Throwable 类，在 Java 中只有 Throwable 类型的实例才可以被抛出（throw）或者捕获（</description>
     </item>
     
     <item>

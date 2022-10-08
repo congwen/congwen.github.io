@@ -6,7 +6,25 @@
     <description>Recent content in leetcode on 丛文的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 04 Aug 2022 19:30:13 +0800</lastBuildDate><atom:link href="https://congwen.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Aug 2022 12:48:43 +0800</lastBuildDate><atom:link href="https://congwen.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[leetcode]删除排序链表中的重复元素 II</title>
+      <link>https://congwen.github.io/post/leetcode/82-remove-duplicates-from-sorted-list-ii/</link>
+      <pubDate>Wed, 24 Aug 2022 12:48:43 +0800</pubDate>
+      
+      <guid>https://congwen.github.io/post/leetcode/82-remove-duplicates-from-sorted-list-ii/</guid>
+      <description>题目 给定一个已排序的链表的头 head ， 删除原始链表中所有重复数字的节点，只留下不同的数字 。返回 已排序的链表 。 示例1: 输入：head = [1,2,3,3,4,4,5] 输出：[1,</description>
+    </item>
+    
+    <item>
+      <title>[leetcode]剑指 Offer 37. 序列化二叉树</title>
+      <link>https://congwen.github.io/post/sordoffer/37-xu-lie-hua-er-cha-shu-lcof/</link>
+      <pubDate>Tue, 09 Aug 2022 12:27:30 +0800</pubDate>
+      
+      <guid>https://congwen.github.io/post/sordoffer/37-xu-lie-hua-er-cha-shu-lcof/</guid>
+      <description>题目 请实现两个函数，分别用来序列化和反序列化二叉树。 你需要设计一个算法来实现二叉树的序列化与反序列化。这里不限定你的序列 / 反序列化算法执行逻</description>
+    </item>
+    
     <item>
       <title>[leetcode]剑指 Offer 36. 二叉搜索树与双向链表</title>
       <link>https://congwen.github.io/post/sordoffer/36-er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/</link>
