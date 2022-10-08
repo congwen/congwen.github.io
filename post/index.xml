@@ -6,16 +6,7 @@
     <description>Recent content in Posts on 丛文的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 08 Oct 2022 20:18:56 +0800</lastBuildDate><atom:link href="https://congwen.github.io/post/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Java接口与抽象类的区别</title>
-      <link>https://congwen.github.io/post/java/java%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
-      <pubDate>Sat, 08 Oct 2022 20:18:56 +0800</pubDate>
-      
-      <guid>https://congwen.github.io/post/java/java%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
-      <description>相同点 都不能被实例化 接口的实现类或抽象类的子类都只有实现了接口或抽象类中的方法后才能实例化。 不同点 接口只有定义，不能有方法的实现，java 1</description>
-    </item>
-    
+    <lastBuildDate>Wed, 24 Aug 2022 12:48:43 +0800</lastBuildDate><atom:link href="https://congwen.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[leetcode]删除排序链表中的重复元素 II</title>
       <link>https://congwen.github.io/post/leetcode/82-remove-duplicates-from-sorted-list-ii/</link>
@@ -122,6 +113,15 @@
       
       <guid>https://congwen.github.io/post/leetcode-958-check-completeness-of-a-binary-tree/</guid>
       <description>给定一个二叉树的 root ，确定它是否是一个 完全二叉树 。 在一个 完全二叉树 中，除了最后一个关卡外，所有关卡都是完全被填满的，并且最后一个关卡中的所有节</description>
+    </item>
+    
+    <item>
+      <title>Java接口与抽象类的区别</title>
+      <link>https://congwen.github.io/post/java/java%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Fri, 08 Oct 2021 20:18:56 +0800</pubDate>
+      
+      <guid>https://congwen.github.io/post/java/java%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <description>相同点 都不能被实例化 接口的实现类或抽象类的子类都只有实现了接口或抽象类中的方法后才能实例化。 不同点 接口只有定义，不能有方法的实现，java 1</description>
     </item>
     
     <item>
