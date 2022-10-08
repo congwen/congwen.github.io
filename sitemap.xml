@@ -86,6 +86,13 @@
   </url>
   
   <url>
+    <loc>https://congwen.github.io/post/java/%E4%B8%BA%E4%BB%80%E4%B9%88java%E4%B8%8D%E6%94%AF%E6%8C%81%E5%A4%9A%E7%BB%A7%E6%89%BF/</loc>
+    <lastmod>2021-10-08T19:57:28+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://congwen.github.io/post/java/java%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95%E8%A6%86%E7%9B%96override%E5%92%8C%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BDoverloade%E7%9A%84%E5%8C%BA%E5%88%AB/</loc>
     <lastmod>2021-10-08T18:56:34+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -297,14 +304,14 @@
   
   <url>
     <loc>https://congwen.github.io/tags/java/</loc>
-    <lastmod>2021-10-08T18:56:34+08:00</lastmod>
+    <lastmod>2021-10-08T19:57:28+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://congwen.github.io/categories/java/</loc>
-    <lastmod>2021-10-08T18:56:34+08:00</lastmod>
+    <lastmod>2021-10-08T19:57:28+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

@@ -6,7 +6,16 @@
     <description>Recent content in java on 丛文的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 08 Oct 2021 18:56:34 +0800</lastBuildDate><atom:link href="https://congwen.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Oct 2021 19:57:28 +0800</lastBuildDate><atom:link href="https://congwen.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>为什么Java不支持多继承</title>
+      <link>https://congwen.github.io/post/java/%E4%B8%BA%E4%BB%80%E4%B9%88java%E4%B8%8D%E6%94%AF%E6%8C%81%E5%A4%9A%E7%BB%A7%E6%89%BF/</link>
+      <pubDate>Fri, 08 Oct 2021 19:57:28 +0800</pubDate>
+      
+      <guid>https://congwen.github.io/post/java/%E4%B8%BA%E4%BB%80%E4%B9%88java%E4%B8%8D%E6%94%AF%E6%8C%81%E5%A4%9A%E7%BB%A7%E6%89%BF/</guid>
+      <description>关于这个问题，Java的创始人James Gosling曾经回答过，他表示： “Java之所以不支持一个类继承多个类，主要是因为在设计之初我们听</description>
+    </item>
+    
     <item>
       <title>Java中的方法覆盖Override和方法重载Overloade的区别</title>
       <link>https://congwen.github.io/post/java/java%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95%E8%A6%86%E7%9B%96override%E5%92%8C%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BDoverloade%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
