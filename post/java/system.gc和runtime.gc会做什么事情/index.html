@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>数组Array和列表ArrayList有什么区别 - 丛文的博客</title>
+  <title>System.gc()和Runtime.gc()会做什么事情 - 丛文的博客</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="丛文" /><meta name="description" content="数组Array和列表ArrayList有什么区别" /><meta name="keywords" content="数组Array和列表ArrayList有什么区别" />
+<meta name="author" content="丛文" /><meta name="description" content="System.gc和Runtime" /><meta name="keywords" content="System.gc和Runtime" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.88.1 with theme even" />
 
 
-<link rel="canonical" href="https://congwen.github.io/post/java/%E6%95%B0%E7%BB%84array%E5%92%8C%E5%88%97%E8%A1%A8arraylist%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/" />
+<link rel="canonical" href="https://congwen.github.io/post/java/system.gc%E5%92%8Cruntime.gc%E4%BC%9A%E5%81%9A%E4%BB%80%E4%B9%88%E4%BA%8B%E6%83%85/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -41,20 +41,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="数组Array和列表ArrayList有什么区别" />
-<meta property="og:description" content="数组Array和列表ArrayList有什么区别" />
+<meta property="og:title" content="System.gc()和Runtime.gc()会做什么事情" />
+<meta property="og:description" content="System.gc和Runtime" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://congwen.github.io/post/java/%E6%95%B0%E7%BB%84array%E5%92%8C%E5%88%97%E8%A1%A8arraylist%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-10-09T15:25:38+08:00" />
-<meta property="article:modified_time" content="2021-10-09T15:25:38+08:00" />
+<meta property="og:url" content="https://congwen.github.io/post/java/system.gc%E5%92%8Cruntime.gc%E4%BC%9A%E5%81%9A%E4%BB%80%E4%B9%88%E4%BA%8B%E6%83%85/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-10-09T16:43:46+08:00" />
+<meta property="article:modified_time" content="2021-10-09T16:43:46+08:00" />
 
-<meta itemprop="name" content="数组Array和列表ArrayList有什么区别">
-<meta itemprop="description" content="数组Array和列表ArrayList有什么区别"><meta itemprop="datePublished" content="2021-10-09T15:25:38+08:00" />
-<meta itemprop="dateModified" content="2021-10-09T15:25:38+08:00" />
-<meta itemprop="wordCount" content="510">
+<meta itemprop="name" content="System.gc()和Runtime.gc()会做什么事情">
+<meta itemprop="description" content="System.gc和Runtime"><meta itemprop="datePublished" content="2021-10-09T16:43:46+08:00" />
+<meta itemprop="dateModified" content="2021-10-09T16:43:46+08:00" />
+<meta itemprop="wordCount" content="903">
 <meta itemprop="keywords" content="java," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="数组Array和列表ArrayList有什么区别"/>
-<meta name="twitter:description" content="数组Array和列表ArrayList有什么区别"/>
+<meta name="twitter:title" content="System.gc()和Runtime.gc()会做什么事情"/>
+<meta name="twitter:description" content="System.gc和Runtime"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -127,7 +127,7 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">数组Array和列表ArrayList有什么区别</h1>
+      <h1 class="post-title">System.gc()和Runtime.gc()会做什么事情</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2021-10-09 </span>
@@ -141,47 +141,37 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#适用场景">适用场景：</a></li>
-        <li><a href="#区别">区别</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+    <nav id="TableOfContents"></nav>
   </div>
 </div>
     <div class="post-content">
-      <h3 id="适用场景">适用场景：</h3>
-<p>如果想要保存一些在整个程序运行期间都会存在而且不变的数据，我们可以将它们放进一个全局数组里， 但是如果我们单纯只是想要以数组的形式保存数据，而不对数据进行增加等操作，只是方便我们进行查找的话，那么，我们就选择 ArrayList。
-如果我们需要对元素进行频繁的移动或删除，或者是处理的是超大量的数据，那么，使用 ArrayList 就真的不是一个好的选择，因为它的效率很低，使用数组进行这样的动作就很麻烦，那么，我们可以考虑选择 LinkedList。</p>
-<h3 id="区别">区别</h3>
-<ol>
+      <ol>
 <li>
-<p>存储内容比较</p>
-<blockquote>
-<p>Array 数组可以包含基本类型和对象类型，ArrayList 却只能包含对象类型。Array 数组在存放的时候一定是同种类型的元素。ArrayList 就不一定了,因为ArrayList可以存储Object。</p>
-</blockquote>
+<p>GC是垃圾收集的意思（Gabage Collection）,内存处理是编程人员容易出现问题的地方，忘记或者错误的内存回收会导致程序或系统的不稳定甚至崩溃，Java提供的GC功能可以自动监测对象是否超过作用域从而达到自动回收内存的目的，Java语言没有提供释放已分配内存的显示操作方法。</p>
 </li>
 <li>
-<p>空间大小比较</p>
-<blockquote>
-<ul>
-<li>Array 数组的空间大小是固定的,所以需要事前确定合适的空间大小。</li>
-<li>ArrayList 的空间是动态增长的,而且，每次添加新的元素的时候都会检查内部数组的空间是否足够。</li>
-</ul>
-</blockquote>
+<p>对于GC来说，当程序员创建对象时，GC就开始监控这个对象的地址、大小以及使用情况。通常，GC采用有向图的方式记录和管理堆(heap)中的所有对象。通过这种方式确定哪些对象是”可达的”，哪些对象是”不可达的”。当GC确定一些对象为”不可达”时，GC就有责任回收这些内存空间。可以。程序员可以手动执行System.gc()，通知GC运行，但是Java语言规范并不保证GC一定会执行。</p>
 </li>
 <li>
-<p>方法上的比较</p>
-<blockquote>
-<p>ArrayList 方法上比 Array 更多样化，比如添加全部 addAll()、删除全部 removeAll()、返回迭代器 iterator() 等。</p>
-</blockquote>
+<p>垃圾回收是一种动态存储管理技术，它自动地释放不再被程序引用的对象，当一个对象不再被引用的时候,按照特定的垃圾收集算法来实现资源自动回收的功能。</p>
+</li>
+<li>
+<p>System.gc();就是呼叫java虚拟机的垃圾回收器运行回收内存的垃圾。</p>
+</li>
+<li>
+<p>当不存在对一个对象的引用时，我们就假定不再需要那个对象，那个对象所占有的存储单元可以被收回，可通过System.gc()方法回收，但一般要把不再引用的对象标志为null为佳。</p>
+</li>
+<li>
+<p>每个 Java 应用程序都有一个 Runtime 类实例，使应用程序能够与其运行的环境相连接。可以通过 getRuntime 方法获取当前运行时。 Runtime.getRuntime().gc();</p>
+</li>
+<li>
+<p>java.lang.System.gc()只是java.lang.Runtime.getRuntime().gc()的简写，两者的行为没有任何不同。</p>
+</li>
+<li>
+<p>唯一的区别就是System.gc()写起来比Runtime.getRuntime().gc()简单点. 其实基本没什么机会用得到这个命令, 因为这个命令只是建议JVM安排GC运行, 还有可能完全被拒绝。 GC本身是会周期性的自动运行的,由JVM决定运行的时机,而且现在的版本有多种更智能的模式可以选择,还会根据运行的机器自动去做选择,就算真的有性能上的需求,也应该去对GC的运行机制进行微调,而不是通过使用这个命令来实现性能的优化</p>
 </li>
 </ol>
-<p>参考：<a href="https://blog.csdn.net/g1998i/article/details/79663976">https://blog.csdn.net/g1998i/article/details/79663976</a></p>
+<p>参考：<a href="https://www.jianshu.com/p/7aa144f6c607">https://www.jianshu.com/p/7aa144f6c607</a></p>
 
     </div>
 
@@ -205,13 +195,13 @@
           <a href="/tags/java/">java</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/java/arraylist%E5%92%8Clinkedlist%E7%B1%BB%E7%9A%84%E7%94%A8%E6%B3%95%E5%8F%8A%E5%8C%BA%E5%88%AB/">
+        <a class="prev" href="/post/java/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">ArrayList和LinkedList类的用法及区别</span>
+            <span class="prev-text nav-default">Java面向对象</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/post/java/hashmap%E5%92%8Chashtable%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/">
-            <span class="next-text nav-default">HashMap和Hashtable有什么区别</span>
+        <a class="next" href="/post/java/java%E4%B8%AD%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%89%E4%BB%80%E4%B9%88%E7%9B%AE%E7%9A%84/">
+            <span class="next-text nav-default">Java中垃圾回收有什么目的</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

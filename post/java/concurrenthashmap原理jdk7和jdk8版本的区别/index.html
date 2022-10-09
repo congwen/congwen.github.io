@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>java · 丛文的博客</title>
+  <title>ConcurrentHashMap原理，jdk7和jdk8版本的区别 - 丛文的博客</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="丛文" /><meta name="description" content="Hugo theme even example site." /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="丛文" /><meta name="description" content="ConcurrentHashMap原理，jdk7和jdk8版本的区别" /><meta name="keywords" content="ConcurrentHashMap原理，jdk7和jdk8版本的区别" />
 
 
 
@@ -26,9 +26,7 @@
 <meta name="generator" content="Hugo 0.88.1 with theme even" />
 
 
-<link rel="canonical" href="https://congwen.github.io/categories/java/" />
-  <link href="https://congwen.github.io/categories/java/index.xml" rel="alternate" type="application/rss+xml" title="丛文的博客" />
-  <link href="https://congwen.github.io/categories/java/index.xml" rel="feed" type="application/rss+xml" title="丛文的博客" />
+<link rel="canonical" href="https://congwen.github.io/post/java/concurrenthashmap%E5%8E%9F%E7%90%86jdk7%E5%92%8Cjdk8%E7%89%88%E6%9C%AC%E7%9A%84%E5%8C%BA%E5%88%AB/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -43,15 +41,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="java" />
-<meta property="og:description" content="Hugo theme even example site." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://congwen.github.io/categories/java/" />
+<meta property="og:title" content="ConcurrentHashMap原理，jdk7和jdk8版本的区别" />
+<meta property="og:description" content="ConcurrentHashMap原理，jdk7和jdk8版本的区别" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://congwen.github.io/post/java/concurrenthashmap%E5%8E%9F%E7%90%86jdk7%E5%92%8Cjdk8%E7%89%88%E6%9C%AC%E7%9A%84%E5%8C%BA%E5%88%AB/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-10-09T17:57:36+08:00" />
+<meta property="article:modified_time" content="2021-10-09T17:57:36+08:00" />
 
-<meta itemprop="name" content="java">
-<meta itemprop="description" content="Hugo theme even example site."><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="java"/>
-<meta name="twitter:description" content="Hugo theme even example site."/>
+<meta itemprop="name" content="ConcurrentHashMap原理，jdk7和jdk8版本的区别">
+<meta itemprop="description" content="ConcurrentHashMap原理，jdk7和jdk8版本的区别"><meta itemprop="datePublished" content="2021-10-09T17:57:36+08:00" />
+<meta itemprop="dateModified" content="2021-10-09T17:57:36+08:00" />
+<meta itemprop="wordCount" content="471">
+<meta itemprop="keywords" content="java," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ConcurrentHashMap原理，jdk7和jdk8版本的区别"/>
+<meta name="twitter:description" content="ConcurrentHashMap原理，jdk7和jdk8版本的区别"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -121,114 +124,99 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          <section id="archive" class="archive">
-  
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">ConcurrentHashMap原理，jdk7和jdk8版本的区别</h1>
 
-  <div class="archive-post">
-      <span class="archive-post-time">
-        2021-10-09
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/java/arraylist%E5%92%8Clinkedlist%E7%B1%BB%E7%9A%84%E7%94%A8%E6%B3%95%E5%8F%8A%E5%8C%BA%E5%88%AB/" class="archive-post-link">
-          ArrayList和LinkedList类的用法及区别
-        </a>
-      </span>
-    </div><div class="archive-post">
-      <span class="archive-post-time">
-        2021-10-09
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/java/%E6%95%B0%E7%BB%84array%E5%92%8C%E5%88%97%E8%A1%A8arraylist%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/" class="archive-post-link">
-          数组Array和列表ArrayList有什么区别
-        </a>
-      </span>
-    </div><div class="archive-post">
-      <span class="archive-post-time">
-        2021-10-09
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/java/hashmap%E5%92%8Chashtable%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/" class="archive-post-link">
-          HashMap和Hashtable有什么区别
-        </a>
-      </span>
-    </div><div class="archive-post">
-      <span class="archive-post-time">
-        2021-10-09
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/java/hashcode%E5%92%8Cequals%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/" class="archive-post-link">
-          HashCode和equals方法的重要性
-        </a>
-      </span>
-    </div><div class="archive-post">
-      <span class="archive-post-time">
-        2021-10-09
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/java/java%E4%B8%AD%E7%9A%84hashmap%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/" class="archive-post-link">
-          Java中的HashMap的工作原理
-        </a>
-      </span>
-    </div><div class="archive-post">
-      <span class="archive-post-time">
-        2021-10-09
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/java/%E5%BF%AB%E9%80%9F%E5%A4%B1%E8%B4%A5fail-fast%E5%92%8C%E5%AE%89%E5%85%A8%E5%A4%B1%E8%B4%A5fail-safe%E7%9A%84%E5%8C%BA%E5%88%AB/" class="archive-post-link">
-          快速失败fail Fast和安全失败fail Safe的区别
-        </a>
-      </span>
-    </div><div class="archive-post">
-      <span class="archive-post-time">
-        2021-10-09
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/java/iterator%E5%92%8Clistiterator%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88/" class="archive-post-link">
-          Iterator和ListIterator的区别是什么
-        </a>
-      </span>
-    </div><div class="archive-post">
-      <span class="archive-post-time">
-        2021-10-09
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/java/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BF%AD%E4%BB%A3%E5%99%A8/" class="archive-post-link">
-          什么是迭代器
-        </a>
-      </span>
-    </div><div class="archive-post">
-      <span class="archive-post-time">
-        2021-10-09
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/java/%E4%BB%80%E4%B9%88%E6%98%AF%E6%AD%BB%E9%94%81/" class="archive-post-link">
-          什么是死锁
-        </a>
-      </span>
-    </div><div class="archive-post">
-      <span class="archive-post-time">
-        2021-10-09
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/java/%E5%9C%A8%E7%9B%91%E8%A7%86%E5%99%A8%E5%86%85%E9%83%A8%E6%98%AF%E5%A6%82%E4%BD%95%E5%81%9A%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%E7%9A%84%E5%92%8C%E7%A8%8B%E5%BA%8F%E5%BA%94%E8%AF%A5%E5%81%9A%E5%93%AA%E7%A7%8D%E7%BA%A7%E5%88%AB%E7%9A%84%E5%90%8C%E6%AD%A5/" class="archive-post-link">
-          Java在监视器内部是如何做线程同步的和程序应该做哪种级别的同步
-        </a>
-      </span>
-    </div>
-</section>
+      <div class="post-meta">
+        <span class="post-time"> 2021-10-09 </span>
+        <div class="post-category">
+            <a href="/categories/java/"> java </a>
+            </div>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
 
-<nav class="pagination">
-  <a class="prev" href="/categories/java/">
-      <i class="iconfont icon-left"></i>
-      <span class="prev-text">上一页</span>
-    </a>
-  <a class="next" href="/categories/java/page/3/">
-      <span class="next-text">下一页</span>
-      <i class="iconfont icon-right"></i>
-    </a>
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#jdk7版本">jdk7版本</a></li>
+        <li><a href="#jdk8版本">jdk8版本</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h3 id="jdk7版本">jdk7版本</h3>
+<ul>
+<li>数据结构：ReentrantLock+Segment+HashEntry，一个Segment中包含一个HashEntry数组，每个
+HashEntry又是一个链表结构</li>
+<li>元素查询：二次hash，第一次Hash定位到Segment，第二次Hash定位到元素所在的链表的头部</li>
+<li>锁：Segment分段锁 Segment继承了ReentrantLock，锁定操作的Segment，其他的Segment不受影响，并发度为segment个数，可以通过构造函数指定，数组扩容不会影响其他的segment get方法无需加锁，volatile保证</li>
+</ul>
+<h3 id="jdk8版本">jdk8版本</h3>
+<ul>
+<li>数据结构：synchronized+CAS+Node+红黑树，Node的val和next都用volatile修饰，保证可见性查找，替换，赋值操作都使用CAS</li>
+<li>锁：锁链表的head节点，不影响其他元素的读写，锁粒度更细，效率更高，扩容时，阻塞所有的读写操作、并发扩容</li>
+<li>读操作无锁：Node的val和next使用volatile修饰，读写线程对该变量互相可见 数组用volatile修饰，保证扩容时被读线程感知</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">丛文</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2021-10-09
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/java/">java</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/leetcode-958-check-completeness-of-a-binary-tree/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">[leetcode]二叉树的完全性检验</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/java/java%E7%9A%84stringstringbufferstringbuilder%E5%8C%BA%E5%88%AB/">
+            <span class="next-text nav-default">Java的String、StringBuffer、StringBuilder区别</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
         </div>
         
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="congwen/blog-comment"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
 
       </div>
     </main>

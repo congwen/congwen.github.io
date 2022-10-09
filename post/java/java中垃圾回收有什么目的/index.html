@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>数组Array和列表ArrayList有什么区别 - 丛文的博客</title>
+  <title>Java中垃圾回收有什么目的 - 丛文的博客</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="丛文" /><meta name="description" content="数组Array和列表ArrayList有什么区别" /><meta name="keywords" content="数组Array和列表ArrayList有什么区别" />
+<meta name="author" content="丛文" /><meta name="description" content="Java中垃圾回收有什么目的" /><meta name="keywords" content="Java中垃圾回收有什么目的" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.88.1 with theme even" />
 
 
-<link rel="canonical" href="https://congwen.github.io/post/java/%E6%95%B0%E7%BB%84array%E5%92%8C%E5%88%97%E8%A1%A8arraylist%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/" />
+<link rel="canonical" href="https://congwen.github.io/post/java/java%E4%B8%AD%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%89%E4%BB%80%E4%B9%88%E7%9B%AE%E7%9A%84/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -41,20 +41,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="数组Array和列表ArrayList有什么区别" />
-<meta property="og:description" content="数组Array和列表ArrayList有什么区别" />
+<meta property="og:title" content="Java中垃圾回收有什么目的" />
+<meta property="og:description" content="Java中垃圾回收有什么目的" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://congwen.github.io/post/java/%E6%95%B0%E7%BB%84array%E5%92%8C%E5%88%97%E8%A1%A8arraylist%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-10-09T15:25:38+08:00" />
-<meta property="article:modified_time" content="2021-10-09T15:25:38+08:00" />
+<meta property="og:url" content="https://congwen.github.io/post/java/java%E4%B8%AD%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%89%E4%BB%80%E4%B9%88%E7%9B%AE%E7%9A%84/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-10-09T16:38:04+08:00" />
+<meta property="article:modified_time" content="2021-10-09T16:38:04+08:00" />
 
-<meta itemprop="name" content="数组Array和列表ArrayList有什么区别">
-<meta itemprop="description" content="数组Array和列表ArrayList有什么区别"><meta itemprop="datePublished" content="2021-10-09T15:25:38+08:00" />
-<meta itemprop="dateModified" content="2021-10-09T15:25:38+08:00" />
-<meta itemprop="wordCount" content="510">
+<meta itemprop="name" content="Java中垃圾回收有什么目的">
+<meta itemprop="description" content="Java中垃圾回收有什么目的"><meta itemprop="datePublished" content="2021-10-09T16:38:04+08:00" />
+<meta itemprop="dateModified" content="2021-10-09T16:38:04+08:00" />
+<meta itemprop="wordCount" content="678">
 <meta itemprop="keywords" content="java," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="数组Array和列表ArrayList有什么区别"/>
-<meta name="twitter:description" content="数组Array和列表ArrayList有什么区别"/>
+<meta name="twitter:title" content="Java中垃圾回收有什么目的"/>
+<meta name="twitter:description" content="Java中垃圾回收有什么目的"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -127,7 +127,7 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">数组Array和列表ArrayList有什么区别</h1>
+      <h1 class="post-title">Java中垃圾回收有什么目的</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2021-10-09 </span>
@@ -145,8 +145,9 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#适用场景">适用场景：</a></li>
-        <li><a href="#区别">区别</a></li>
+        <li><a href="#1回收哪些对象的判定">1.回收哪些对象的判定</a></li>
+        <li><a href="#2如何回收">2.如何回收</a></li>
+        <li><a href="#3什么时候回收">3.什么时候回收</a></li>
       </ul>
     </li>
   </ul>
@@ -154,34 +155,25 @@
   </div>
 </div>
     <div class="post-content">
-      <h3 id="适用场景">适用场景：</h3>
-<p>如果想要保存一些在整个程序运行期间都会存在而且不变的数据，我们可以将它们放进一个全局数组里， 但是如果我们单纯只是想要以数组的形式保存数据，而不对数据进行增加等操作，只是方便我们进行查找的话，那么，我们就选择 ArrayList。
-如果我们需要对元素进行频繁的移动或删除，或者是处理的是超大量的数据，那么，使用 ArrayList 就真的不是一个好的选择，因为它的效率很低，使用数组进行这样的动作就很麻烦，那么，我们可以考虑选择 LinkedList。</p>
-<h3 id="区别">区别</h3>
-<ol>
-<li>
-<p>存储内容比较</p>
+      <p>垃圾回收(gc)的目的是释放堆中不需要保存的对象，达到内存的充分利用。</p>
+<h3 id="1回收哪些对象的判定">1.回收哪些对象的判定</h3>
 <blockquote>
-<p>Array 数组可以包含基本类型和对象类型，ArrayList 却只能包含对象类型。Array 数组在存放的时候一定是同种类型的元素。ArrayList 就不一定了,因为ArrayList可以存储Object。</p>
+<p>垃圾回收最简单的思路是采用引用计数的方式，即记录对象被引用的次数，直到一段时间内对象都没有被其他对象引用，此时可以确定该对象能被回收，引用计数实现简单，运行高效，但是有一个循环引用的问题，即两个本应被回收的对象因为互相引用而无法被回收，针对这个问题又有了弱引用，即把两个互相引用的一个引用计数改为弱引用，弱引用不会使次数加1，c++即是这么做的。</p>
 </blockquote>
-</li>
-<li>
-<p>空间大小比较</p>
 <blockquote>
-<ul>
-<li>Array 数组的空间大小是固定的,所以需要事前确定合适的空间大小。</li>
-<li>ArrayList 的空间是动态增长的,而且，每次添加新的元素的时候都会检查内部数组的空间是否足够。</li>
-</ul>
+<p>jvm虚拟机的使用的是根寻路算法，其大致思想是看除堆区以外的内存区域能否通过引用链找到堆中的对象，找不到就证明该对象可以被回收。</p>
 </blockquote>
-</li>
-<li>
-<p>方法上的比较</p>
+<h3 id="2如何回收">2.如何回收</h3>
 <blockquote>
-<p>ArrayList 方法上比 Array 更多样化，比如添加全部 addAll()、删除全部 removeAll()、返回迭代器 iterator() 等。</p>
+<p>jvm有两种回收方式，一种是标记完待回收的对象之后一起释放内存，这种方法的缺点是会产生较多难以重复利用的内存碎片。另一种为了避免内存碎片的出现，将内存分为两块，一块使用，一块不使用，标记完所有待回收的对象之后，将还要使用的内存复制到不使用的区域，然后对使用的整体区域进行内存回收，这种方法没有内存碎片问题，但是每次回收的复制工作很耗性能。</p>
 </blockquote>
-</li>
-</ol>
-<p>参考：<a href="https://blog.csdn.net/g1998i/article/details/79663976">https://blog.csdn.net/g1998i/article/details/79663976</a></p>
+<blockquote>
+<p>通过统计发现，在内存中存活越久的对象就越不容易被回收，越是新分配的内存对象就越可能会被回收。根据这个特性，把内存区域分为新生代和老年代(有的虚拟机会分为很多代)，新生代容易被回收，采用复制内存再回收的方法，老年代不容易被回收，采用标记后回收和复制内存相结合的方法。</p>
+</blockquote>
+<h3 id="3什么时候回收">3.什么时候回收</h3>
+<blockquote>
+<p>程序员可以手动调用gc，一般是系统等到新生代的内存区占满了又需要分配内存的时候，这个时候新生代就变成了老年代，等老年代的内存占满之后开始回收老年代所占的内存区。</p>
+</blockquote>
 
     </div>
 
@@ -205,13 +197,13 @@
           <a href="/tags/java/">java</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/java/arraylist%E5%92%8Clinkedlist%E7%B1%BB%E7%9A%84%E7%94%A8%E6%B3%95%E5%8F%8A%E5%8C%BA%E5%88%AB/">
+        <a class="prev" href="/post/java/system.gc%E5%92%8Cruntime.gc%E4%BC%9A%E5%81%9A%E4%BB%80%E4%B9%88%E4%BA%8B%E6%83%85/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">ArrayList和LinkedList类的用法及区别</span>
+            <span class="prev-text nav-default">System.gc()和Runtime.gc()会做什么事情</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/post/java/hashmap%E5%92%8Chashtable%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/">
-            <span class="next-text nav-default">HashMap和Hashtable有什么区别</span>
+        <a class="next" href="/post/java/java%E4%B8%ADhashset%E5%92%8Ctreeset%E7%9A%84%E5%8C%BA%E5%88%AB/">
+            <span class="next-text nav-default">Java中HashSet和TreeSet的区别</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
