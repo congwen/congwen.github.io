@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>归档 - 丛文的博客</title>
+  <title>HashCode和equals方法的重要性 - 丛文的博客</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="丛文" /><meta name="description" content="Hugo theme even example site." /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="丛文" /><meta name="description" content="HashCode和equals方法的重要性" /><meta name="keywords" content="HashCode和equals方法的重要性" />
 
 
 
@@ -26,9 +26,7 @@
 <meta name="generator" content="Hugo 0.88.1 with theme even" />
 
 
-<link rel="canonical" href="https://congwen.github.io/post/" />
-  <link href="https://congwen.github.io/post/index.xml" rel="alternate" type="application/rss+xml" title="丛文的博客" />
-  <link href="https://congwen.github.io/post/index.xml" rel="feed" type="application/rss+xml" title="丛文的博客" />
+<link rel="canonical" href="https://congwen.github.io/post/java/hashcode%E5%92%8Cequals%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -43,15 +41,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Posts" />
-<meta property="og:description" content="Hugo theme even example site." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://congwen.github.io/post/" />
+<meta property="og:title" content="HashCode和equals方法的重要性" />
+<meta property="og:description" content="HashCode和equals方法的重要性" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://congwen.github.io/post/java/hashcode%E5%92%8Cequals%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-10-09T15:04:18+08:00" />
+<meta property="article:modified_time" content="2021-10-09T15:04:18+08:00" />
 
-<meta itemprop="name" content="Posts">
-<meta itemprop="description" content="Hugo theme even example site."><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content="Hugo theme even example site."/>
+<meta itemprop="name" content="HashCode和equals方法的重要性">
+<meta itemprop="description" content="HashCode和equals方法的重要性"><meta itemprop="datePublished" content="2021-10-09T15:04:18+08:00" />
+<meta itemprop="dateModified" content="2021-10-09T15:04:18+08:00" />
+<meta itemprop="wordCount" content="274">
+<meta itemprop="keywords" content="java," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HashCode和equals方法的重要性"/>
+<meta name="twitter:description" content="HashCode和equals方法的重要性"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -121,137 +124,82 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          
-<section id="archive" class="archive">
-      <div class="collection-title">
-        <h2 class="archive-year">2021</h2>
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">HashCode和equals方法的重要性</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-10-09 </span>
+        <div class="post-category">
+            <a href="/categories/java/"> java </a>
+            </div>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
+    </header>
 
-    <div class="archive-post">
-      <span class="archive-post-time">
-        08-03
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/bitmap-in-clickhouse/" class="archive-post-link">
-          Clickhouse位图（bitmap）的使用
-        </a>
-      </span>
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents"></nav>
+  </div>
+</div>
+    <div class="post-content">
+      <ol>
+<li>hashcode和equals组合在一起确定元素的唯一性。</li>
+<li>查找元素时，如果单单使用equals来确定一个元素，需要对集合内的元素逐个调用equals方法，效率太低。因此加入了hashcode方法，将元素映射到随机的内存地址上，通过hashcode快速定位到元素（大致）所在的内存地址，再通过使用equals方法确定元素的精确位置。比较两个元素时，先比较hashcode，如果hashcode不同，则元素一定不相等；如果相同，再用equals判断。</li>
+<li>HashMap采用这两个方法实现散列存储，提高键的索引性能。HashSet是基于HashMap实现的。</li>
+</ol>
+
     </div>
 
-    <div class="archive-post">
-      <span class="archive-post-time">
-        08-02
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/solve-virtualbox-network-config-of-hostonly/" class="archive-post-link">
-          解决virtualbox网络配置hostonly后不生效的问题
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        08-02
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/solution-of-virtualbox-menu-is-hided/" class="archive-post-link">
-          VirtualBox的菜单栏被隐藏的解决办法
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        08-02
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/ssl-error-syscall-in-connection-to-github-443/" class="archive-post-link">
-          SSL Error Syscall in Connection to Github 443
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        08-02
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/clickhouse-install-in-ubuntu/" class="archive-post-link">
-          在Ubuntu中安装clickhouse
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        07-29
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/install-ubuntu-server-in-virtualbox/" class="archive-post-link">
-          在Virtualbox中安装Ubuntu server
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        07-29
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/install-virtualbox-in-windows10/" class="archive-post-link">
-          在win10系统中安装virtualbox
-        </a>
-      </span>
-    </div>
-      <div class="collection-title">
-        <h2 class="archive-year">2019</h2>
-      </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        11-11
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/merge-sort/" class="archive-post-link">
-          归并排序（Merge Sort）
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        11-05
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/git-push-pull-no-passwd/" class="archive-post-link">
-          解决Git Pull,push每次都需要输入密码问题
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        11-05
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/shell-sort/" class="archive-post-link">
-          希尔排序（Shell Sort）
-        </a>
-      </span>
-    </div></section>
-
-<nav class="pagination">
-  <a class="prev" href="/post/page/3/">
-      <i class="iconfont icon-left"></i>
-      <span class="prev-text">上一页</span>
-    </a>
-  <a class="next" href="/post/page/5/">
-      <span class="next-text">下一页</span>
-      <i class="iconfont icon-right"></i>
-    </a>
-</nav>
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">丛文</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2021-10-09
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/java/">java</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/java/hashmap%E5%92%8Chashtable%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">HashMap和Hashtable有什么区别</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/java/java%E4%B8%AD%E7%9A%84hashmap%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/">
+            <span class="next-text nav-default">Java中的HashMap的工作原理</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
         </div>
         
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="congwen/blog-comment"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
 
       </div>
     </main>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>归档 - 丛文的博客</title>
+  <title>HashMap和Hashtable有什么区别 - 丛文的博客</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="丛文" /><meta name="description" content="Hugo theme even example site." /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="丛文" /><meta name="description" content="HashMap和Hashtable有什么区别" /><meta name="keywords" content="HashMap和Hashtable有什么区别" />
 
 
 
@@ -26,9 +26,7 @@
 <meta name="generator" content="Hugo 0.88.1 with theme even" />
 
 
-<link rel="canonical" href="https://congwen.github.io/post/" />
-  <link href="https://congwen.github.io/post/index.xml" rel="alternate" type="application/rss+xml" title="丛文的博客" />
-  <link href="https://congwen.github.io/post/index.xml" rel="feed" type="application/rss+xml" title="丛文的博客" />
+<link rel="canonical" href="https://congwen.github.io/post/java/hashmap%E5%92%8Chashtable%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -43,15 +41,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Posts" />
-<meta property="og:description" content="Hugo theme even example site." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://congwen.github.io/post/" />
+<meta property="og:title" content="HashMap和Hashtable有什么区别" />
+<meta property="og:description" content="HashMap和Hashtable有什么区别" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://congwen.github.io/post/java/hashmap%E5%92%8Chashtable%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-10-09T15:13:23+08:00" />
+<meta property="article:modified_time" content="2021-10-09T15:13:23+08:00" />
 
-<meta itemprop="name" content="Posts">
-<meta itemprop="description" content="Hugo theme even example site."><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content="Hugo theme even example site."/>
+<meta itemprop="name" content="HashMap和Hashtable有什么区别">
+<meta itemprop="description" content="HashMap和Hashtable有什么区别"><meta itemprop="datePublished" content="2021-10-09T15:13:23+08:00" />
+<meta itemprop="dateModified" content="2021-10-09T15:13:23+08:00" />
+<meta itemprop="wordCount" content="801">
+<meta itemprop="keywords" content="java," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HashMap和Hashtable有什么区别"/>
+<meta name="twitter:description" content="HashMap和Hashtable有什么区别"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -121,137 +124,86 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          
-<section id="archive" class="archive">
-      <div class="collection-title">
-        <h2 class="archive-year">2021</h2>
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">HashMap和Hashtable有什么区别</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-10-09 </span>
+        <div class="post-category">
+            <a href="/categories/java/"> java </a>
+            </div>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
+    </header>
 
-    <div class="archive-post">
-      <span class="archive-post-time">
-        08-03
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/bitmap-in-clickhouse/" class="archive-post-link">
-          Clickhouse位图（bitmap）的使用
-        </a>
-      </span>
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents"></nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>HashMap和Hashtable都实现了Map接口，但决定用哪一个之前先要弄清楚它们之间的分别。主要的区别有：线程安全性，同步(synchronization)，以及速度。</p>
+<ol>
+<li>HashMap几乎可以等价于Hashtable，除了HashMap是非synchronized的，并可以接受null(HashMap可以接受为null的键值(key)和值(value)，而Hashtable则不行)。</li>
+<li>HashMap是非synchronized，而Hashtable是synchronized，这意味着Hashtable是线程安全的，多个线程可以共享一个Hashtable；而如果没有正确的同步的话，多个线程是不能共享HashMap的。Java 5提供了ConcurrentHashMap，它是HashTable的替代，比HashTable的扩展性更好。</li>
+<li>另一个区别是HashMap的迭代器(Iterator)是fail-fast迭代器，而Hashtable的enumerator迭代器不是fail-fast的。所以当有其它线程改变了HashMap的结构（增加或者移除元素），将会抛出ConcurrentModificationException，但迭代器本身的remove()方法移除元素则不会抛出ConcurrentModificationException异常。但这并不是一个一定发生的行为，要看JVM。这条同样也是Enumeration和Iterator的区别。</li>
+<li>由于Hashtable是线程安全的也是synchronized，所以在单线程环境下它比HashMap要慢。如果你不需要同步，只需要单一线程，那么使用HashMap性能要好过Hashtable。</li>
+<li>HashMap不能保证随着时间的推移Map中的元素次序是不变的。</li>
+</ol>
+<p>参考：<a href="https://developer.aliyun.com/article/388328">https://developer.aliyun.com/article/388328</a></p>
+
     </div>
 
-    <div class="archive-post">
-      <span class="archive-post-time">
-        08-02
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/solve-virtualbox-network-config-of-hostonly/" class="archive-post-link">
-          解决virtualbox网络配置hostonly后不生效的问题
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        08-02
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/solution-of-virtualbox-menu-is-hided/" class="archive-post-link">
-          VirtualBox的菜单栏被隐藏的解决办法
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        08-02
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/ssl-error-syscall-in-connection-to-github-443/" class="archive-post-link">
-          SSL Error Syscall in Connection to Github 443
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        08-02
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/clickhouse-install-in-ubuntu/" class="archive-post-link">
-          在Ubuntu中安装clickhouse
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        07-29
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/install-ubuntu-server-in-virtualbox/" class="archive-post-link">
-          在Virtualbox中安装Ubuntu server
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        07-29
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/install-virtualbox-in-windows10/" class="archive-post-link">
-          在win10系统中安装virtualbox
-        </a>
-      </span>
-    </div>
-      <div class="collection-title">
-        <h2 class="archive-year">2019</h2>
-      </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        11-11
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/merge-sort/" class="archive-post-link">
-          归并排序（Merge Sort）
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        11-05
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/git-push-pull-no-passwd/" class="archive-post-link">
-          解决Git Pull,push每次都需要输入密码问题
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        11-05
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/shell-sort/" class="archive-post-link">
-          希尔排序（Shell Sort）
-        </a>
-      </span>
-    </div></section>
-
-<nav class="pagination">
-  <a class="prev" href="/post/page/3/">
-      <i class="iconfont icon-left"></i>
-      <span class="prev-text">上一页</span>
-    </a>
-  <a class="next" href="/post/page/5/">
-      <span class="next-text">下一页</span>
-      <i class="iconfont icon-right"></i>
-    </a>
-</nav>
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">丛文</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2021-10-09
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/java/">java</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/java/%E6%95%B0%E7%BB%84array%E5%92%8C%E5%88%97%E8%A1%A8arraylist%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">数组Array和列表ArrayList有什么区别</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/java/hashcode%E5%92%8Cequals%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/">
+            <span class="next-text nav-default">HashCode和equals方法的重要性</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
         </div>
         
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="congwen/blog-comment"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
 
       </div>
     </main>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>[leetcode]二叉树的完全性检验 - 丛文的博客</title>
+  <title>Iterator和ListIterator的区别是什么 - 丛文的博客</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="丛文" /><meta name="description" content="Leetcode 958 Check Completeness of a Binary Tree" /><meta name="keywords" content="Leetcode, 958, Check, Completeness, of, a, Binary, Tree" />
+<meta name="author" content="丛文" /><meta name="description" content="Iterator和ListIterator的区别是什么" /><meta name="keywords" content="Iterator和ListIterator的区别是什么" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.88.1 with theme even" />
 
 
-<link rel="canonical" href="https://congwen.github.io/post/leetcode-958-check-completeness-of-a-binary-tree/" />
+<link rel="canonical" href="https://congwen.github.io/post/java/iterator%E5%92%8Clistiterator%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -41,20 +41,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="[leetcode]二叉树的完全性检验" />
-<meta property="og:description" content="Leetcode 958 Check Completeness of a Binary Tree" />
+<meta property="og:title" content="Iterator和ListIterator的区别是什么" />
+<meta property="og:description" content="Iterator和ListIterator的区别是什么" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://congwen.github.io/post/leetcode-958-check-completeness-of-a-binary-tree/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2022-07-29T14:58:11+08:00" />
-<meta property="article:modified_time" content="2022-07-29T14:58:11+08:00" />
+<meta property="og:url" content="https://congwen.github.io/post/java/iterator%E5%92%8Clistiterator%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-10-09T13:44:41+08:00" />
+<meta property="article:modified_time" content="2021-10-09T13:44:41+08:00" />
 
-<meta itemprop="name" content="[leetcode]二叉树的完全性检验">
-<meta itemprop="description" content="Leetcode 958 Check Completeness of a Binary Tree"><meta itemprop="datePublished" content="2022-07-29T14:58:11+08:00" />
-<meta itemprop="dateModified" content="2022-07-29T14:58:11+08:00" />
-<meta itemprop="wordCount" content="416">
-<meta itemprop="keywords" content="算法,leetcode," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="[leetcode]二叉树的完全性检验"/>
-<meta name="twitter:description" content="Leetcode 958 Check Completeness of a Binary Tree"/>
+<meta itemprop="name" content="Iterator和ListIterator的区别是什么">
+<meta itemprop="description" content="Iterator和ListIterator的区别是什么"><meta itemprop="datePublished" content="2021-10-09T13:44:41+08:00" />
+<meta itemprop="dateModified" content="2021-10-09T13:44:41+08:00" />
+<meta itemprop="wordCount" content="497">
+<meta itemprop="keywords" content="java," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Iterator和ListIterator的区别是什么"/>
+<meta name="twitter:description" content="Iterator和ListIterator的区别是什么"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -127,12 +127,12 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">[leetcode]二叉树的完全性检验</h1>
+      <h1 class="post-title">Iterator和ListIterator的区别是什么</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2022-07-29 </span>
+        <span class="post-time"> 2021-10-09 </span>
         <div class="post-category">
-            <a href="/categories/leetcode/"> leetcode </a>
+            <a href="/categories/java/"> java </a>
             </div>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -141,14 +141,24 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#iterator和listiterator的区别">Iterator和ListIterator的区别</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
   </div>
 </div>
     <div class="post-content">
-      <p>给定一个二叉树的 root ，确定它是否是一个 完全二叉树 。</p>
-<p>在一个 完全二叉树 中，除了最后一个关卡外，所有关卡都是完全被填满的，并且最后一个关卡中的所有节点都是尽可能靠左的。它可以包含 1 到 2h 节点之间的最后一级 h 。</p>
-<p>来源：力扣（LeetCode）
-链接：https://leetcode.cn/problems/check-completeness-of-a-binary-tree</p>
+      <h3 id="iterator和listiterator的区别">Iterator和ListIterator的区别</h3>
+<ul>
+<li>Iterator可用来遍历Set和List集合，但是ListIterator只能用来遍历List。</li>
+<li>Iterator对集合只能是前向遍历，ListIterator即可以前向也可以后向。</li>
+<li>ListIterator实现了Iterator接口，并包含其他的功能，比如：增加元素、替换元素、获取前一个和后一个元素的索引等。</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -179,57 +189,40 @@
 </span><span class="lnt">26
 </span><span class="lnt">27
 </span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java">    <span class="cm">/**
-</span><span class="cm"> * Definition for a binary tree node.
-</span><span class="cm"> * public class TreeNode {
-</span><span class="cm"> *     int val;
-</span><span class="cm"> *     TreeNode left;
-</span><span class="cm"> *     TreeNode right;
-</span><span class="cm"> *     TreeNode() {}
-</span><span class="cm"> *     TreeNode(int val) { this.val = val; }
-</span><span class="cm"> *     TreeNode(int val, TreeNode left, TreeNode right) {
-</span><span class="cm"> *         this.val = val;
-</span><span class="cm"> *         this.left = left;
-</span><span class="cm"> *         this.right = right;
-</span><span class="cm"> *     }
-</span><span class="cm"> * }
-</span><span class="cm"> */</span>
-<span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isCompleteTree</span><span class="o">(</span><span class="n">TreeNode</span> <span class="n">root</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kt">boolean</span> <span class="n">flag</span><span class="o">=</span><span class="kc">false</span><span class="o">;</span> <span class="c1">//是否出现叶子结点
-</span><span class="c1"></span>        <span class="n">Queue</span><span class="o">&lt;</span><span class="n">TreeNode</span><span class="o">&gt;</span> <span class="n">queue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;();</span>
-        <span class="n">queue</span><span class="o">.</span><span class="na">offer</span><span class="o">(</span><span class="n">root</span><span class="o">);</span>
-        <span class="k">while</span><span class="o">(!</span><span class="n">queue</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">()){</span>
-            <span class="n">TreeNode</span> <span class="n">node</span><span class="o">=</span><span class="n">queue</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span>
-            <span class="c1">//先做错误case判断
-</span><span class="c1"></span>            <span class="c1">//错误case1:只有右节点，没有左节点
-</span><span class="c1"></span>            <span class="k">if</span><span class="o">(</span><span class="n">node</span><span class="o">.</span><span class="na">left</span> <span class="o">==</span><span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="o">.</span><span class="na">right</span> <span class="o">!=</span><span class="kc">null</span><span class="o">)</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-            <span class="c1">//错误case1:出现叶子结点后，后续结点中还有不为叶子结点
-</span><span class="c1"></span>            <span class="k">if</span><span class="o">(</span><span class="n">flag</span> <span class="o">&amp;&amp;(</span><span class="n">node</span><span class="o">.</span><span class="na">left</span><span class="o">!=</span><span class="kc">null</span> <span class="o">||</span> <span class="n">node</span><span class="o">.</span><span class="na">right</span> <span class="o">!=</span><span class="kc">null</span><span class="o">))</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-            <span class="c1">//出现叶子节点，flag=true
-</span><span class="c1"></span>            <span class="k">if</span><span class="o">(</span><span class="n">node</span><span class="o">.</span><span class="na">left</span><span class="o">==</span><span class="kc">null</span> <span class="o">||</span> <span class="n">node</span><span class="o">.</span><span class="na">right</span><span class="o">==</span><span class="kc">null</span><span class="o">)</span> <span class="n">flag</span><span class="o">=</span><span class="kc">true</span><span class="o">;</span>
-
-            <span class="k">if</span><span class="o">(</span><span class="n">node</span><span class="o">.</span><span class="na">left</span> <span class="o">!=</span><span class="kc">null</span><span class="o">)</span> <span class="n">queue</span><span class="o">.</span><span class="na">offer</span><span class="o">(</span><span class="n">node</span><span class="o">.</span><span class="na">left</span><span class="o">);</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">node</span><span class="o">.</span><span class="na">right</span> <span class="o">!=</span><span class="kc">null</span><span class="o">)</span> <span class="n">queue</span><span class="o">.</span><span class="na">offer</span><span class="o">(</span><span class="n">node</span><span class="o">.</span><span class="na">right</span><span class="o">);</span>
-        <span class="o">}</span>
-         <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-    <span class="o">}</span>
-   
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ListTest</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+		<span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;北京&#34;</span><span class="o">);</span>
+		<span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;上海&#34;</span><span class="o">);</span>
+		<span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;广州&#34;</span><span class="o">);</span>
+		<span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;深圳&#34;</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;List: &#34;</span> <span class="o">+</span> <span class="n">list</span><span class="o">);</span>
+		<span class="c1">// Get the list iterator
+</span><span class="c1"></span>		<span class="n">ListIterator</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">iterator</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">listIterator</span><span class="o">();</span>
+		<span class="k">while</span> <span class="o">(</span><span class="n">iterator</span><span class="o">.</span><span class="na">hasNext</span><span class="o">())</span> <span class="o">{</span>
+			<span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">iterator</span><span class="o">.</span><span class="na">nextIndex</span><span class="o">();</span>
+			<span class="n">String</span> <span class="n">element</span> <span class="o">=</span> <span class="n">iterator</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Index=&#34;</span> <span class="o">+</span> <span class="n">index</span> <span class="o">+</span> <span class="s">&#34;, Element=&#34;</span> <span class="o">+</span> <span class="n">element</span><span class="o">);</span>
+		<span class="o">}</span>
+		<span class="c1">// Reuse the iterator to iterate from the end to the beginning
+</span><span class="c1"></span>		<span class="k">while</span> <span class="o">(</span><span class="n">iterator</span><span class="o">.</span><span class="na">hasPrevious</span><span class="o">())</span> <span class="o">{</span>
+			<span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">iterator</span><span class="o">.</span><span class="na">previousIndex</span><span class="o">();</span>
+			<span class="n">String</span> <span class="n">element</span> <span class="o">=</span> <span class="n">iterator</span><span class="o">.</span><span class="na">previous</span><span class="o">();</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Index=&#34;</span> <span class="o">+</span> <span class="n">index</span> <span class="o">+</span> <span class="s">&#34;,  Element=&#34;</span> <span class="o">+</span> <span class="n">element</span><span class="o">);</span>
+		<span class="o">}</span>
+		
+		<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">synchronizedList</span> <span class="o">=</span> <span class="n">Collections</span><span class="o">.</span><span class="na">synchronizedList</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+		<span class="n">synchronizedList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;杭州&#34;</span><span class="o">);</span>
+		<span class="n">synchronizedList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;苏州&#34;</span><span class="o">);</span>
+		<span class="n">synchronizedList</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+	<span class="o">}</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
-</div>
+</div><p>参考：<a href="https://zhuanlan.zhihu.com/p/190173894">https://zhuanlan.zhihu.com/p/190173894</a></p>
+
     </div>
 
     <div class="post-copyright">
@@ -240,7 +233,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2022-07-29
+        2021-10-09
         
     </span>
   </p>
@@ -249,17 +242,16 @@
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
-          <a href="/tags/leetcode/">leetcode</a>
+          <a href="/tags/java/">java</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/sordoffer/sordoffer-28-dui-cheng-de-er-cha-shu-lcof/">
+        <a class="prev" href="/post/java/%E5%BF%AB%E9%80%9F%E5%A4%B1%E8%B4%A5fail-fast%E5%92%8C%E5%AE%89%E5%85%A8%E5%A4%B1%E8%B4%A5fail-safe%E7%9A%84%E5%8C%BA%E5%88%AB/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">[leetcode]剑指 Offer 28. 对称的二叉树</span>
+            <span class="prev-text nav-default">快速失败fail Fast和安全失败fail Safe的区别</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/post/java/%E6%95%B0%E7%BB%84array%E5%92%8C%E5%88%97%E8%A1%A8arraylist%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/">
-            <span class="next-text nav-default">数组Array和列表ArrayList有什么区别</span>
+        <a class="next" href="/post/java/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BF%AD%E4%BB%A3%E5%99%A8/">
+            <span class="next-text nav-default">什么是迭代器</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>归档 - 丛文的博客</title>
+  <title>快速失败fail Fast和安全失败fail Safe的区别 - 丛文的博客</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="丛文" /><meta name="description" content="Hugo theme even example site." /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="丛文" /><meta name="description" content="快速失败fail Fast和安全失败fail Safe的区别" /><meta name="keywords" content="快速失败fail, Fast和安全失败fail, Safe的区别" />
 
 
 
@@ -26,9 +26,7 @@
 <meta name="generator" content="Hugo 0.88.1 with theme even" />
 
 
-<link rel="canonical" href="https://congwen.github.io/post/" />
-  <link href="https://congwen.github.io/post/index.xml" rel="alternate" type="application/rss+xml" title="丛文的博客" />
-  <link href="https://congwen.github.io/post/index.xml" rel="feed" type="application/rss+xml" title="丛文的博客" />
+<link rel="canonical" href="https://congwen.github.io/post/java/%E5%BF%AB%E9%80%9F%E5%A4%B1%E8%B4%A5fail-fast%E5%92%8C%E5%AE%89%E5%85%A8%E5%A4%B1%E8%B4%A5fail-safe%E7%9A%84%E5%8C%BA%E5%88%AB/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -43,15 +41,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Posts" />
-<meta property="og:description" content="Hugo theme even example site." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://congwen.github.io/post/" />
+<meta property="og:title" content="快速失败fail Fast和安全失败fail Safe的区别" />
+<meta property="og:description" content="快速失败fail Fast和安全失败fail Safe的区别" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://congwen.github.io/post/java/%E5%BF%AB%E9%80%9F%E5%A4%B1%E8%B4%A5fail-fast%E5%92%8C%E5%AE%89%E5%85%A8%E5%A4%B1%E8%B4%A5fail-safe%E7%9A%84%E5%8C%BA%E5%88%AB/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-10-09T14:08:01+08:00" />
+<meta property="article:modified_time" content="2021-10-09T14:08:01+08:00" />
 
-<meta itemprop="name" content="Posts">
-<meta itemprop="description" content="Hugo theme even example site."><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content="Hugo theme even example site."/>
+<meta itemprop="name" content="快速失败fail Fast和安全失败fail Safe的区别">
+<meta itemprop="description" content="快速失败fail Fast和安全失败fail Safe的区别"><meta itemprop="datePublished" content="2021-10-09T14:08:01+08:00" />
+<meta itemprop="dateModified" content="2021-10-09T14:08:01+08:00" />
+<meta itemprop="wordCount" content="316">
+<meta itemprop="keywords" content="java," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="快速失败fail Fast和安全失败fail Safe的区别"/>
+<meta name="twitter:description" content="快速失败fail Fast和安全失败fail Safe的区别"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -121,137 +124,97 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          
-<section id="archive" class="archive">
-      <div class="collection-title">
-        <h2 class="archive-year">2021</h2>
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">快速失败fail Fast和安全失败fail Safe的区别</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-10-09 </span>
+        <div class="post-category">
+            <a href="/categories/java/"> java </a>
+            </div>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
+    </header>
 
-    <div class="archive-post">
-      <span class="archive-post-time">
-        08-03
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/bitmap-in-clickhouse/" class="archive-post-link">
-          Clickhouse位图（bitmap）的使用
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        08-02
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/solve-virtualbox-network-config-of-hostonly/" class="archive-post-link">
-          解决virtualbox网络配置hostonly后不生效的问题
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        08-02
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/solution-of-virtualbox-menu-is-hided/" class="archive-post-link">
-          VirtualBox的菜单栏被隐藏的解决办法
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        08-02
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/ssl-error-syscall-in-connection-to-github-443/" class="archive-post-link">
-          SSL Error Syscall in Connection to Github 443
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        08-02
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/clickhouse-install-in-ubuntu/" class="archive-post-link">
-          在Ubuntu中安装clickhouse
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        07-29
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/install-ubuntu-server-in-virtualbox/" class="archive-post-link">
-          在Virtualbox中安装Ubuntu server
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        07-29
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/install-virtualbox-in-windows10/" class="archive-post-link">
-          在win10系统中安装virtualbox
-        </a>
-      </span>
-    </div>
-      <div class="collection-title">
-        <h2 class="archive-year">2019</h2>
-      </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        11-11
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/merge-sort/" class="archive-post-link">
-          归并排序（Merge Sort）
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        11-05
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/git-push-pull-no-passwd/" class="archive-post-link">
-          解决Git Pull,push每次都需要输入密码问题
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        11-05
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/shell-sort/" class="archive-post-link">
-          希尔排序（Shell Sort）
-        </a>
-      </span>
-    </div></section>
-
-<nav class="pagination">
-  <a class="prev" href="/post/page/3/">
-      <i class="iconfont icon-left"></i>
-      <span class="prev-text">上一页</span>
-    </a>
-  <a class="next" href="/post/page/5/">
-      <span class="next-text">下一页</span>
-      <i class="iconfont icon-right"></i>
-    </a>
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#快速失败fail-fast">快速失败（fail-fast）</a></li>
+        <li><a href="#安全失败fail-safe">安全失败（fail-safe）</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h3 id="快速失败fail-fast">快速失败（fail-fast）</h3>
+<ul>
+<li>在使用迭代器对集合对象进行遍历的时候，如果 A 线程正在对集合进行遍历，此时 B 线程对集合进行修改（增加、删除、修改），或者 A 线程在遍历过程中对集合进行修改，都会导致 A 线程抛出 ConcurrentModificationException 异常。</li>
+</ul>
+<h3 id="安全失败fail-safe">安全失败（fail-safe）</h3>
+<ul>
+<li>采用安全失败机制的集合容器，在遍历时不是直接在集合内容上访问的，而是先复制原有集合内容，在拷贝的集合上进行遍历。</li>
+<li>由于迭代时是对原集合的拷贝进行遍历，所以在遍历过程中对原集合所作的修改并不能被迭代器检测到，故不会抛 ConcurrentModificationException 异常</li>
+</ul>
+<p>快速失败和安全失败是对迭代器而言的。并发环境下建议使用 java.util.concurrent 包下的容器类，除非没有修改操作</p>
+<p>参考：<a href="https://juejin.cn/post/6844903711148359693">https://juejin.cn/post/6844903711148359693</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">丛文</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2021-10-09
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/java/">java</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/java/java%E4%B8%AD%E7%9A%84hashmap%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Java中的HashMap的工作原理</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/java/iterator%E5%92%8Clistiterator%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88/">
+            <span class="next-text nav-default">Iterator和ListIterator的区别是什么</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
         </div>
         
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="congwen/blog-comment"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
 
       </div>
     </main>

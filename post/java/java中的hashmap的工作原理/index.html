@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Java接口与抽象类的区别 - 丛文的博客</title>
+  <title>Java中的HashMap的工作原理 - 丛文的博客</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="丛文" /><meta name="description" content="Java接口与抽象类的区别" /><meta name="keywords" content="Java接口与抽象类的区别" />
+<meta name="author" content="丛文" /><meta name="description" content="Java中的HashMap的工作原理" /><meta name="keywords" content="Java中的HashMap的工作原理" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.88.1 with theme even" />
 
 
-<link rel="canonical" href="https://congwen.github.io/post/java/java%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB%E7%9A%84%E5%8C%BA%E5%88%AB/" />
+<link rel="canonical" href="https://congwen.github.io/post/java/java%E4%B8%AD%E7%9A%84hashmap%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -41,20 +41,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Java接口与抽象类的区别" />
-<meta property="og:description" content="Java接口与抽象类的区别" />
+<meta property="og:title" content="Java中的HashMap的工作原理" />
+<meta property="og:description" content="Java中的HashMap的工作原理" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://congwen.github.io/post/java/java%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB%E7%9A%84%E5%8C%BA%E5%88%AB/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-10-08T20:18:56+08:00" />
-<meta property="article:modified_time" content="2021-10-08T20:18:56+08:00" />
+<meta property="og:url" content="https://congwen.github.io/post/java/java%E4%B8%AD%E7%9A%84hashmap%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-10-09T14:15:08+08:00" />
+<meta property="article:modified_time" content="2021-10-09T14:15:08+08:00" />
 
-<meta itemprop="name" content="Java接口与抽象类的区别">
-<meta itemprop="description" content="Java接口与抽象类的区别"><meta itemprop="datePublished" content="2021-10-08T20:18:56+08:00" />
-<meta itemprop="dateModified" content="2021-10-08T20:18:56+08:00" />
-<meta itemprop="wordCount" content="427">
+<meta itemprop="name" content="Java中的HashMap的工作原理">
+<meta itemprop="description" content="Java中的HashMap的工作原理"><meta itemprop="datePublished" content="2021-10-09T14:15:08+08:00" />
+<meta itemprop="dateModified" content="2021-10-09T14:15:08+08:00" />
+<meta itemprop="wordCount" content="1387">
 <meta itemprop="keywords" content="java," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Java接口与抽象类的区别"/>
-<meta name="twitter:description" content="Java接口与抽象类的区别"/>
+<meta name="twitter:title" content="Java中的HashMap的工作原理"/>
+<meta name="twitter:description" content="Java中的HashMap的工作原理"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -127,10 +127,10 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Java接口与抽象类的区别</h1>
+      <h1 class="post-title">Java中的HashMap的工作原理</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2021-10-08 </span>
+        <span class="post-time"> 2021-10-09 </span>
         <div class="post-category">
             <a href="/categories/java/"> java </a>
             </div>
@@ -145,8 +145,8 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#相同点">相同点</a></li>
-        <li><a href="#不同点">不同点</a></li>
+        <li><a href="#hashmap的使用及特性">HashMap的使用及特性</a></li>
+        <li><a href="#hashmap的工作原理">HashMap的工作原理</a></li>
       </ul>
     </li>
   </ul>
@@ -154,27 +154,48 @@
   </div>
 </div>
     <div class="post-content">
-      <h3 id="相同点">相同点</h3>
-<ol>
-<li>都不能被实例化</li>
-<li>接口的实现类或抽象类的子类都只有实现了接口或抽象类中的方法后才能实例化。</li>
-</ol>
-<h3 id="不同点">不同点</h3>
+      <h3 id="hashmap的使用及特性">HashMap的使用及特性</h3>
+<p>HashMap可以接受null键值和值，HashMap是非synchronized，HashMap储存的是键值对。</p>
+<h3 id="hashmap的工作原理">HashMap的工作原理</h3>
 <ol>
 <li>
-<p>接口只有定义，不能有方法的实现，java 1.8中可以定义default方法体，而抽象类可以有定义与实现，方法可在抽象类中实现。</p>
+<p>基本原理</p>
+<blockquote>
+<p>hashmap是一个key-value键值对的数据结构，从结构上来讲在jdk1.8之前是用数组加链表的方式实现，jdk1.8加了红黑树，hashmap数组的默认初始长度是16，hashmap数组只允许一个key为null，允许多个value为null
+hashmap的内部实现，hashmap是使用数组+链表+红黑树的形式实现的，其中数组是一个一个Node[]数组，我们叫他hash桶数组，它上面存放的是key-value键值对的节点。HashMap是用hash表来存储的，在hashmap里为解决hash冲突，使用链地址法，简单来说就是数组加链表的形式来解决，当数据被hash后，得到数组下标，把数据放在对应下表的链表中</p>
+</blockquote>
 </li>
 <li>
-<p>实现接口的关键字为implements，继承抽象类的关键字为extends。一个类可以实现多个接口，但一个类只能继承一个抽象类。所以，使用接口可以间接地实现多重继承。</p>
+<p>hashmap的方法实现</p>
+<ol>
+<li>
+<p>put方法</p>
+<blockquote>
+<p>put方法的第一步，就是计算出要put元素在hash桶数组中的索引位置，得到索引位置需要三步，去put元素key的hashcode值，高位运算，取模运算，高位运算就是用第一步得到的值h，用h的高16位和低16位进行异或操作，第三步为了使hash桶数组元素分布更均匀，采用取模运算，取模运算就是用第二步得到的值和hash桶数组长度-1的值取与。这样得到的结果和传统取模运算结果一致，而且效率比取模运算高
+jdk1.8中put方法的具体步骤，先判断hashmap是否为空，为空的话扩容，不为空计算出key的hash值i，然后看table[i]是否为空，为空就直接插入，不为空判断当前位置的key和table[i]是否相同，相同就覆盖，不相同就查看table[i]是否是红黑树节点，如果是的话就用红黑树直接插入键值对，如果不是开始遍历链表插入，如果遇到重复值就覆盖，否则直接插入，如果链表长度大于8，转为红黑树结构，执行完成后看size是否大于阈值threshold，大于就扩容，否则直接结束</p>
+</blockquote>
 </li>
 <li>
-<p>接口强调特定功能的实现，而抽象类强调所属关系。</p>
+<p>get方法</p>
+<blockquote>
+<p>计算出要获取元素的hash值，去对应位置取即可</p>
+</blockquote>
 </li>
 <li>
-<p>接口成员变量默认为public static final，必须赋初值，不能被修改；其所有的成员方法都是public、abstract的。抽象类中成员变量默认default，可在子类中被重新定义，也可被重新赋值；抽象方法被abstract修饰，不能被private、static、synchronized和native等修饰，必须以分号结尾，不带花括号。</p>
+<p>扩容机制</p>
+<blockquote>
+<p>hashmap的扩容中主要进行两步，第一步把数组长度变为原来的两倍，第二部把旧数组的元素重新计算hash插入到新数组中，在jdk1.8时，不用重新计算hash，只用看看原来的hash值新增的一位是零还是1，如果是1这个元素在新数组中的位置，是原数组的位置加原数组长度，如果是零就插入到原数组中。扩容过程第二步一个非常重要的方法是transfer方法，采用头插法，把旧数组的元素插入到新数组中</p>
+</blockquote>
 </li>
 </ol>
-<p>参考：<a href="https://zhuanlan.zhihu.com/p/94770324">https://zhuanlan.zhihu.com/p/94770324</a></p>
+</li>
+<li>
+<p>hashmap大小为什么是2的幂次方</p>
+<blockquote>
+<p>在计算插入元素在hash桶数组的索引时第三步，为了使元素分布的更加均匀，用取模操作，但是传统取模操作效率低，然后优化成h&amp;(length-1)，设置成2幂次方，是因为2的幂次方-1后的值每一位上都是1，然后与第二步计算出的h值与的时候，最终的结果只和key的hashcode值本身有关，这样不会造成空间浪费并且分布均匀，如果不是2的幂次方，比如15。那么length-1的2进制就会变成1110。在h为随机数的情况下，和1110做&amp;操作。尾数永远为0。那么0001、1001、1101等尾数为1的位置就永远不可能被entry占用。这样会造成浪费，不随机等问题</p>
+</blockquote>
+</li>
+</ol>
 
     </div>
 
@@ -186,7 +207,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2021-10-08
+        2021-10-09
         
     </span>
   </p>
@@ -198,13 +219,13 @@
           <a href="/tags/java/">java</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/java/java%E7%9A%84%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92/">
+        <a class="prev" href="/post/java/hashcode%E5%92%8Cequals%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Java的值传递和引用传递</span>
+            <span class="prev-text nav-default">HashCode和equals方法的重要性</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/post/java/%E4%B8%BA%E4%BB%80%E4%B9%88java%E4%B8%8D%E6%94%AF%E6%8C%81%E5%A4%9A%E7%BB%A7%E6%89%BF/">
-            <span class="next-text nav-default">为什么Java不支持多继承</span>
+        <a class="next" href="/post/java/%E5%BF%AB%E9%80%9F%E5%A4%B1%E8%B4%A5fail-fast%E5%92%8C%E5%AE%89%E5%85%A8%E5%A4%B1%E8%B4%A5fail-safe%E7%9A%84%E5%8C%BA%E5%88%AB/">
+            <span class="next-text nav-default">快速失败fail Fast和安全失败fail Safe的区别</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
