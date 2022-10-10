@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>归档 - 丛文的博客</title>
+  <title>Java线程的生命周期中的状态 - 丛文的博客</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="丛文" /><meta name="description" content="Hugo theme even example site." /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="丛文" /><meta name="description" content="Java线程的生命周期" /><meta name="keywords" content="Java线程的生命周期" />
 
 
 
@@ -26,9 +26,7 @@
 <meta name="generator" content="Hugo 0.88.1 with theme even" />
 
 
-<link rel="canonical" href="https://congwen.github.io/post/" />
-  <link href="https://congwen.github.io/post/index.xml" rel="alternate" type="application/rss+xml" title="丛文的博客" />
-  <link href="https://congwen.github.io/post/index.xml" rel="feed" type="application/rss+xml" title="丛文的博客" />
+<link rel="canonical" href="https://congwen.github.io/post/java/java%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -43,15 +41,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Posts" />
-<meta property="og:description" content="Hugo theme even example site." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://congwen.github.io/post/" />
+<meta property="og:title" content="Java线程的生命周期中的状态" />
+<meta property="og:description" content="Java线程的生命周期" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://congwen.github.io/post/java/java%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-10-09T20:18:36+08:00" />
+<meta property="article:modified_time" content="2021-10-09T20:18:36+08:00" />
 
-<meta itemprop="name" content="Posts">
-<meta itemprop="description" content="Hugo theme even example site."><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content="Hugo theme even example site."/>
+<meta itemprop="name" content="Java线程的生命周期中的状态">
+<meta itemprop="description" content="Java线程的生命周期"><meta itemprop="datePublished" content="2021-10-09T20:18:36+08:00" />
+<meta itemprop="dateModified" content="2021-10-09T20:18:36+08:00" />
+<meta itemprop="wordCount" content="540">
+<meta itemprop="keywords" content="java," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Java线程的生命周期中的状态"/>
+<meta name="twitter:description" content="Java线程的生命周期"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -121,134 +124,101 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          
-<section id="archive" class="archive">
-      <div class="collection-title">
-        <h2 class="archive-year">2021</h2>
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Java线程的生命周期中的状态</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-10-09 </span>
+        <div class="post-category">
+            <a href="/categories/java/"> java </a>
+            </div>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
+    </header>
 
-    <div class="archive-post">
-      <span class="archive-post-time">
-        10-09
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/java/java%E7%9A%84final%E5%85%B3%E9%94%AE%E5%AD%97%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" class="archive-post-link">
-          Java的final关键字使用方法
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        10-09
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/java/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="archive-post-link">
-          Java面向对象
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        10-09
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/java/%E5%92%8Cequals%E6%AF%94%E8%BE%83/" class="archive-post-link">
-          ==和equals比较
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        10-09
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/java/system.gc%E5%92%8Cruntime.gc%E4%BC%9A%E5%81%9A%E4%BB%80%E4%B9%88%E4%BA%8B%E6%83%85/" class="archive-post-link">
-          System.gc()和Runtime.gc()会做什么事情
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        10-09
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/java/java%E4%B8%AD%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%89%E4%BB%80%E4%B9%88%E7%9B%AE%E7%9A%84/" class="archive-post-link">
-          Java中垃圾回收有什么目的
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        10-09
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/java/java%E4%B8%ADhashset%E5%92%8Ctreeset%E7%9A%84%E5%8C%BA%E5%88%AB/" class="archive-post-link">
-          Java中HashSet和TreeSet的区别
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        10-09
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/java/%E4%BC%98%E5%85%88%E7%BA%A7%E9%98%9F%E5%88%97priorityqueue/" class="archive-post-link">
-          优先级队列PriorityQueue
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        10-09
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/java/comparable%E5%92%8Ccomparator%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB/" class="archive-post-link">
-          Comparable和Comparator接口的区别
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        10-09
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/java/arraylist%E5%92%8Clinkedlist%E7%B1%BB%E7%9A%84%E7%94%A8%E6%B3%95%E5%8F%8A%E5%8C%BA%E5%88%AB/" class="archive-post-link">
-          ArrayList和LinkedList类的用法及区别
-        </a>
-      </span>
-    </div>
-
-    <div class="archive-post">
-      <span class="archive-post-time">
-        10-09
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/java/%E6%95%B0%E7%BB%84array%E5%92%8C%E5%88%97%E8%A1%A8arraylist%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/" class="archive-post-link">
-          数组Array和列表ArrayList有什么区别
-        </a>
-      </span>
-    </div></section>
-
-<nav class="pagination">
-  <a class="prev" href="/post/page/2/">
-      <i class="iconfont icon-left"></i>
-      <span class="prev-text">上一页</span>
-    </a>
-  <a class="next" href="/post/page/4/">
-      <span class="next-text">下一页</span>
-      <i class="iconfont icon-right"></i>
-    </a>
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#线程通常有五种状态">线程通常有五种状态</a></li>
+        <li><a href="#阻塞的情况又分为三种">阻塞的情况又分为三种</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h3 id="线程通常有五种状态">线程通常有五种状态</h3>
+<ol>
+<li>新建状态（New）：新创建了一个线程对象。</li>
+<li>就绪状态（Runnable）：线程对象创建后，其他线程调用了该对象的start方法。该状态的线程位于可运行线程池中，变得可运行，等待获取CPU的使用权。</li>
+<li>运行状态（Running）：就绪状态的线程获取了CPU，执行程序代码。</li>
+<li>阻塞状态（Blocked）：阻塞状态是线程因为某种原因放弃CPU使用权，暂时停止运行。直到线程进入就绪状态，才有机会转到运行状态。</li>
+<li>死亡状态（Dead）：线程执行完了或者因异常退出了run方法，该线程结束生命周期。</li>
+</ol>
+<h3 id="阻塞的情况又分为三种">阻塞的情况又分为三种</h3>
+<ul>
+<li>等待阻塞：运行的线程执行wait方法，该线程会释放占用的所有资源，JVM会把该线程放入“等待池”中。进入这个状态后，是不能自动唤醒的，必须依靠其他线程调用notify或notifyAll方法才能被唤醒，wait是object类的方法</li>
+<li>同步阻塞：运行的线程在获取对象的同步锁时，若该同步锁被别的线程占用，则JVM会把该线程放入“锁池”中。</li>
+<li>其他阻塞：运行的线程执行sleep或join方法，或者发出了I/O请求时，JVM会把该线程置为阻塞状
+态。当sleep状态超时、join等待线程终止或者超时、或者I/O处理完毕时，线程重新转入就绪状态。sleep是Thread类的方法</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">丛文</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2021-10-09
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/java/">java</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/java/java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%ADsleepwaitjoinyield%E7%9A%84%E5%8C%BA%E5%88%AB/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Java多线程中sleep、wait、join、yield的区别</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/java/java%E7%9A%84gc%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E5%8F%AF%E4%BB%A5%E8%A2%AB%E5%9B%9E%E6%94%B6/">
+            <span class="next-text nav-default">Java的GC如何判断对象可以被回收</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
         </div>
         
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="congwen/blog-comment"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
 
       </div>
     </main>

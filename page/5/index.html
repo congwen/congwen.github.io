@@ -124,7 +124,7 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/java/hashmap%E5%92%8Chashtable%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/">HashMap和Hashtable有什么区别</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/java/java%E4%B8%AD%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%89%E4%BB%80%E4%B9%88%E7%9B%AE%E7%9A%84/">Java中垃圾回收有什么目的</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2021-10-09 </span>
       <div class="post-category">
@@ -135,17 +135,17 @@
   
   <div class="post-content">
     <div class="post-summary">
-      HashMap和Hashtable都实现了Map接口，但决定用哪一个之前先要弄清楚它们之间的分别。主要的区别有：线程安全性，同步(synch
+      垃圾回收(gc)的目的是释放堆中不需要保存的对象，达到内存的充分利用。 1.回收哪些对象的判定 垃圾回收最简单的思路是采用引用计数的方式，即记录
     </div>
     <div class="read-more">
-      <a href="/post/java/hashmap%E5%92%8Chashtable%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/" class="read-more-link">阅读更多</a>
+      <a href="/post/java/java%E4%B8%AD%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%89%E4%BB%80%E4%B9%88%E7%9B%AE%E7%9A%84/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/java/hashcode%E5%92%8Cequals%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/">HashCode和equals方法的重要性</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/java/java%E4%B8%ADhashset%E5%92%8Ctreeset%E7%9A%84%E5%8C%BA%E5%88%AB/">Java中HashSet和TreeSet的区别</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2021-10-09 </span>
       <div class="post-category">
@@ -156,17 +156,17 @@
   
   <div class="post-content">
     <div class="post-summary">
-      hashcode和equals组合在一起确定元素的唯一性。 查找元素时，如果单单使用equals来确定一个元素，需要对集合内的元素逐个调用eq
+      一、实现方式 HashSet：HashSet是哈希表实现的。 TreeSet：TreeSet是二差树实现的。 二、数据是否有序 HashSet：Ha
     </div>
     <div class="read-more">
-      <a href="/post/java/hashcode%E5%92%8Cequals%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/" class="read-more-link">阅读更多</a>
+      <a href="/post/java/java%E4%B8%ADhashset%E5%92%8Ctreeset%E7%9A%84%E5%8C%BA%E5%88%AB/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/java/java%E4%B8%AD%E7%9A%84hashmap%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/">Java中的HashMap的工作原理</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/java/%E4%BC%98%E5%85%88%E7%BA%A7%E9%98%9F%E5%88%97priorityqueue/">优先级队列PriorityQueue</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2021-10-09 </span>
       <div class="post-category">
@@ -177,17 +177,17 @@
   
   <div class="post-content">
     <div class="post-summary">
-      HashMap的使用及特性 HashMap可以接受null键值和值，HashMap是非synchronized，HashMap储存的是键值对。
+      优先级队列 PriorityQueue PriorityQueue 类在 Java 1.5 中引入 PriorityQueue 是基于优先堆的一个无界队列，这个优先队列中的元素可以默认自然排序或者通过提供的 Comparator 在队列实例化的时排序。 PriorityQueue 不允许
     </div>
     <div class="read-more">
-      <a href="/post/java/java%E4%B8%AD%E7%9A%84hashmap%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/" class="read-more-link">阅读更多</a>
+      <a href="/post/java/%E4%BC%98%E5%85%88%E7%BA%A7%E9%98%9F%E5%88%97priorityqueue/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/java/%E5%BF%AB%E9%80%9F%E5%A4%B1%E8%B4%A5fail-fast%E5%92%8C%E5%AE%89%E5%85%A8%E5%A4%B1%E8%B4%A5fail-safe%E7%9A%84%E5%8C%BA%E5%88%AB/">快速失败fail Fast和安全失败fail Safe的区别</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/java/comparable%E5%92%8Ccomparator%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB/">Comparable和Comparator接口的区别</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2021-10-09 </span>
       <div class="post-category">
@@ -198,17 +198,17 @@
   
   <div class="post-content">
     <div class="post-summary">
-      快速失败（fail-fast） 在使用迭代器对集合对象进行遍历的时候，如果 A 线程正在对集合进行遍历，此时 B 线程对集合进行修改（增加、删除、修改
+      Java提供了只包含一个compareTo()方法的Comparable接口。这个方法可以个给两个对象排序。具体来说，它返回负数，0，正数来
     </div>
     <div class="read-more">
-      <a href="/post/java/%E5%BF%AB%E9%80%9F%E5%A4%B1%E8%B4%A5fail-fast%E5%92%8C%E5%AE%89%E5%85%A8%E5%A4%B1%E8%B4%A5fail-safe%E7%9A%84%E5%8C%BA%E5%88%AB/" class="read-more-link">阅读更多</a>
+      <a href="/post/java/comparable%E5%92%8Ccomparator%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/java/iterator%E5%92%8Clistiterator%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88/">Iterator和ListIterator的区别是什么</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/java/arraylist%E5%92%8Clinkedlist%E7%B1%BB%E7%9A%84%E7%94%A8%E6%B3%95%E5%8F%8A%E5%8C%BA%E5%88%AB/">ArrayList和LinkedList类的用法及区别</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2021-10-09 </span>
       <div class="post-category">
@@ -219,17 +219,17 @@
   
   <div class="post-content">
     <div class="post-summary">
-      Iterator和ListIterator的区别 Iterator可用来遍历Set和List集合，但是ListIterator只能用来遍历Li
+      List 是一个有序、可重复的集合，集合中每个元素都有其对应的顺序索引。List 集合允许使用重复元素，可以通过索引来访问指定位置的集合元素。List
     </div>
     <div class="read-more">
-      <a href="/post/java/iterator%E5%92%8Clistiterator%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88/" class="read-more-link">阅读更多</a>
+      <a href="/post/java/arraylist%E5%92%8Clinkedlist%E7%B1%BB%E7%9A%84%E7%94%A8%E6%B3%95%E5%8F%8A%E5%8C%BA%E5%88%AB/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/java/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BF%AD%E4%BB%A3%E5%99%A8/">什么是迭代器</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/java/%E6%95%B0%E7%BB%84array%E5%92%8C%E5%88%97%E8%A1%A8arraylist%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/">数组Array和列表ArrayList有什么区别</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2021-10-09 </span>
       <div class="post-category">
@@ -240,10 +240,10 @@
   
   <div class="post-content">
     <div class="post-summary">
-      什么是迭代器 迭代器是一种设计模式，是一个对象，是一种通用的遍历集合元素的接口。 用来遍历Collection 集合的元素，且不需要了解集合的底层
+      适用场景： 如果想要保存一些在整个程序运行期间都会存在而且不变的数据，我们可以将它们放进一个全局数组里， 但是如果我们单纯只是想要以数组的形式保
     </div>
     <div class="read-more">
-      <a href="/post/java/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BF%AD%E4%BB%A3%E5%99%A8/" class="read-more-link">阅读更多</a>
+      <a href="/post/java/%E6%95%B0%E7%BB%84array%E5%92%8C%E5%88%97%E8%A1%A8arraylist%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

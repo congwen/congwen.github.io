@@ -124,7 +124,7 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/java/%E4%BB%80%E4%B9%88%E6%98%AF%E6%AD%BB%E9%94%81/">什么是死锁</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/java/hashmap%E5%92%8Chashtable%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/">HashMap和Hashtable有什么区别</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2021-10-09 </span>
       <div class="post-category">
@@ -135,17 +135,17 @@
   
   <div class="post-content">
     <div class="post-summary">
-      什么是死锁 两个线程或两个以上线程都在等待对方执行完毕才能继续往下执行的时候就发生了死锁。结果就是这些线程都陷入了无限的等待中。 如何确保N个线
+      HashMap和Hashtable都实现了Map接口，但决定用哪一个之前先要弄清楚它们之间的分别。主要的区别有：线程安全性，同步(synch
     </div>
     <div class="read-more">
-      <a href="/post/java/%E4%BB%80%E4%B9%88%E6%98%AF%E6%AD%BB%E9%94%81/" class="read-more-link">阅读更多</a>
+      <a href="/post/java/hashmap%E5%92%8Chashtable%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/java/%E5%9C%A8%E7%9B%91%E8%A7%86%E5%99%A8%E5%86%85%E9%83%A8%E6%98%AF%E5%A6%82%E4%BD%95%E5%81%9A%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%E7%9A%84%E5%92%8C%E7%A8%8B%E5%BA%8F%E5%BA%94%E8%AF%A5%E5%81%9A%E5%93%AA%E7%A7%8D%E7%BA%A7%E5%88%AB%E7%9A%84%E5%90%8C%E6%AD%A5/">Java在监视器内部是如何做线程同步的和程序应该做哪种级别的同步</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/java/hashcode%E5%92%8Cequals%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/">HashCode和equals方法的重要性</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2021-10-09 </span>
       <div class="post-category">
@@ -156,17 +156,17 @@
   
   <div class="post-content">
     <div class="post-summary">
-      JVM基于进入和退出Monitor对象来实现方法同步和代码块同步，但两者的实现细节不一样。本质都是对一个对象的监视器（monitor）进行获
+      hashcode和equals组合在一起确定元素的唯一性。 查找元素时，如果单单使用equals来确定一个元素，需要对集合内的元素逐个调用eq
     </div>
     <div class="read-more">
-      <a href="/post/java/%E5%9C%A8%E7%9B%91%E8%A7%86%E5%99%A8%E5%86%85%E9%83%A8%E6%98%AF%E5%A6%82%E4%BD%95%E5%81%9A%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%E7%9A%84%E5%92%8C%E7%A8%8B%E5%BA%8F%E5%BA%94%E8%AF%A5%E5%81%9A%E5%93%AA%E7%A7%8D%E7%BA%A7%E5%88%AB%E7%9A%84%E5%90%8C%E6%AD%A5/" class="read-more-link">阅读更多</a>
+      <a href="/post/java/hashcode%E5%92%8Cequals%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/java/java%E7%9A%84synchronized%E7%9A%84%E5%90%8C%E6%AD%A5%E4%BB%A3%E7%A0%81%E5%9D%97%E5%92%8C%E5%90%8C%E6%AD%A5%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/">Java的synchronized的同步代码块和同步方法的区别</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/java/java%E4%B8%AD%E7%9A%84hashmap%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/">Java中的HashMap的工作原理</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2021-10-09 </span>
       <div class="post-category">
@@ -177,17 +177,17 @@
   
   <div class="post-content">
     <div class="post-summary">
-      synchronized同步方法和同步代码块的区别 同步方法默认使用this或者当前类做为锁。 同步代码块可以选择以什么来加锁，比同步方法更精确
+      HashMap的使用及特性 HashMap可以接受null键值和值，HashMap是非synchronized，HashMap储存的是键值对。
     </div>
     <div class="read-more">
-      <a href="/post/java/java%E7%9A%84synchronized%E7%9A%84%E5%90%8C%E6%AD%A5%E4%BB%A3%E7%A0%81%E5%9D%97%E5%92%8C%E5%90%8C%E6%AD%A5%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/" class="read-more-link">阅读更多</a>
+      <a href="/post/java/java%E4%B8%AD%E7%9A%84hashmap%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/java/%E5%88%9B%E5%BB%BA%E7%BA%BF%E7%A8%8B%E6%9C%89%E5%87%A0%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E6%96%B9%E5%BC%8F/">创建线程有几种不同的方式</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/java/%E5%BF%AB%E9%80%9F%E5%A4%B1%E8%B4%A5fail-fast%E5%92%8C%E5%AE%89%E5%85%A8%E5%A4%B1%E8%B4%A5fail-safe%E7%9A%84%E5%8C%BA%E5%88%AB/">快速失败fail Fast和安全失败fail Safe的区别</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2021-10-09 </span>
       <div class="post-category">
@@ -198,17 +198,17 @@
   
   <div class="post-content">
     <div class="post-summary">
-      1、继承Thread类 通过继承 Thread 类，并重写它的 run 方法，我们就可以创建一个线程 首先定义一个类来继承 Thread 类，重写 run 方法。 然后创建这个子类对象，并调
+      快速失败（fail-fast） 在使用迭代器对集合对象进行遍历的时候，如果 A 线程正在对集合进行遍历，此时 B 线程对集合进行修改（增加、删除、修改
     </div>
     <div class="read-more">
-      <a href="/post/java/%E5%88%9B%E5%BB%BA%E7%BA%BF%E7%A8%8B%E6%9C%89%E5%87%A0%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E6%96%B9%E5%BC%8F/" class="read-more-link">阅读更多</a>
+      <a href="/post/java/%E5%BF%AB%E9%80%9F%E5%A4%B1%E8%B4%A5fail-fast%E5%92%8C%E5%AE%89%E5%85%A8%E5%A4%B1%E8%B4%A5fail-safe%E7%9A%84%E5%8C%BA%E5%88%AB/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/java/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88/">进程和线程的区别是什么</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/java/iterator%E5%92%8Clistiterator%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88/">Iterator和ListIterator的区别是什么</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2021-10-09 </span>
       <div class="post-category">
@@ -219,17 +219,17 @@
   
   <div class="post-content">
     <div class="post-summary">
-      功能：进程是操作系统资源分配的基本单位，而线程是任务调度和执行的基本单位 开销：每个进程都有独立的内存空间，存放代码和数据段等，程序之间的切换
+      Iterator和ListIterator的区别 Iterator可用来遍历Set和List集合，但是ListIterator只能用来遍历Li
     </div>
     <div class="read-more">
-      <a href="/post/java/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88/" class="read-more-link">阅读更多</a>
+      <a href="/post/java/iterator%E5%92%8Clistiterator%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/java/java%E7%9A%84%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92/">Java的值传递和引用传递</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/java/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BF%AD%E4%BB%A3%E5%99%A8/">什么是迭代器</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2021-10-09 </span>
       <div class="post-category">
@@ -240,10 +240,10 @@
   
   <div class="post-content">
     <div class="post-summary">
-      形参与实参 形参：方法被调用时需要传递进来的参数，如：func(int a)中的a，它只有在func被调用期间a才有意义，也就是会被分配内存空间
+      什么是迭代器 迭代器是一种设计模式，是一个对象，是一种通用的遍历集合元素的接口。 用来遍历Collection 集合的元素，且不需要了解集合的底层
     </div>
     <div class="read-more">
-      <a href="/post/java/java%E7%9A%84%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92/" class="read-more-link">阅读更多</a>
+      <a href="/post/java/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BF%AD%E4%BB%A3%E5%99%A8/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
