@@ -6,7 +6,16 @@
     <description>Recent content in 链表 on 丛文的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 24 Aug 2022 12:48:43 +0800</lastBuildDate><atom:link href="https://congwen.github.io/tags/%E9%93%BE%E8%A1%A8/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Oct 2024 12:41:18 +0800</lastBuildDate><atom:link href="https://congwen.github.io/tags/%E9%93%BE%E8%A1%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[leetcode]707. 设计链表</title>
+      <link>https://congwen.github.io/post/leetcode/707-design-linked-list/</link>
+      <pubDate>Mon, 21 Oct 2024 12:41:18 +0800</pubDate>
+      
+      <guid>https://congwen.github.io/post/leetcode/707-design-linked-list/</guid>
+      <description>题目 你需要实现一个链表类 MyLinkedList，支持以下操作： get(index): 获取链表中第 index 个节点的值。如果索引无效，则返回 -1。 addAtHead(value): 在链表头部添加一个值</description>
+    </item>
+    
     <item>
       <title>[leetcode]删除排序链表中的重复元素 II</title>
       <link>https://congwen.github.io/post/leetcode/82-remove-duplicates-from-sorted-list-ii/</link>

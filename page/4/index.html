@@ -124,6 +124,111 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/java/%E5%B9%B6%E5%8F%91%E5%B9%B6%E8%A1%8C%E4%B8%B2%E8%A1%8C%E7%9A%84%E5%8C%BA%E5%88%AB/">并发、并行、串行的区别</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-10-10 </span>
+      <div class="post-category">
+          <a href="/categories/java/"> java </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      串行 在时间上不可能发生重叠，前一个任务没搞定，下一个任务就只能等着 并行 在时间上是重叠的，两个任务在 同一时刻互不干扰 的同时执行 并发 允许两个任务
+    </div>
+    <div class="read-more">
+      <a href="/post/java/%E5%B9%B6%E5%8F%91%E5%B9%B6%E8%A1%8C%E4%B8%B2%E8%A1%8C%E7%9A%84%E5%8C%BA%E5%88%AB/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/java/threadlocal%E7%9A%84%E5%8E%9F%E7%90%86%E5%92%8C%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/">ThreadLocal的原理和使用场景</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-10-10 </span>
+      <div class="post-category">
+          <a href="/categories/java/"> java </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      ThreadLocal的原理 每一个Thread对象均含有一个ThreadLocalMap类型的成员变量threadLocals，它存储本线程
+    </div>
+    <div class="read-more">
+      <a href="/post/java/threadlocal%E7%9A%84%E5%8E%9F%E7%90%86%E5%92%8C%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/java/java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%ADsleepwaitjoinyield%E7%9A%84%E5%8C%BA%E5%88%AB/">Java多线程中sleep、wait、join、yield的区别</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-10-09 </span>
+      <div class="post-category">
+          <a href="/categories/java/"> java </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      锁池 所有需要竞争同步锁的线程都会放在锁池当中，比如当前对象的锁已经被其中一个线程得到，则其他线程需要在这个锁池进行等待，当前面的线程释放同步
+    </div>
+    <div class="read-more">
+      <a href="/post/java/java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%ADsleepwaitjoinyield%E7%9A%84%E5%8C%BA%E5%88%AB/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/java/java%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">Java线程的生命周期中的状态</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-10-09 </span>
+      <div class="post-category">
+          <a href="/categories/java/"> java </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      线程通常有五种状态 新建状态（New）：新创建了一个线程对象。 就绪状态（Runnable）：线程对象创建后，其他线程调用了该对象的start方
+    </div>
+    <div class="read-more">
+      <a href="/post/java/java%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/java/java%E7%9A%84gc%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E5%8F%AF%E4%BB%A5%E8%A2%AB%E5%9B%9E%E6%94%B6/">Java的GC如何判断对象可以被回收</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-10-09 </span>
+      <div class="post-category">
+          <a href="/categories/java/"> java </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      引用计数法：每个对象有一个引用计数属性，新增一个引用时计数加1，引用释放时计数减1，计数为0时可以回收 可达性分析法：从 GC Roots 开始向下搜索，搜索
+    </div>
+    <div class="read-more">
+      <a href="/post/java/java%E7%9A%84gc%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E5%8F%AF%E4%BB%A5%E8%A2%AB%E5%9B%9E%E6%94%B6/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/java/java%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/">Java类加载器</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2021-10-09 </span>
@@ -139,111 +244,6 @@
     </div>
     <div class="read-more">
       <a href="/post/java/java%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/java/concurrenthashmap%E5%8E%9F%E7%90%86jdk7%E5%92%8Cjdk8%E7%89%88%E6%9C%AC%E7%9A%84%E5%8C%BA%E5%88%AB/">ConcurrentHashMap原理，jdk7和jdk8版本的区别</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-10-09 </span>
-      <div class="post-category">
-          <a href="/categories/java/"> java </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      jdk7版本 数据结构：ReentrantLock+Segment+HashEntry，一个Segment中包含一个HashEntry数组，每
-    </div>
-    <div class="read-more">
-      <a href="/post/java/concurrenthashmap%E5%8E%9F%E7%90%86jdk7%E5%92%8Cjdk8%E7%89%88%E6%9C%AC%E7%9A%84%E5%8C%BA%E5%88%AB/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/java/java%E7%9A%84stringstringbufferstringbuilder%E5%8C%BA%E5%88%AB/">Java的String、StringBuffer、StringBuilder区别</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-10-09 </span>
-      <div class="post-category">
-          <a href="/categories/java/"> java </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      String是final修饰的，不可变，每次操作都会产生新的String对象 StringBuffer和StringBuilder都是在原对象
-    </div>
-    <div class="read-more">
-      <a href="/post/java/java%E7%9A%84stringstringbufferstringbuilder%E5%8C%BA%E5%88%AB/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/java/java%E7%9A%84final%E5%85%B3%E9%94%AE%E5%AD%97%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">Java的final关键字使用方法</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-10-09 </span>
-      <div class="post-category">
-          <a href="/categories/java/"> java </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      修饰类：表示类不可被继承修饰方法：表示方法不可被子类覆盖，但是可以重载 修饰变量：表示变量一旦被赋值就不可以更改它的值。 修饰成员变量 如果fin
-    </div>
-    <div class="read-more">
-      <a href="/post/java/java%E7%9A%84final%E5%85%B3%E9%94%AE%E5%AD%97%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/java/%E5%92%8Cequals%E6%AF%94%E8%BE%83/">==和equals比较</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-10-09 </span>
-      <div class="post-category">
-          <a href="/categories/java/"> java </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      一、对象类型不同 1、equals()：是超类Object中的方法。 2、==：是操作符。 二、比较的对象不同 1、equals()：用来检测两个对
-    </div>
-    <div class="read-more">
-      <a href="/post/java/%E5%92%8Cequals%E6%AF%94%E8%BE%83/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/java/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">Java面向对象</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-10-09 </span>
-      <div class="post-category">
-          <a href="/categories/java/"> java </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      什么是面向对象 什么是面向对象？ 对比面向过程，是两种不同的处理问题的角度 面向过程更注重事情的每一个步骤及顺序，面向对象更注重事情有哪些参与者（
-    </div>
-    <div class="read-more">
-      <a href="/post/java/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
@@ -292,7 +292,7 @@
   <span class="copyright-year">
     &copy; 
     2019 - 
-    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>丛文</span>
+    2025<span class="heart"><i class="iconfont icon-heart"></i></span><span>丛文</span>
   </span>
 </div>
 

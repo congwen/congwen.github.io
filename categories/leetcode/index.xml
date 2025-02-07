@@ -6,7 +6,43 @@
     <description>Recent content in leetcode on 丛文的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 24 Aug 2022 12:48:43 +0800</lastBuildDate><atom:link href="https://congwen.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Oct 2024 12:41:18 +0800</lastBuildDate><atom:link href="https://congwen.github.io/categories/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[leetcode]707. 设计链表</title>
+      <link>https://congwen.github.io/post/leetcode/707-design-linked-list/</link>
+      <pubDate>Mon, 21 Oct 2024 12:41:18 +0800</pubDate>
+      
+      <guid>https://congwen.github.io/post/leetcode/707-design-linked-list/</guid>
+      <description>题目 你需要实现一个链表类 MyLinkedList，支持以下操作： get(index): 获取链表中第 index 个节点的值。如果索引无效，则返回 -1。 addAtHead(value): 在链表头部添加一个值</description>
+    </item>
+    
+    <item>
+      <title>[leetcode]795. 区间子数组个数</title>
+      <link>https://congwen.github.io/post/leetcode/795-number-of-subarrays-with-bounded-maximum/</link>
+      <pubDate>Wed, 16 Oct 2024 14:04:27 +0800</pubDate>
+      
+      <guid>https://congwen.github.io/post/leetcode/795-number-of-subarrays-with-bounded-maximum/</guid>
+      <description>题目描述： 给定一个整数数组 A 和两个整数 L 和 R，你需要找到数组中有多少个子数组的元素都在 [L, R] 的范围内。 注意：子数组是连续的。 示例 输入：A = [1, 2,</description>
+    </item>
+    
+    <item>
+      <title>[leetcode]66. 加一</title>
+      <link>https://congwen.github.io/post/leetcode/66-plus-one/</link>
+      <pubDate>Wed, 16 Oct 2024 12:41:18 +0800</pubDate>
+      
+      <guid>https://congwen.github.io/post/leetcode/66-plus-one/</guid>
+      <description>题目 给定一个由 整数 组成的 非空 数组所表示的非负整数，在该数的基础上加一。 最高位数字存放在数组的首位， 数组中每个元素只存储单个数字。 你可以假设除</description>
+    </item>
+    
+    <item>
+      <title>[leetcode]189. 轮转数组</title>
+      <link>https://congwen.github.io/post/leetcode/189-rotate-array/</link>
+      <pubDate>Wed, 16 Oct 2024 12:30:18 +0800</pubDate>
+      
+      <guid>https://congwen.github.io/post/leetcode/189-rotate-array/</guid>
+      <description>题目 给定一个整数数组 nums，将数组中的元素向右轮转 k 个位置，其中 k 是非负数。 示例 1: 输入: nums = [1,2,3,4,5,6,7], k = 3 输出: [5,6,7,1,2,3,4] 解释: 向右轮转 1 步: [7,1,2,3,4,5,6] 向右轮转</description>
+    </item>
+    
     <item>
       <title>[leetcode]删除排序链表中的重复元素 II</title>
       <link>https://congwen.github.io/post/leetcode/82-remove-duplicates-from-sorted-list-ii/</link>

@@ -6,7 +6,16 @@
     <description>Recent content in 数据结构 on 丛文的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 24 Aug 2022 12:48:43 +0800</lastBuildDate><atom:link href="https://congwen.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Oct 2024 12:30:18 +0800</lastBuildDate><atom:link href="https://congwen.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[leetcode]189. 轮转数组</title>
+      <link>https://congwen.github.io/post/leetcode/189-rotate-array/</link>
+      <pubDate>Wed, 16 Oct 2024 12:30:18 +0800</pubDate>
+      
+      <guid>https://congwen.github.io/post/leetcode/189-rotate-array/</guid>
+      <description>题目 给定一个整数数组 nums，将数组中的元素向右轮转 k 个位置，其中 k 是非负数。 示例 1: 输入: nums = [1,2,3,4,5,6,7], k = 3 输出: [5,6,7,1,2,3,4] 解释: 向右轮转 1 步: [7,1,2,3,4,5,6] 向右轮转</description>
+    </item>
+    
     <item>
       <title>[leetcode]删除排序链表中的重复元素 II</title>
       <link>https://congwen.github.io/post/leetcode/82-remove-duplicates-from-sorted-list-ii/</link>
