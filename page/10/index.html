@@ -124,6 +124,27 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/singleton-pattern/">单例模式-双重校验锁</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-08-24 </span>
+      <div class="post-category">
+          <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"> 设计模式 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      采用双锁机制，安全且在多线程情况下能保持高性能。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 public class Singleton{ private static volatile Singleton instance; private Singleton(){} public static Singleton getInstance(){ if(instance == null){ // 判断对象是否以及实例化过
+    </div>
+    <div class="read-more">
+      <a href="/post/singleton-pattern/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/solve-virtualbox-network-config-of-hostonly/">解决virtualbox网络配置hostonly后不生效的问题</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2021-08-02 </span>
@@ -223,27 +244,6 @@
     </div>
     <div class="read-more">
       <a href="/post/install-ubuntu-server-in-virtualbox/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/install-virtualbox-in-windows10/">在win10系统中安装virtualbox</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-07-29 </span>
-      <div class="post-category">
-          <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"> 软件安装 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      1、下载virtualbox 进入virtualbox官网下载：https://www.virtualbox.org/wiki/Downloa
-    </div>
-    <div class="read-more">
-      <a href="/post/install-virtualbox-in-windows10/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
