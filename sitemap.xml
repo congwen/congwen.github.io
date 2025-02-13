@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://congwen.github.io/post/deepthink/charlie-munger-thinking-system-investment-philosophy-and-life-wisdom/</loc>
+    <lastmod>2025-02-13T13:53:17+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://congwen.github.io/post/deepthink/how-do-i-know-what-i-am-capable-of/</loc>
     <lastmod>2025-02-08T18:37:32+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -493,41 +500,48 @@
   
   <url>
     <loc>https://congwen.github.io/categories/</loc>
-    <lastmod>2025-02-08T18:37:32+08:00</lastmod>
+    <lastmod>2025-02-13T13:53:17+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://congwen.github.io/post/</loc>
-    <lastmod>2025-02-08T18:37:32+08:00</lastmod>
+    <lastmod>2025-02-13T13:53:17+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://congwen.github.io/tags/</loc>
-    <lastmod>2025-02-08T18:37:32+08:00</lastmod>
+    <lastmod>2025-02-13T13:53:17+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://congwen.github.io/tags/%E6%80%9D%E8%80%83/</loc>
-    <lastmod>2025-02-08T18:37:32+08:00</lastmod>
+    <loc>https://congwen.github.io/tags/%E4%B9%A6%E7%B1%8D/</loc>
+    <lastmod>2025-02-13T13:53:17+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://congwen.github.io/categories/%E6%80%9D%E8%80%83/</loc>
-    <lastmod>2025-02-08T18:37:32+08:00</lastmod>
+    <lastmod>2025-02-13T13:53:17+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://congwen.github.io/</loc>
+    <lastmod>2025-02-13T13:53:17+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://congwen.github.io/tags/%E6%80%9D%E8%80%83/</loc>
     <lastmod>2025-02-08T18:37:32+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
