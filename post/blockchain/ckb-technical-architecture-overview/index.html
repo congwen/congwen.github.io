@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>CKB 技术架构概览 - KnowDoBeMore</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="丛文" /><meta name="description" content="Nervos CKB 分层架构、Cell 模型、CKB-VM 与 NC-MAX 共识的技术概览" /><meta name="keywords" content="CKB,, Nervos,, 技术架构,, Cell, Model,, CKB-VM" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.88.1 with theme even" />
+
+
+<link rel="canonical" href="https://congwen.github.io/post/blockchain/ckb-technical-architecture-overview/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <meta name="referrer" content="no-referrer-when-downgrade">
+
+<link href="/sass/main.min.cb68f97bc9cece255d217346d970e3c62623408634e500c330a62fadabbbe77c.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="CKB 技术架构概览" />
+<meta property="og:description" content="Nervos CKB 分层架构、Cell 模型、CKB-VM 与 NC-MAX 共识的技术概览" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://congwen.github.io/post/blockchain/ckb-technical-architecture-overview/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2026-08-26T17:20:00+08:00" />
+<meta property="article:modified_time" content="2026-08-26T17:20:00+08:00" />
+
+<meta itemprop="name" content="CKB 技术架构概览">
+<meta itemprop="description" content="Nervos CKB 分层架构、Cell 模型、CKB-VM 与 NC-MAX 共识的技术概览"><meta itemprop="datePublished" content="2026-08-26T17:20:00+08:00" />
+<meta itemprop="dateModified" content="2026-08-26T17:20:00+08:00" />
+<meta itemprop="wordCount" content="1974">
+<meta itemprop="keywords" content="CKB,区块链,Nervos," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CKB 技术架构概览"/>
+<meta name="twitter:description" content="Nervos CKB 分层架构、Cell 模型、CKB-VM 与 NC-MAX 共识的技术概览"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">KnowDoBeMore</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">KnowDoBeMore</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">CKB 技术架构概览</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2026-08-26 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"> 区块链 </a>
+            </div>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-分层定位通用验证层">1. 分层定位：通用验证层</a></li>
+        <li><a href="#2-cell-模型可编程的-utxo">2. Cell 模型：可编程的 UTXO</a></li>
+        <li><a href="#3-ckb-vmrisc-v-虚拟机">3. CKB-VM：RISC-V 虚拟机</a></li>
+        <li><a href="#4-共识nc-max--eaglesong-pow">4. 共识：NC-MAX + Eaglesong PoW</a></li>
+        <li><a href="#5-经济模型存储即价值">5. 经济模型：存储即价值</a></li>
+        <li><a href="#6-节点与网络">6. 节点与网络</a></li>
+        <li><a href="#7-与以太坊bitcoin-的对比简要">7. 与以太坊/Bitcoin 的对比（简要）</a></li>
+        <li><a href="#8-进一步阅读">8. 进一步阅读</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p><a href="https://docs.nervos.org/">CKB</a>（Common Knowledge Base，公共知识库）是 <a href="https://www.nervos.org/">Nervos Network</a> 的 Layer 1 公链，2019 年 11 月主网上线。与以太坊的账户模型、比特币的纯价值 UTXO 不同，CKB 的核心设计是：<strong>用 Cell 承载任意链上状态，用 RISC-V 虚拟机验证状态转换，把计算尽量推到链下，链上专注验证与安全</strong>。</p>
+<p>本文从分层定位、状态模型、虚拟机、共识与经济模型几方面，梳理 CKB 的技术架构。</p>
+<h3 id="1-分层定位通用验证层">1. 分层定位：通用验证层</h3>
+<p>区块链设计里，安全性、去中心化和可扩展性往往难以在同一层同时做到极致。Nervos 采用多层架构：</p>
+<ul>
+<li><strong>Layer 1（CKB）</strong>：优先保证安全与去中心化，作为资产与状态的最终存储与验证层</li>
+<li><strong>Layer 2 及更高层</strong>（如 Godwoken、Axon 等）：承担大量计算与业务逻辑，将结果提交到 CKB 验证</li>
+</ul>
+<p>CKB 因此常被称为 <strong>Universal Verification Layer（通用验证层）</strong>：链下或 L2 的 Generator 负责生成新状态，CKB 节点只验证「这次状态转换是否合法」，而不在 L1 上执行全部业务计算。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">┌─────────────────────────────────────────┐
+│  Layer 2 / 链下 Generator（计算、业务）   │
+└─────────────────┬───────────────────────┘
+                  │ 提交交易（含新 Cell）
+                  ▼
+┌─────────────────────────────────────────┐
+│  Layer 1 CKB（验证、存储、PoW 安全）      │
+└─────────────────────────────────────────┘
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="2-cell-模型可编程的-utxo">2. Cell 模型：可编程的 UTXO</h3>
+<p>CKB 的状态单元叫 <strong>Cell</strong>，可以理解为「带数据和脚本的 UTXO」：</p>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cell</td>
+<td>链上状态的基本容器，持有 CKB 代币和任意字节数据</td>
+</tr>
+<tr>
+<td>消费（Consume）</td>
+<td>Cell 不可就地修改；更新状态需消费旧 Cell、创建新 Cell</td>
+</tr>
+<tr>
+<td>Lock Script</td>
+<td>定义「谁可以用」——访问控制，类似 Bitcoin 的 locking script</td>
+</tr>
+<tr>
+<td>Type Script</td>
+<td>定义「怎样用才合法」——状态转换规则，类似智能合约逻辑</td>
+</tr>
+</tbody>
+</table>
+<p>一笔 CKB 交易与 Bitcoin 类似，采用 <strong>输入 / 输出</strong> 结构：输入引用并解锁已有 Cell，输出生成新的 Cell。验证节点对每个输入执行 Lock Script 和 Type Script，全部通过则交易有效。</p>
+<p>Cell 模型的几个特点：</p>
+<ul>
+<li><strong>状态与资产同构</strong>：Cell 既代表价值（CKByte），也代表存储空间</li>
+<li><strong>并行友好</strong>：无全局账户状态树争用，不同 Cell 可并行验证</li>
+<li><strong>链下计算、链上验证</strong>：复杂逻辑在客户端或 L2 执行，链上只跑脚本验证</li>
+</ul>
+<h3 id="3-ckb-vmrisc-v-虚拟机">3. CKB-VM：RISC-V 虚拟机</h3>
+<p>CKB 的智能合约以 <strong>Script</strong> 形式存在，在 <strong>CKB-VM</strong> 中执行。CKB-VM 基于开源 <strong>RISC-V</strong> 指令集，而非为某条链定制的私有 opcode。</p>
+<p>设计取舍：</p>
+<ul>
+<li><strong>标准 ISA</strong>：复用成熟的 RISC-V 工具链与生态，可用 C、Rust 等编译到 RISC-V 的 language 开发合约</li>
+<li><strong>密码学原语不硬编码</strong>：哈希、签名等通过普通汇编/库在 VM 内实现，保持 VM 精简</li>
+<li><strong>Syscall</strong>：脚本通过系统调用读取交易、Cell 数据、区块头等链上上下文</li>
+<li><strong>Cycle 计量</strong>：每条指令消耗 cycle，用于限制执行时间并计算手续费</li>
+</ul>
+<p>Script 执行成功返回 <code>0</code>，失败则交易被拒绝。Lock Script 与 Type Script 分别在解锁与类型校验阶段运行。</p>
+<h3 id="4-共识nc-max--eaglesong-pow">4. 共识：NC-MAX + Eaglesong PoW</h3>
+<p>CKB 使用 <strong>工作量证明（PoW）</strong>，哈希算法为 <strong>Eaglesong</strong>，共识协议为 <strong>NC-MAX</strong>（Nervos Consensus MAX）。</p>
+<p>NC-MAX 在 Bitcoin 中本聪共识基础上改进，目标是在不牺牲安全与去中心化的前提下，缩短确认时间、提高吞吐。主网出块间隔约 <strong>10 秒</strong>。</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>共识</td>
+<td>NC-MAX（Eaglesong PoW）</td>
+</tr>
+<tr>
+<td>出块时间</td>
+<td>~10 秒</td>
+</tr>
+<tr>
+<td>原生代币</td>
+<td>CKByte（CKB），最小单位 Shannon（1 CKB = 10⁸ Shannon）</td>
+</tr>
+<tr>
+<td>地址格式</td>
+<td>Bech32（主网 <code>ckb1...</code>，测试网 <code>ckt1...</code>）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-经济模型存储即价值">5. 经济模型：存储即价值</h3>
+<p>CKB 代币 <strong>CKByte</strong> 具有双重含义：</p>
+<ol>
+<li><strong>价值载体</strong>：转账、支付手续费</li>
+<li><strong>存储配额</strong>：1 CKB 对应链上 1 字节状态的占用权（「1 CKB = 1 byte」）</li>
+</ol>
+<p>用户要在链上长期保存数据，需要持有相应数量的 CKB。这种 <strong>状态导向的经济模型</strong> 鼓励释放不再使用的状态（将 Cell 中的 CKB 取回），缓解状态膨胀问题。</p>
+<p>交易手续费由矿工根据交易所消耗的 <strong>cycle</strong> 和占用的 <strong>链上存储</strong> 综合决定。</p>
+<h3 id="6-节点与网络">6. 节点与网络</h3>
+<p>CKB 节点通过 P2P 网络同步区块与交易。典型组件包括：</p>
+<ul>
+<li><strong>Full Node</strong>：完整验证区块与交易，维护链状态</li>
+<li><strong>Miner</strong>：打包交易、参与 PoW 出块</li>
+<li><strong>Light Client</strong>：轻量同步，依赖全节点提供证明</li>
+</ul>
+<p>官方实现：<a href="https://github.com/nervosnetwork/ckb">nervosnetwork/ckb</a>（Rust）。</p>
+<h3 id="7-与以太坊bitcoin-的对比简要">7. 与以太坊/Bitcoin 的对比（简要）</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>Bitcoin</th>
+<th>Ethereum</th>
+<th>CKB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>状态模型</td>
+<td>UTXO（仅价值）</td>
+<td>账户 + 全局状态</td>
+<td>Cell（价值 + 任意数据）</td>
+</tr>
+<tr>
+<td>合约执行</td>
+<td>Script（非图灵完备）</td>
+<td>EVM（链上执行）</td>
+<td>CKB-VM（链上验证为主）</td>
+</tr>
+<tr>
+<td>共识</td>
+<td>PoW</td>
+<td>PoS（The Merge 后）</td>
+<td>PoW（NC-MAX）</td>
+</tr>
+<tr>
+<td>扩展思路</td>
+<td>L2 / 闪电网络</td>
+<td>Rollup、分片等</td>
+<td>分层 + 链下 Generator</td>
+</tr>
+</tbody>
+</table>
+<h3 id="8-进一步阅读">8. 进一步阅读</h3>
+<ul>
+<li><a href="https://docs.nervos.org/">Nervos 官方文档</a></li>
+<li><a href="https://nervosnetwork.github.io/rfcs/rfcs/0002-ckb/0002-ckb.html">RFC 0002: Nervos CKB</a></li>
+<li><a href="https://docs.nervos.org/docs/getting-started/how-ckb-works">How CKB Works</a></li>
+<li><a href="https://docs.nervos.org/docs/tech-explanation/cell-model">Cell Model 详解</a></li>
+</ul>
+<hr>
+<p>CKB 的架构选择可以概括为：<strong>PoW 保障 L1 安全，Cell 模型灵活表达状态，RISC-V VM 提供可验证的计算边界，代币经济绑定存储成本，计算则交给 L2 与链下。</strong> 理解这几块，就掌握了阅读 CKB 生态其他组件（钱包、dApp、L2 协议）的基础。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">丛文</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2026-08-26
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/ckb/">CKB</a>
+          <a href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/">区块链</a>
+          <a href="/tags/nervos/">Nervos</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/deepthink/charlie-munger-thinking-system-investment-philosophy-and-life-wisdom/">
+            <span class="next-text nav-default">查理·芒格的思维体系、投资哲学与人生智慧</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="congwen/blog-comment"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="iamcongwen@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/congwen" class="iconfont icon-github" title="github"></a>
+  <a href="https://congwen.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2019 - 
+    2026<span class="heart"><i class="iconfont icon-heart"></i></span><span>丛文</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+<script id="baidu_push">
+  (function(){
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script'); bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>
