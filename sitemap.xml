@@ -506,6 +506,13 @@
   </url>
   
   <url>
+    <loc>https://congwen.github.io/</loc>
+    <lastmod>2025-02-13T13:53:17+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://congwen.github.io/post/</loc>
     <lastmod>2025-02-13T13:53:17+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -528,13 +535,6 @@
   
   <url>
     <loc>https://congwen.github.io/categories/%E6%80%9D%E8%80%83/</loc>
-    <lastmod>2025-02-13T13:53:17+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://congwen.github.io/</loc>
     <lastmod>2025-02-13T13:53:17+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
